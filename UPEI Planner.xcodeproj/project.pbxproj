@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A79392182BCC0300717995 /* DataModel.xcdatamodeld */; };
+		4BD4CC6C18285A27004F8834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6B18285A27004F8834 /* UIKit.framework */; };
+		4BD4CC6E18285A27004F8834 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6D18285A27004F8834 /* Foundation.framework */; };
+		4BD4CC7018285A27004F8834 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6F18285A27004F8834 /* CoreGraphics.framework */; };
+		4BD4CC7218285A27004F8834 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC7118285A27004F8834 /* CoreData.framework */; };
+		4BD4CC7818285A27004F8834 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7618285A27004F8834 /* InfoPlist.strings */; };
+		4BD4CC7A18285A27004F8834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7918285A27004F8834 /* main.m */; };
+		4BD4CC7E18285A27004F8834 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7D18285A27004F8834 /* AppDelegate.m */; };
+		4BD4CC8018285A27004F8834 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7F18285A27004F8834 /* Default.png */; };
+		4BD4CC8218285A27004F8834 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC8118285A27004F8834 /* Default@2x.png */; };
+		4BD4CC8418285A28004F8834 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC8318285A28004F8834 /* Default-568h@2x.png */; };
+		4BD4CC8718285A28004F8834 /* UPEI_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC8518285A28004F8834 /* UPEI_Planner.xcdatamodeld */; };
+		4BD4CC8F18285A28004F8834 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC8E18285A28004F8834 /* SenTestingKit.framework */; };
+		4BD4CC9018285A28004F8834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6B18285A27004F8834 /* UIKit.framework */; };
+		4BD4CC9118285A28004F8834 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6D18285A27004F8834 /* Foundation.framework */; };
+		4BD4CC9218285A28004F8834 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC7118285A27004F8834 /* CoreData.framework */; };
+		4BD4CC9A18285A28004F8834 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC9818285A28004F8834 /* InfoPlist.strings */; };
+		4BD4CC9D18285A28004F8834 /* UPEI_PlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC9C18285A28004F8834 /* UPEI_PlannerTests.m */; };
+		4BD4CCA918285AD9004F8834 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CCA718285AD9004F8834 /* InformationViewController.m */; };
+		4BD4CCAA18285AD9004F8834 /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CCA818285AD9004F8834 /* InformationViewController.xib */; };
+		4BD4CCAE18285B74004F8834 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CCAC18285B74004F8834 /* CalendarViewController.m */; };
+		4BD4CCAF18285B74004F8834 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CCAD18285B74004F8834 /* CalendarViewController.xib */; };
+		4BD4CCB618285C88004F8834 /* MoodleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CCB418285C88004F8834 /* MoodleViewController.m */; };
+		4BD4CCB718285C88004F8834 /* MoodleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CCB518285C88004F8834 /* MoodleViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4BD4CC9318285A28004F8834 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BD4CC6018285A27004F8834 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BD4CC6718285A27004F8834;
+			remoteInfo = "UPEI Planner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26A79393182BCC0300717995 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		4BD4CC6818285A27004F8834 /* UPEI Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UPEI Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BD4CC6B18285A27004F8834 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4BD4CC6D18285A27004F8834 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4BD4CC6F18285A27004F8834 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4BD4CC7118285A27004F8834 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4BD4CC7518285A27004F8834 /* UPEI Planner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UPEI Planner-Info.plist"; sourceTree = "<group>"; };
+		4BD4CC7718285A27004F8834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4BD4CC7918285A27004F8834 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4BD4CC7B18285A27004F8834 /* UPEI Planner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UPEI Planner-Prefix.pch"; sourceTree = "<group>"; };
+		4BD4CC7C18285A27004F8834 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4BD4CC7D18285A27004F8834 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4BD4CC7F18285A27004F8834 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4BD4CC8118285A27004F8834 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4BD4CC8318285A28004F8834 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4BD4CC8618285A28004F8834 /* UPEI_Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UPEI_Planner.xcdatamodel; sourceTree = "<group>"; };
+		4BD4CC8D18285A28004F8834 /* UPEI PlannerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UPEI PlannerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BD4CC8E18285A28004F8834 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4BD4CC9718285A28004F8834 /* UPEI PlannerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UPEI PlannerTests-Info.plist"; sourceTree = "<group>"; };
+		4BD4CC9918285A28004F8834 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4BD4CC9B18285A28004F8834 /* UPEI_PlannerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPEI_PlannerTests.h; sourceTree = "<group>"; };
+		4BD4CC9C18285A28004F8834 /* UPEI_PlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPEI_PlannerTests.m; sourceTree = "<group>"; };
+		4BD4CCA618285AD9004F8834 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
+		4BD4CCA718285AD9004F8834 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		4BD4CCA818285AD9004F8834 /* InformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
+		4BD4CCAB18285B74004F8834 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		4BD4CCAC18285B74004F8834 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		4BD4CCAD18285B74004F8834 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		4BD4CCB318285C88004F8834 /* MoodleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodleViewController.h; sourceTree = "<group>"; };
+		4BD4CCB418285C88004F8834 /* MoodleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodleViewController.m; sourceTree = "<group>"; };
+		4BD4CCB518285C88004F8834 /* MoodleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodleViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BD4CC6518285A27004F8834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BD4CC6C18285A27004F8834 /* UIKit.framework in Frameworks */,
+				4BD4CC6E18285A27004F8834 /* Foundation.framework in Frameworks */,
+				4BD4CC7018285A27004F8834 /* CoreGraphics.framework in Frameworks */,
+				4BD4CC7218285A27004F8834 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BD4CC8918285A28004F8834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BD4CC8F18285A28004F8834 /* SenTestingKit.framework in Frameworks */,
+				4BD4CC9018285A28004F8834 /* UIKit.framework in Frameworks */,
+				4BD4CC9118285A28004F8834 /* Foundation.framework in Frameworks */,
+				4BD4CC9218285A28004F8834 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BD4CC5F18285A27004F8834 = {
+			isa = PBXGroup;
+			children = (
+				4BD4CC7318285A27004F8834 /* UPEI Planner */,
+				4BD4CC9518285A28004F8834 /* UPEI PlannerTests */,
+				4BD4CC6A18285A27004F8834 /* Frameworks */,
+				4BD4CC6918285A27004F8834 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BD4CC6918285A27004F8834 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BD4CC6818285A27004F8834 /* UPEI Planner.app */,
+				4BD4CC8D18285A28004F8834 /* UPEI PlannerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BD4CC6A18285A27004F8834 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BD4CC6B18285A27004F8834 /* UIKit.framework */,
+				4BD4CC6D18285A27004F8834 /* Foundation.framework */,
+				4BD4CC6F18285A27004F8834 /* CoreGraphics.framework */,
+				4BD4CC7118285A27004F8834 /* CoreData.framework */,
+				4BD4CC8E18285A28004F8834 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BD4CC7318285A27004F8834 /* UPEI Planner */ = {
+			isa = PBXGroup;
+			children = (
+				4BD4CC7C18285A27004F8834 /* AppDelegate.h */,
+				4BD4CC7D18285A27004F8834 /* AppDelegate.m */,
+				4BD4CCA618285AD9004F8834 /* InformationViewController.h */,
+				4BD4CCA718285AD9004F8834 /* InformationViewController.m */,
+				4BD4CCA818285AD9004F8834 /* InformationViewController.xib */,
+				4BD4CCAB18285B74004F8834 /* CalendarViewController.h */,
+				4BD4CCAC18285B74004F8834 /* CalendarViewController.m */,
+				4BD4CCAD18285B74004F8834 /* CalendarViewController.xib */,
+				4BD4CCB318285C88004F8834 /* MoodleViewController.h */,
+				4BD4CCB418285C88004F8834 /* MoodleViewController.m */,
+				4BD4CCB518285C88004F8834 /* MoodleViewController.xib */,
+				4BD4CC8518285A28004F8834 /* UPEI_Planner.xcdatamodeld */,
+				4BD4CC7418285A27004F8834 /* Supporting Files */,
+				26A79392182BCC0300717995 /* DataModel.xcdatamodeld */,
+			);
+			path = "UPEI Planner";
+			sourceTree = "<group>";
+		};
+		4BD4CC7418285A27004F8834 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BD4CC7518285A27004F8834 /* UPEI Planner-Info.plist */,
+				4BD4CC7618285A27004F8834 /* InfoPlist.strings */,
+				4BD4CC7918285A27004F8834 /* main.m */,
+				4BD4CC7B18285A27004F8834 /* UPEI Planner-Prefix.pch */,
+				4BD4CC7F18285A27004F8834 /* Default.png */,
+				4BD4CC8118285A27004F8834 /* Default@2x.png */,
+				4BD4CC8318285A28004F8834 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BD4CC9518285A28004F8834 /* UPEI PlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BD4CC9B18285A28004F8834 /* UPEI_PlannerTests.h */,
+				4BD4CC9C18285A28004F8834 /* UPEI_PlannerTests.m */,
+				4BD4CC9618285A28004F8834 /* Supporting Files */,
+			);
+			path = "UPEI PlannerTests";
+			sourceTree = "<group>";
+		};
+		4BD4CC9618285A28004F8834 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BD4CC9718285A28004F8834 /* UPEI PlannerTests-Info.plist */,
+				4BD4CC9818285A28004F8834 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BD4CC6718285A27004F8834 /* UPEI Planner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BD4CCA018285A28004F8834 /* Build configuration list for PBXNativeTarget "UPEI Planner" */;
+			buildPhases = (
+				4BD4CC6418285A27004F8834 /* Sources */,
+				4BD4CC6518285A27004F8834 /* Frameworks */,
+				4BD4CC6618285A27004F8834 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UPEI Planner";
+			productName = "UPEI Planner";
+			productReference = 4BD4CC6818285A27004F8834 /* UPEI Planner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4BD4CC8C18285A28004F8834 /* UPEI PlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BD4CCA318285A28004F8834 /* Build configuration list for PBXNativeTarget "UPEI PlannerTests" */;
+			buildPhases = (
+				4BD4CC8818285A28004F8834 /* Sources */,
+				4BD4CC8918285A28004F8834 /* Frameworks */,
+				4BD4CC8A18285A28004F8834 /* Resources */,
+				4BD4CC8B18285A28004F8834 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BD4CC9418285A28004F8834 /* PBXTargetDependency */,
+			);
+			name = "UPEI PlannerTests";
+			productName = "UPEI PlannerTests";
+			productReference = 4BD4CC8D18285A28004F8834 /* UPEI PlannerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BD4CC6018285A27004F8834 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Kyle Pineau & Evan Jackson";
+			};
+			buildConfigurationList = 4BD4CC6318285A27004F8834 /* Build configuration list for PBXProject "UPEI Planner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4BD4CC5F18285A27004F8834;
+			productRefGroup = 4BD4CC6918285A27004F8834 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BD4CC6718285A27004F8834 /* UPEI Planner */,
+				4BD4CC8C18285A28004F8834 /* UPEI PlannerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BD4CC6618285A27004F8834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BD4CC7818285A27004F8834 /* InfoPlist.strings in Resources */,
+				4BD4CC8018285A27004F8834 /* Default.png in Resources */,
+				4BD4CC8218285A27004F8834 /* Default@2x.png in Resources */,
+				4BD4CC8418285A28004F8834 /* Default-568h@2x.png in Resources */,
+				4BD4CCAA18285AD9004F8834 /* InformationViewController.xib in Resources */,
+				4BD4CCAF18285B74004F8834 /* CalendarViewController.xib in Resources */,
+				4BD4CCB718285C88004F8834 /* MoodleViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BD4CC8A18285A28004F8834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BD4CC9A18285A28004F8834 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BD4CC8B18285A28004F8834 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BD4CC6418285A27004F8834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BD4CC7A18285A27004F8834 /* main.m in Sources */,
+				4BD4CC7E18285A27004F8834 /* AppDelegate.m in Sources */,
+				4BD4CC8718285A28004F8834 /* UPEI_Planner.xcdatamodeld in Sources */,
+				4BD4CCA918285AD9004F8834 /* InformationViewController.m in Sources */,
+				4BD4CCAE18285B74004F8834 /* CalendarViewController.m in Sources */,
+				4BD4CCB618285C88004F8834 /* MoodleViewController.m in Sources */,
+				26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BD4CC8818285A28004F8834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BD4CC9D18285A28004F8834 /* UPEI_PlannerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4BD4CC9418285A28004F8834 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BD4CC6718285A27004F8834 /* UPEI Planner */;
+			targetProxy = 4BD4CC9318285A28004F8834 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4BD4CC7618285A27004F8834 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BD4CC7718285A27004F8834 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4BD4CC9818285A28004F8834 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BD4CC9918285A28004F8834 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BD4CC9E18285A28004F8834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4BD4CC9F18285A28004F8834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BD4CCA118285A28004F8834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UPEI Planner/UPEI Planner-Prefix.pch";
+				INFOPLIST_FILE = "UPEI Planner/UPEI Planner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4BD4CCA218285A28004F8834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UPEI Planner/UPEI Planner-Prefix.pch";
+				INFOPLIST_FILE = "UPEI Planner/UPEI Planner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4BD4CCA418285A28004F8834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UPEI Planner.app/UPEI Planner";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UPEI Planner/UPEI Planner-Prefix.pch";
+				INFOPLIST_FILE = "UPEI PlannerTests/UPEI PlannerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4BD4CCA518285A28004F8834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UPEI Planner.app/UPEI Planner";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UPEI Planner/UPEI Planner-Prefix.pch";
+				INFOPLIST_FILE = "UPEI PlannerTests/UPEI PlannerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BD4CC6318285A27004F8834 /* Build configuration list for PBXProject "UPEI Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BD4CC9E18285A28004F8834 /* Debug */,
+				4BD4CC9F18285A28004F8834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BD4CCA018285A28004F8834 /* Build configuration list for PBXNativeTarget "UPEI Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BD4CCA118285A28004F8834 /* Debug */,
+				4BD4CCA218285A28004F8834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BD4CCA318285A28004F8834 /* Build configuration list for PBXNativeTarget "UPEI PlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BD4CCA418285A28004F8834 /* Debug */,
+				4BD4CCA518285A28004F8834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		26A79392182BCC0300717995 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				26A79393182BCC0300717995 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 26A79393182BCC0300717995 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		4BD4CC8518285A28004F8834 /* UPEI_Planner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4BD4CC8618285A28004F8834 /* UPEI_Planner.xcdatamodel */,
+			);
+			currentVersion = 4BD4CC8618285A28004F8834 /* UPEI_Planner.xcdatamodel */;
+			path = UPEI_Planner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4BD4CC6018285A27004F8834 /* Project object */;
+}
