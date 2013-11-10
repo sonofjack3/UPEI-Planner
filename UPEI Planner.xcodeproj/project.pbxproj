@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A79392182BCC0300717995 /* DataModel.xcdatamodeld */; };
+		4B9101CA1830206B009F3885 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C81830206B009F3885 /* Default.png */; };
+		4B9101CB1830206B009F3885 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C91830206B009F3885 /* Default@2x.png */; };
 		4BD4CC6C18285A27004F8834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6B18285A27004F8834 /* UIKit.framework */; };
 		4BD4CC6E18285A27004F8834 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6D18285A27004F8834 /* Foundation.framework */; };
 		4BD4CC7018285A27004F8834 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6F18285A27004F8834 /* CoreGraphics.framework */; };
@@ -15,9 +17,6 @@
 		4BD4CC7818285A27004F8834 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7618285A27004F8834 /* InfoPlist.strings */; };
 		4BD4CC7A18285A27004F8834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7918285A27004F8834 /* main.m */; };
 		4BD4CC7E18285A27004F8834 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7D18285A27004F8834 /* AppDelegate.m */; };
-		4BD4CC8018285A27004F8834 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7F18285A27004F8834 /* Default.png */; };
-		4BD4CC8218285A27004F8834 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC8118285A27004F8834 /* Default@2x.png */; };
-		4BD4CC8418285A28004F8834 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC8318285A28004F8834 /* Default-568h@2x.png */; };
 		4BD4CC8718285A28004F8834 /* UPEI_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC8518285A28004F8834 /* UPEI_Planner.xcdatamodeld */; };
 		4BD4CC8F18285A28004F8834 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC8E18285A28004F8834 /* SenTestingKit.framework */; };
 		4BD4CC9018285A28004F8834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6B18285A27004F8834 /* UIKit.framework */; };
@@ -56,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		26A79393182BCC0300717995 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		4B9101C81830206B009F3885 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4B9101C91830206B009F3885 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4BD4CC6818285A27004F8834 /* UPEI Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UPEI Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD4CC6B18285A27004F8834 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4BD4CC6D18285A27004F8834 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,9 +68,6 @@
 		4BD4CC7B18285A27004F8834 /* UPEI Planner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UPEI Planner-Prefix.pch"; sourceTree = "<group>"; };
 		4BD4CC7C18285A27004F8834 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BD4CC7D18285A27004F8834 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4BD4CC7F18285A27004F8834 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		4BD4CC8118285A27004F8834 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		4BD4CC8318285A28004F8834 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4BD4CC8618285A28004F8834 /* UPEI_Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UPEI_Planner.xcdatamodel; sourceTree = "<group>"; };
 		4BD4CC8D18285A28004F8834 /* UPEI PlannerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UPEI PlannerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD4CC8E18285A28004F8834 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -180,6 +178,8 @@
 		4BD4CC7418285A27004F8834 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B9101C81830206B009F3885 /* Default.png */,
+				4B9101C91830206B009F3885 /* Default@2x.png */,
 				4BD4CC7518285A27004F8834 /* UPEI Planner-Info.plist */,
 				4BFF8C7B182FD08B007A5DE2 /* Icon-72.png */,
 				4BFF8C7C182FD08C007A5DE2 /* Icon-72@2x.png */,
@@ -195,9 +195,6 @@
 				4BD4CC7618285A27004F8834 /* InfoPlist.strings */,
 				4BD4CC7918285A27004F8834 /* main.m */,
 				4BD4CC7B18285A27004F8834 /* UPEI Planner-Prefix.pch */,
-				4BD4CC7F18285A27004F8834 /* Default.png */,
-				4BD4CC8118285A27004F8834 /* Default@2x.png */,
-				4BD4CC8318285A28004F8834 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -293,9 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BD4CC7818285A27004F8834 /* InfoPlist.strings in Resources */,
-				4BD4CC8018285A27004F8834 /* Default.png in Resources */,
-				4BD4CC8218285A27004F8834 /* Default@2x.png in Resources */,
-				4BD4CC8418285A28004F8834 /* Default-568h@2x.png in Resources */,
 				4BD4CCAA18285AD9004F8834 /* InformationViewController.xib in Resources */,
 				4BD4CCAF18285B74004F8834 /* CalendarViewController.xib in Resources */,
 				4BD4CCB718285C88004F8834 /* MoodleViewController.xib in Resources */,
@@ -310,6 +304,8 @@
 				4BFF8C8E182FD08C007A5DE2 /* iTunesArtwork.png in Resources */,
 				4BFF8C8F182FD08C007A5DE2 /* iTunesArtwork@2x.png in Resources */,
 				4BFF8C90182FD08C007A5DE2 /* spacer.gif in Resources */,
+				4B9101CA1830206B009F3885 /* Default.png in Resources */,
+				4B9101CB1830206B009F3885 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
