@@ -11,6 +11,12 @@
 #import "CalendarViewController.h"
 #import "MoodleViewController.h"
 
+#import "Student.h"
+#import "Assignment.h"
+#import "Exam.h"
+#import "StudentClass.h"
+#import "Project.h"
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -36,6 +42,8 @@
     // Override point for customization after application launch
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    //[self create];
+    //[self read];
     return YES;
 }
 
@@ -106,7 +114,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"UPEI_Planner" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"DataModel" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -119,7 +127,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"UPEI_Planner.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"DataModel.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -161,5 +169,100 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+- (void) create {
+    // Get the context
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    // Create and configure the Faculty entity and set its attributes
+    Student *Kyle = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
+    [Kyle setName:@"Kyle Pineau"];
+    [Kyle setId:[NSNumber numberWithInt:1]];
+    
+    // Create and configure the Department entity and set its attributes
+    StudentClass *CSC212 = [NSEntityDescription insertNewObjectForEntityForName:@"StudentClass" inManagedObjectContext:context];
+    [CSC212 setName:@"Non Traditional Programming"];
+    [CSC212 setProfessor:@"Stephen Howard"];
+    [CSC212 setClassprefix:@"CSC"];
+    [CSC212 setClassnumber:[NSNumber numberWithInt:212]];
+    
+    // Create and configure the Course entity and set its attributes
+    
+    
+    // Set relationships (including reverse relationships)
+    [Kyle addCoursesObject:CSC212];
+    [CSC212 setStudent:Kyle];
+    
+    
+    // Tell the context object to save everything
+    NSError *error = nil;
+    if ([context save:&error]) {
+        NSLog(@"Saved successfully!");
+    } else {
+        NSLog(@"Oops, save error: %@", [error userInfo]);
+    }
+    
+}
+- (void) read {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    // Build a fetch request
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student"
+                                              inManagedObjectContext:context];
+    
+    [fetchRequest setEntity:entity];
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    for (Student *student in fetchedObjects) {
+        // DisplayFaculty details
+        NSLog(@"Student: %@, id: %@", [student name], [student id]);
+        
+        NSLog(@"\tCourses:");
+        NSSet *classes = [student courses];
+        
+        
+        // Use these 3 lines (instead of the 1 line below) to sort departments alphabetically by name
+        NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+        NSArray *sortList = [classes sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDesc]];
+        for (StudentClass *class in sortList) {
+            
+            //for (Department *department in departments) {
+            // Display Department details
+            NSLog(@"\t\tCourse: %@, Professor: %@, ClassID: %@,%@", [class name], [class professor], [class classprefix],[class classnumber]);
+            
+        }
+    }
+}
 
+- (void) delete
+{
+    // Get the context object
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    // We want to delete a department
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student"
+                                              inManagedObjectContext:context];
+    
+    [fetchRequest setEntity:entity];
+    
+    // Want to delete the Chemistry Department
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", @"Kyle Pineau"];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    // Get the department and delete it
+    StudentClass *deleteme = [fetchedObjects objectAtIndex:0];
+    
+    
+    // Save everything
+    if ([context save:&error]) {
+        NSLog(@"Saved successfully!");
+    } else {
+        NSLog(@"Oops, save error: %@", [error localizedDescription]);
+    }
+}
 @end

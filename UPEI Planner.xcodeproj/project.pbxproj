@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A79392182BCC0300717995 /* DataModel.xcdatamodeld */; };
+		26BD4389183139E700DA7339 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4388183139E700DA7339 /* Project.m */; };
+		26BD438C183139E800DA7339 /* StudentClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD438B183139E800DA7339 /* StudentClass.m */; };
+		26BD438F183139E800DA7339 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD438E183139E800DA7339 /* Exam.m */; };
+		26BD4392183139E800DA7339 /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4391183139E800DA7339 /* Assignment.m */; };
+		26BD4395183139E800DA7339 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4394183139E800DA7339 /* Student.m */; };
 		4B9101CA1830206B009F3885 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C81830206B009F3885 /* Default.png */; };
 		4B9101CB1830206B009F3885 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C91830206B009F3885 /* Default@2x.png */; };
 		4BD4CC6C18285A27004F8834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6B18285A27004F8834 /* UIKit.framework */; };
@@ -17,7 +22,6 @@
 		4BD4CC7818285A27004F8834 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7618285A27004F8834 /* InfoPlist.strings */; };
 		4BD4CC7A18285A27004F8834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7918285A27004F8834 /* main.m */; };
 		4BD4CC7E18285A27004F8834 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC7D18285A27004F8834 /* AppDelegate.m */; };
-		4BD4CC8718285A28004F8834 /* UPEI_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC8518285A28004F8834 /* UPEI_Planner.xcdatamodeld */; };
 		4BD4CC8F18285A28004F8834 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC8E18285A28004F8834 /* SenTestingKit.framework */; };
 		4BD4CC9018285A28004F8834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6B18285A27004F8834 /* UIKit.framework */; };
 		4BD4CC9118285A28004F8834 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6D18285A27004F8834 /* Foundation.framework */; };
@@ -55,6 +59,16 @@
 
 /* Begin PBXFileReference section */
 		26A79393182BCC0300717995 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		26BD4387183139E700DA7339 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		26BD4388183139E700DA7339 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		26BD438A183139E800DA7339 /* StudentClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentClass.h; sourceTree = "<group>"; };
+		26BD438B183139E800DA7339 /* StudentClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentClass.m; sourceTree = "<group>"; };
+		26BD438D183139E800DA7339 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
+		26BD438E183139E800DA7339 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
+		26BD4390183139E800DA7339 /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
+		26BD4391183139E800DA7339 /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
+		26BD4393183139E800DA7339 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		26BD4394183139E800DA7339 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		4B9101C81830206B009F3885 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4B9101C91830206B009F3885 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4BD4CC6818285A27004F8834 /* UPEI Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UPEI Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +82,6 @@
 		4BD4CC7B18285A27004F8834 /* UPEI Planner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UPEI Planner-Prefix.pch"; sourceTree = "<group>"; };
 		4BD4CC7C18285A27004F8834 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BD4CC7D18285A27004F8834 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4BD4CC8618285A28004F8834 /* UPEI_Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UPEI_Planner.xcdatamodel; sourceTree = "<group>"; };
 		4BD4CC8D18285A28004F8834 /* UPEI PlannerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UPEI PlannerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD4CC8E18285A28004F8834 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4BD4CC9718285A28004F8834 /* UPEI PlannerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UPEI PlannerTests-Info.plist"; sourceTree = "<group>"; };
@@ -168,9 +181,18 @@
 				4BD4CCB318285C88004F8834 /* MoodleViewController.h */,
 				4BD4CCB418285C88004F8834 /* MoodleViewController.m */,
 				4BD4CCB518285C88004F8834 /* MoodleViewController.xib */,
-				4BD4CC8518285A28004F8834 /* UPEI_Planner.xcdatamodeld */,
 				4BD4CC7418285A27004F8834 /* Supporting Files */,
 				26A79392182BCC0300717995 /* DataModel.xcdatamodeld */,
+				26BD4393183139E800DA7339 /* Student.h */,
+				26BD4394183139E800DA7339 /* Student.m */,
+				26BD4390183139E800DA7339 /* Assignment.h */,
+				26BD4391183139E800DA7339 /* Assignment.m */,
+				26BD438D183139E800DA7339 /* Exam.h */,
+				26BD438E183139E800DA7339 /* Exam.m */,
+				26BD438A183139E800DA7339 /* StudentClass.h */,
+				26BD438B183139E800DA7339 /* StudentClass.m */,
+				26BD4387183139E700DA7339 /* Project.h */,
+				26BD4388183139E700DA7339 /* Project.m */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -342,11 +364,15 @@
 			files = (
 				4BD4CC7A18285A27004F8834 /* main.m in Sources */,
 				4BD4CC7E18285A27004F8834 /* AppDelegate.m in Sources */,
-				4BD4CC8718285A28004F8834 /* UPEI_Planner.xcdatamodeld in Sources */,
 				4BD4CCA918285AD9004F8834 /* InformationViewController.m in Sources */,
 				4BD4CCAE18285B74004F8834 /* CalendarViewController.m in Sources */,
 				4BD4CCB618285C88004F8834 /* MoodleViewController.m in Sources */,
 				26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */,
+				26BD4389183139E700DA7339 /* Project.m in Sources */,
+				26BD438C183139E800DA7339 /* StudentClass.m in Sources */,
+				26BD438F183139E800DA7339 /* Exam.m in Sources */,
+				26BD4392183139E800DA7339 /* Assignment.m in Sources */,
+				26BD4395183139E800DA7339 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,16 +570,6 @@
 			);
 			currentVersion = 26A79393182BCC0300717995 /* DataModel.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		4BD4CC8518285A28004F8834 /* UPEI_Planner.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4BD4CC8618285A28004F8834 /* UPEI_Planner.xcdatamodel */,
-			);
-			currentVersion = 4BD4CC8618285A28004F8834 /* UPEI_Planner.xcdatamodel */;
-			path = UPEI_Planner.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

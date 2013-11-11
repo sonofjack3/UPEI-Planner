@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Assignment" syncable="YES">
+    <entity name="Assignment" representedClassName="Assignment" syncable="YES">
         <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="due_date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,9 +8,35 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="assignment" inverseEntity="Class" syncable="YES"/>
+        <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentClass" inverseName="assignment" inverseEntity="StudentClass" syncable="YES"/>
     </entity>
-    <entity name="Class" syncable="YES">
+    <entity name="Exam" representedClassName="Exam" syncable="YES">
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="due_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mark" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentClass" inverseName="exam" inverseEntity="StudentClass" syncable="YES"/>
+    </entity>
+    <entity name="Project" representedClassName="Project" syncable="YES">
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="due_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mark" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="members" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentClass" inverseName="project" inverseEntity="StudentClass" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" minCount="1" maxCount="5" deletionRule="Nullify" destinationEntity="StudentClass" inverseName="student" inverseEntity="StudentClass" syncable="YES"/>
+    </entity>
+    <entity name="StudentClass" representedClassName="StudentClass" syncable="YES">
         <attribute name="classnumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="classprefix" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,35 +46,10 @@
         <relationship name="project" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="classes" inverseEntity="Project" syncable="YES"/>
         <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="courses" inverseEntity="Student" syncable="YES"/>
     </entity>
-    <entity name="Exam" syncable="YES">
-        <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="mark" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="exam" inverseEntity="Class" syncable="YES"/>
-    </entity>
-    <entity name="Project" syncable="YES">
-        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="due_date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="mark" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="members" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="project" inverseEntity="Class" syncable="YES"/>
-    </entity>
-    <entity name="Student" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="picture" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <relationship name="courses" optional="YES" toMany="YES" minCount="1" maxCount="5" deletionRule="Nullify" destinationEntity="Class" inverseName="student" inverseEntity="Class" syncable="YES"/>
-    </entity>
     <elements>
         <element name="Assignment" positionX="160" positionY="192" width="128" height="163"/>
-        <element name="Class" positionX="-54" positionY="393" width="128" height="163"/>
-        <element name="Exam" positionX="358" positionY="90" width="128" height="148"/>
+        <element name="StudentClass" positionX="-54" positionY="393" width="128" height="163"/>
+        <element name="Exam" positionX="358" positionY="90" width="128" height="163"/>
         <element name="Project" positionX="142" positionY="-117" width="128" height="163"/>
         <element name="Student" positionX="-378" positionY="270" width="128" height="103"/>
     </elements>

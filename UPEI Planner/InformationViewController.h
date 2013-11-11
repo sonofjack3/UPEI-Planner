@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "Student.h"
 
 @interface InformationViewController : UITableViewController
-
+@property (strong, nonatomic) IBOutlet UITableView *TableView;
+@property (strong, nonatomic) NSArray *studentArray;
 @end
