@@ -21,6 +21,7 @@
     if (self)
     {
         [[self tabBarItem] setTitle:@"Info View"];
+        [self setTitle:@"Planner"];
     }
     return self;
 }
@@ -28,6 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
+                                                             style:UIBarButtonItemStyleBordered
+                                                            target:self
+                                                            action:nil];
+    [[self navigationItem] setRightBarButtonItem:item];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,32 +56,33 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // The number of Faculties will define the # of rows needed
-    return studentArray.count;
+    //return studentArray.count;
+    return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellId = @"StudentCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
     }
+    //[[cell textLabel] setText:[NSString stringWithFormat:@"%d - Puppy", [indexPath row]]];
     
     // Configure the cell...
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
     // Get the faculty
     Student *student = [studentArray objectAtIndex:[indexPath row]];
-    
+    [[cell textLabel] setText:[student name]];
+    //NSLog([student name]);
     // Set the cell's text to the faculty name
-    if([indexPath row] == 0)
-        [[cell textLabel] setText:[student name]];
-    else if([indexPath row] == 1)
-        [[cell textLabel] setText:[student id]];
-    else if([indexPath row] == 2)
-        [[cell textLabel] setText:@"Classes"];
+    [[cell textLabel] setText:[student name]];
+    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Student ID: %@",[student id]]];
+
     return cell;
     //return nil;
+    
 }
 
 /*
@@ -169,7 +176,7 @@
 {
     [super viewWillAppear:animated];
     // Load the table data //
-    //[self loadTableData];
+    [self loadTableData];
 }
 
 @end

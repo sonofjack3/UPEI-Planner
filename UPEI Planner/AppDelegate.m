@@ -31,10 +31,10 @@
     InformationViewController *info = [[InformationViewController alloc] init];
     CalendarViewController *calendar = [[CalendarViewController alloc] init];
     MoodleViewController *moodle = [[MoodleViewController alloc] init];
-    
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:info];
     //Create a tab bar view controller with tabs for each of the above three views
     UITabBarController *tabBar = [[UITabBarController alloc] init];
-    NSArray *viewControllers = [NSArray arrayWithObjects:info, calendar, moodle, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:navController, calendar, moodle, nil];
     [tabBar setViewControllers:viewControllers];
     
     [[self window] setRootViewController:tabBar];
@@ -43,7 +43,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //[self create];
-    //[self read];
+    [self read];
     return YES;
 }
 

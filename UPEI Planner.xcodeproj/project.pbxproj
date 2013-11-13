@@ -13,6 +13,8 @@
 		26BD438F183139E800DA7339 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD438E183139E800DA7339 /* Exam.m */; };
 		26BD4392183139E800DA7339 /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4391183139E800DA7339 /* Assignment.m */; };
 		26BD4395183139E800DA7339 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4394183139E800DA7339 /* Student.m */; };
+		26BD4399183424A100DA7339 /* EditStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4397183424A100DA7339 /* EditStudentController.m */; };
+		26BD439A183424A100DA7339 /* EditStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BD4398183424A100DA7339 /* EditStudentController.xib */; };
 		4B9101CA1830206B009F3885 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C81830206B009F3885 /* Default.png */; };
 		4B9101CB1830206B009F3885 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C91830206B009F3885 /* Default@2x.png */; };
 		4BD4CC6C18285A27004F8834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6B18285A27004F8834 /* UIKit.framework */; };
@@ -69,6 +71,9 @@
 		26BD4391183139E800DA7339 /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
 		26BD4393183139E800DA7339 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		26BD4394183139E800DA7339 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		26BD4396183424A100DA7339 /* EditStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditStudentController.h; sourceTree = "<group>"; };
+		26BD4397183424A100DA7339 /* EditStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditStudentController.m; sourceTree = "<group>"; };
+		26BD4398183424A100DA7339 /* EditStudentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditStudentController.xib; sourceTree = "<group>"; };
 		4B9101C81830206B009F3885 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4B9101C91830206B009F3885 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4BD4CC6818285A27004F8834 /* UPEI Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UPEI Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +198,9 @@
 				26BD438B183139E800DA7339 /* StudentClass.m */,
 				26BD4387183139E700DA7339 /* Project.h */,
 				26BD4388183139E700DA7339 /* Project.m */,
+				26BD4396183424A100DA7339 /* EditStudentController.h */,
+				26BD4397183424A100DA7339 /* EditStudentController.m */,
+				26BD4398183424A100DA7339 /* EditStudentController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -328,6 +336,7 @@
 				4BFF8C90182FD08C007A5DE2 /* spacer.gif in Resources */,
 				4B9101CA1830206B009F3885 /* Default.png in Resources */,
 				4B9101CB1830206B009F3885 /* Default@2x.png in Resources */,
+				26BD439A183424A100DA7339 /* EditStudentController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +382,7 @@
 				26BD438F183139E800DA7339 /* Exam.m in Sources */,
 				26BD4392183139E800DA7339 /* Assignment.m in Sources */,
 				26BD4395183139E800DA7339 /* Student.m in Sources */,
+				26BD4399183424A100DA7339 /* EditStudentController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
