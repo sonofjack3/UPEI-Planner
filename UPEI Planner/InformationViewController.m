@@ -29,11 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
+    UIBarButtonItem *edit = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
                                                              style:UIBarButtonItemStyleBordered
                                                             target:self
-                                                            action:nil];
-    [[self navigationItem] setRightBarButtonItem:item];
+                                                            action:@selector(editStudent)];
+    [[self navigationItem] setRightBarButtonItem:edit];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -162,6 +162,8 @@
     
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    if ([fetchedObjects count] == 0)
+        NSLog(@"No objects fetched.");
     studentArray = [context executeFetchRequest:fetchRequest error:&error];
     for (Student *student in fetchedObjects) {
         // DisplayFaculty details
@@ -177,6 +179,12 @@
     [super viewWillAppear:animated];
     // Load the table data //
     [self loadTableData];
+}
+
+- (void) editStudent
+{
+    UIViewController *next = [[EditStudentController alloc] initWithNibName:@"EditStudentController" bundle:nil];
+    [[self navigationController] pushViewController:next animated:YES];
 }
 
 @end

@@ -25,12 +25,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //[self create];
+    [self read];
+    [self update];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //Create view controller for each screen
     InformationViewController *info = [[InformationViewController alloc] init];
     CalendarViewController *calendar = [[CalendarViewController alloc] init];
     MoodleViewController *moodle = [[MoodleViewController alloc] init];
+    //Info screen requires nav controller
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:info];
     //Create a tab bar view controller with tabs for each of the above three views
     UITabBarController *tabBar = [[UITabBarController alloc] init];
@@ -187,7 +192,6 @@
     
     // Create and configure the Course entity and set its attributes
     
-    
     // Set relationships (including reverse relationships)
     [Kyle addCoursesObject:CSC212];
     [CSC212 setStudent:Kyle];
@@ -235,6 +239,27 @@
     }
 }
 
+- (void) update
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    Student *student = [fetchedObjects objectAtIndex:0];
+    
+    if ([context save:&error])
+    {
+        NSLog(@"Saved successfully");
+    }
+    else
+    {
+        NSLog(@"Save error: %@", [error localizedDescription]);
+    }
+}
+
 - (void) delete
 {
     // Get the context object
@@ -256,7 +281,6 @@
     
     // Get the department and delete it
     StudentClass *deleteme = [fetchedObjects objectAtIndex:0];
-    
     
     // Save everything
     if ([context save:&error]) {
