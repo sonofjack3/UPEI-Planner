@@ -31,7 +31,7 @@
         <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentClass" inverseName="project" inverseEntity="StudentClass" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="courses" optional="YES" toMany="YES" minCount="1" maxCount="5" deletionRule="Nullify" destinationEntity="StudentClass" inverseName="student" inverseEntity="StudentClass" syncable="YES"/>
@@ -48,9 +48,9 @@
     </entity>
     <elements>
         <element name="Assignment" positionX="160" positionY="192" width="128" height="163"/>
-        <element name="StudentClass" positionX="-54" positionY="393" width="128" height="163"/>
         <element name="Exam" positionX="358" positionY="90" width="128" height="163"/>
         <element name="Project" positionX="142" positionY="-117" width="128" height="163"/>
         <element name="Student" positionX="-378" positionY="270" width="128" height="103"/>
+        <element name="StudentClass" positionX="-54" positionY="393" width="128" height="163"/>
     </elements>
 </model>

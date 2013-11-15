@@ -26,8 +26,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //[self create];
-    [self read];
-    [self update];
+    //[self read];
+    //[self update];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -47,8 +47,7 @@
     // Override point for customization after application launch
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    //[self create];
-    //[self read];
+    
     return YES;
 }
 

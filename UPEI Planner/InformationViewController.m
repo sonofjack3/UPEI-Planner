@@ -56,8 +56,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // The number of Faculties will define the # of rows needed
-    //return studentArray.count;
-    return 1;
+    int size = 0;
+    if(studentArray.count)
+        size = studentArray.count;
+    return size;
+    //return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -162,8 +165,10 @@
     
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    if ([fetchedObjects count] == 0)
+    if ([fetchedObjects count] == 0) {
         NSLog(@"No objects fetched.");
+        [self editStudent];
+    }
     studentArray = [context executeFetchRequest:fetchRequest error:&error];
     for (Student *student in fetchedObjects) {
         // DisplayFaculty details

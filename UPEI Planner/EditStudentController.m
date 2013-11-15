@@ -54,16 +54,26 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entity];
-    
+    Student *student;
+    NSError *error;
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [request setSortDescriptors:sortDescriptors];
+    error = nil;
+    NSArray *studentArray = [context executeFetchRequest:request error:&error];
     
-    NSError *error = nil;
-    Student *student = [[context executeFetchRequest:request error:&error] objectAtIndex:0];
+    if(studentArray.count > 0) {
+        
+        student = [studentArray objectAtIndex:0];
+    }
+    else {
+        student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
+    }
     
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [student setName:[_nameField text]];
-    [student setId:[NSNumber numberWithInteger:[[_idField text] integerValue]]]; //not updating properly?
+    //NSLog(@"%@",[formatter numberFromString:[_idField text]]);
+    [student setId:[formatter numberFromString:[_idField text]]]; //not updating properly?
     
     if ([context save:&error])
     {
