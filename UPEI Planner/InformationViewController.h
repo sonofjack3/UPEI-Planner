@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "EditStudentController.h"
 #import "Student.h"
 
 @interface InformationViewController : UITableViewController
