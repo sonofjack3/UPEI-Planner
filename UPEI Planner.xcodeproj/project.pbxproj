@@ -36,6 +36,10 @@
 		4BD4CCAF18285B74004F8834 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CCAD18285B74004F8834 /* CalendarViewController.xib */; };
 		4BD4CCB618285C88004F8834 /* MoodleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CCB418285C88004F8834 /* MoodleViewController.m */; };
 		4BD4CCB718285C88004F8834 /* MoodleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CCB518285C88004F8834 /* MoodleViewController.xib */; };
+		4BDFD5061837E7520016A21C /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDFD5041837E7520016A21C /* CoursesViewController.m */; };
+		4BDFD5071837E7520016A21C /* CoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFD5051837E7520016A21C /* CoursesViewController.xib */; };
+		4BE4269118391C3900CBBEBB /* AddClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4268F18391C3900CBBEBB /* AddClassController.m */; };
+		4BE4269218391C3900CBBEBB /* AddClassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE4269018391C3900CBBEBB /* AddClassController.xib */; };
 		4BFF8C86182FD08C007A5DE2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF8C7B182FD08B007A5DE2 /* Icon-72.png */; };
 		4BFF8C87182FD08C007A5DE2 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF8C7C182FD08C007A5DE2 /* Icon-72@2x.png */; };
 		4BFF8C88182FD08C007A5DE2 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF8C7D182FD08C007A5DE2 /* Icon-Small-50.png */; };
@@ -102,6 +106,13 @@
 		4BD4CCB318285C88004F8834 /* MoodleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodleViewController.h; sourceTree = "<group>"; };
 		4BD4CCB418285C88004F8834 /* MoodleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodleViewController.m; sourceTree = "<group>"; };
 		4BD4CCB518285C88004F8834 /* MoodleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodleViewController.xib; sourceTree = "<group>"; };
+		4BDFD4FD1837D9210016A21C /* DataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		4BDFD5031837E7520016A21C /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
+		4BDFD5041837E7520016A21C /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
+		4BDFD5051837E7520016A21C /* CoursesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursesViewController.xib; sourceTree = "<group>"; };
+		4BE4268E18391C3900CBBEBB /* AddClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddClassController.h; sourceTree = "<group>"; };
+		4BE4268F18391C3900CBBEBB /* AddClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddClassController.m; sourceTree = "<group>"; };
+		4BE4269018391C3900CBBEBB /* AddClassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddClassController.xib; sourceTree = "<group>"; };
 		4BFF8C7B182FD08B007A5DE2 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		4BFF8C7C182FD08C007A5DE2 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		4BFF8C7D182FD08C007A5DE2 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -180,6 +191,12 @@
 				4BD4CCA618285AD9004F8834 /* InformationViewController.h */,
 				4BD4CCA718285AD9004F8834 /* InformationViewController.m */,
 				4BD4CCA818285AD9004F8834 /* InformationViewController.xib */,
+				26BD4396183424A100DA7339 /* EditStudentController.h */,
+				26BD4397183424A100DA7339 /* EditStudentController.m */,
+				26BD4398183424A100DA7339 /* EditStudentController.xib */,
+				4BDFD5031837E7520016A21C /* CoursesViewController.h */,
+				4BDFD5041837E7520016A21C /* CoursesViewController.m */,
+				4BDFD5051837E7520016A21C /* CoursesViewController.xib */,
 				4BD4CCAB18285B74004F8834 /* CalendarViewController.h */,
 				4BD4CCAC18285B74004F8834 /* CalendarViewController.m */,
 				4BD4CCAD18285B74004F8834 /* CalendarViewController.xib */,
@@ -198,9 +215,9 @@
 				26BD438B183139E800DA7339 /* StudentClass.m */,
 				26BD4387183139E700DA7339 /* Project.h */,
 				26BD4388183139E700DA7339 /* Project.m */,
-				26BD4396183424A100DA7339 /* EditStudentController.h */,
-				26BD4397183424A100DA7339 /* EditStudentController.m */,
-				26BD4398183424A100DA7339 /* EditStudentController.xib */,
+				4BE4268E18391C3900CBBEBB /* AddClassController.h */,
+				4BE4268F18391C3900CBBEBB /* AddClassController.m */,
+				4BE4269018391C3900CBBEBB /* AddClassController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -337,6 +354,8 @@
 				4B9101CA1830206B009F3885 /* Default.png in Resources */,
 				4B9101CB1830206B009F3885 /* Default@2x.png in Resources */,
 				26BD439A183424A100DA7339 /* EditStudentController.xib in Resources */,
+				4BDFD5071837E7520016A21C /* CoursesViewController.xib in Resources */,
+				4BE4269218391C3900CBBEBB /* AddClassController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +402,8 @@
 				26BD4392183139E800DA7339 /* Assignment.m in Sources */,
 				26BD4395183139E800DA7339 /* Student.m in Sources */,
 				26BD4399183424A100DA7339 /* EditStudentController.m in Sources */,
+				4BDFD5061837E7520016A21C /* CoursesViewController.m in Sources */,
+				4BE4269118391C3900CBBEBB /* AddClassController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,9 +597,10 @@
 		26A79392182BCC0300717995 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4BDFD4FD1837D9210016A21C /* DataModel 2.xcdatamodel */,
 				26A79393182BCC0300717995 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 26A79393182BCC0300717995 /* DataModel.xcdatamodel */;
+			currentVersion = 4BDFD4FD1837D9210016A21C /* DataModel 2.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

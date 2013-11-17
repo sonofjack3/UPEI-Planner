@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIBarButtonItem *edit = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
+    UIBarButtonItem *edit = [[UIBarButtonItem alloc] initWithTitle:@"Edit Student"
                                                              style:UIBarButtonItemStyleBordered
                                                             target:self
                                                             action:@selector(editStudent)];
@@ -85,7 +85,6 @@
 
     return cell;
     //return nil;
-    
 }
 
 /*
@@ -131,6 +130,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIViewController *next = [[CoursesViewController alloc] initWithNibName:@"CoursesViewController" bundle:nil];
+    [[self navigationController] pushViewController:next animated:YES];
     
     //DepartmentViewController *departmentViewController = [self.storyboardinstantiateViewControllerWithIdentifier:@"DeptController"];
     
@@ -165,17 +166,21 @@
     
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    if ([fetchedObjects count] == 0) {
-        NSLog(@"No objects fetched.");
-        [self editStudent];
-    }
     studentArray = [context executeFetchRequest:fetchRequest error:&error];
-    for (Student *student in fetchedObjects) {
-        // DisplayFaculty details
-        NSLog(@"Student: %@, id: %@", [student name], [student id]);
+    if ([studentArray count] == 0) //no student in database; first time app is being used
+    {
+        [self editStudent]; //bring up the EditStudentController's view
+    }
+    else
+    {
+        for (Student *student in fetchedObjects)
+        {
+            // DisplayFaculty details
+            NSLog(@"Student: %@, id: %@", [student name], [student id]);
         
-        NSLog(@"\tCourses:");
-        NSSet *classes = [student courses];
+            NSLog(@"\tCourses:");
+            NSSet *classes = [student courses];
+        }
     }
     [[self tableView] reloadData];
 }

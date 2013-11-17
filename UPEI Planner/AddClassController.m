@@ -1,18 +1,18 @@
 //
-//  EditStudentController.m
+//  AddClassController.m
 //  UPEI Planner
 //
-//  Created by Kyle Pineau on 2013-11-13.
+//  Created by Evan Jackson on 2013-11-17.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
 
-#import "EditStudentController.h"
+#import "AddClassController.h"
 
-@interface EditStudentController ()
+@interface AddClassController ()
 
 @end
 
-@implementation EditStudentController
+@implementation AddClassController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,22 +27,11 @@
 {
     [super viewDidLoad];
     
-    _saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(saveStudent)];
+    _saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(saveClass)];
     [[self navigationItem] setRightBarButtonItem:_saveButton];
     
     _cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
-    
-    /* Disable cancel button if this is the first time the app is opened (no student in database) and enable otherwise*/
-    NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:context];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entity];
-    NSError *error = nil;
-    if ([[context executeFetchRequest:request error:&error] count] == 0) //no student in database
-        [_cancelButton setEnabled:NO];
-    else //a student is in the database
-        [_cancelButton setEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,35 +48,29 @@
 }
 
 // Action called by _saveButton to save edits to the Student
-- (void) saveStudent
+- (void) saveClass
 {
     NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
     
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentClass" inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entity];
-    Student *student;
+    StudentClass *class;
     NSError *error;
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [request setSortDescriptors:sortDescriptors];
     error = nil;
-    NSArray *studentArray = [context executeFetchRequest:request error:&error];
     
-    if(studentArray.count > 0) //if there is a student in the database
-    {
-        student = [studentArray objectAtIndex:0];
-    }
-    else //there are no students and this is the first time the app is being started
-    {
-        student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
-    }
+    class = [NSEntityDescription insertNewObjectForEntityForName:@"StudentClass" inManagedObjectContext:context];
     
-    /* Save user's text field entries to database (Student) */
-    [student setName:[_nameField text]];
+    /* Save user's text field entries to database (StudentClass) */
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [student setId:[formatter numberFromString:[_idField text]]];
+    [class setClassprefix:[_prefixField text]];
+    [class setClassnumber:[formatter numberFromString:[_numberField text]]];
+    [class setName:[_nameField text]];
+    [class setProfessor:[_profField text]];
     
     if ([context save:&error])
     {
