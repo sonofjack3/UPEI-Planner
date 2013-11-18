@@ -32,6 +32,8 @@
     
     _cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
+    
+    [[self navigationItem] setTitle:@"Add class"];
 }
 
 - (void)didReceiveMemoryWarning

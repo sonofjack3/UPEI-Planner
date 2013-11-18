@@ -10,6 +10,7 @@
 #import "StudentClass.h"
 #import "AppDelegate.h"
 #import "AddClassController.h"
+#import "SingleCourseViewController.h"
 
 @interface CoursesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 

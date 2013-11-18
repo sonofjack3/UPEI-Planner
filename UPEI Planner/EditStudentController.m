@@ -33,6 +33,8 @@
     _cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
     
+    [[self navigationItem] setTitle:@"Edit student info"];
+    
     /* Disable cancel button if this is the first time the app is opened (no student in database) and enable otherwise*/
     NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:context];

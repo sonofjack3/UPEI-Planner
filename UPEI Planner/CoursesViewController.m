@@ -78,7 +78,7 @@
     
     StudentClass *class = [_classes objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[class name]];
-    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@ %@ - Prof: %@", [class classprefix], [class classnumber], [class professor]]];
+    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@ %@", [class classprefix], [class classnumber]]];
     
     return cell;
     //return nil;
@@ -127,16 +127,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    //DepartmentViewController *departmentViewController = [self.storyboardinstantiateViewControllerWithIdentifier:@"DeptController"];
-    
-    // Get the Faculty
-    //Faculty *faculty = [facultyArray objectAtIndex:indexPath.row];
-    
-    //[departmentViewController setFacultyID:[faculty objectID]];
-    
-    //[[self navigationController] pushViewController:departmentViewController animated:YES];
-    
+    SingleCourseViewController *next = [[SingleCourseViewController alloc] initWithNibName:@"SingleCourseViewController" bundle:nil];
+    [next setRowNumber:[indexPath row]];
+    NSString *prefix = [[_classes objectAtIndex:[indexPath row]] classprefix];
+    NSString *number = [prefix stringByAppendingFormat:@" %@", [[_classes objectAtIndex:[indexPath row]] classnumber]];
+    [next setClassID:number];
+    [[self navigationController] pushViewController:next animated:YES];
 }
 
 #pragma mark - Private methods
@@ -144,6 +140,7 @@
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
+
 // Performs a fetch and reloads the table view.
 - (void) loadTableData {
     
