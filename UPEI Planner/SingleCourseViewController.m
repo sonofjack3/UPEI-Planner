@@ -23,7 +23,7 @@
     }
     
     NSString *string = [NSString stringWithFormat:@"Hey"];
-    [_course setAssignments:[[NSMutableSet alloc] initWithObjects:string, nil]];
+    [_course setAssignment:[[NSMutableSet alloc] initWithObjects:string, nil]];
     
     return self;
 }

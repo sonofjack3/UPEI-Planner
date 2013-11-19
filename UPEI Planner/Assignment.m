@@ -19,6 +19,6 @@
 @dynamic name;
 @dynamic number;
 @dynamic weight;
-@synthesize course;
+@synthesize classes;
 
 @end

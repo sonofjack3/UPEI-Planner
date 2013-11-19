@@ -144,9 +144,9 @@
 // Performs a fetch and reloads the table view.
 - (void) loadTableData {
     
-    //_assignments = [NSMutableArray arrayWithArray:[[_course assignments] allObjects]];
+    _assignments = [NSMutableArray arrayWithArray:[[_course assignment] allObjects]];
     
-    //[_course setAssignments:[NSSet setWithArray:_assignments]];
+    [_course setAssignment:[NSSet setWithArray:_assignments]];
     [[self tableView] reloadData];
 }
 

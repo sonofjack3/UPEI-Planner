@@ -16,7 +16,7 @@
 @dynamic classprefix;
 @dynamic name;
 @dynamic professor;
-@dynamic assignments;
+@dynamic assignment;
 @dynamic exam;
 @dynamic project;
 @dynamic student;

@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString * classprefix;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * professor;
-@property (nonatomic, retain) NSMutableSet *assignments;
+@property (nonatomic, retain) NSMutableSet *assignment;
 @property (nonatomic, retain) NSSet *exam;
 @property (nonatomic, retain) NSSet *project;
 @property (nonatomic, retain) NSManagedObject *student;

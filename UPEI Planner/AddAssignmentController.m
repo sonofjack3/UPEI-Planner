@@ -76,9 +76,9 @@
     [assignment setName:[_nameField text]];
     [assignment setDue_date:[_dateField text]];
     [assignment setWeight:[formatter numberFromString:[_weightField text]]];
-    [assignment setCourse:_course];
-    [[_course assignments] addObject:assignment];
-    NSLog(@"%@", [_course assignments]);
+    [assignment setClasses:_course];
+    [[_course assignment] addObject:assignment];
+    NSLog(@"%@", [_course assignment]);
     
     if ([context save:&error])
     {
