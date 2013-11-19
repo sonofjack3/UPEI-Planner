@@ -23,6 +23,8 @@
 		26C4B8FB183BAAA8002BF64F /* ExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4B8F9183BAAA8002BF64F /* ExamViewController.xib */; };
 		26C4B8FF183BAACB002BF64F /* AddExamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4B8FD183BAACA002BF64F /* AddExamController.m */; };
 		26C4B900183BAACB002BF64F /* AddExamController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4B8FE183BAACB002BF64F /* AddExamController.xib */; };
+		26C4B904183BAF39002BF64F /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4B902183BAF38002BF64F /* CalendarViewController.m */; };
+		26C4B905183BAF39002BF64F /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4B903183BAF39002BF64F /* CalendarViewController.xib */; };
 		4B2E07F7183A7AFF00C7F089 /* SingleCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E07F5183A7AFF00C7F089 /* SingleCourseViewController.m */; };
 		4B2E07F8183A7AFF00C7F089 /* SingleCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */; };
 		4B9101CA1830206B009F3885 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C81830206B009F3885 /* Default.png */; };
@@ -48,8 +50,6 @@
 		4BD4CC9D18285A28004F8834 /* UPEI_PlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CC9C18285A28004F8834 /* UPEI_PlannerTests.m */; };
 		4BD4CCA918285AD9004F8834 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CCA718285AD9004F8834 /* InformationViewController.m */; };
 		4BD4CCAA18285AD9004F8834 /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CCA818285AD9004F8834 /* InformationViewController.xib */; };
-		4BD4CCAE18285B74004F8834 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CCAC18285B74004F8834 /* CalendarViewController.m */; };
-		4BD4CCAF18285B74004F8834 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CCAD18285B74004F8834 /* CalendarViewController.xib */; };
 		4BD4CCB618285C88004F8834 /* MoodleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4CCB418285C88004F8834 /* MoodleViewController.m */; };
 		4BD4CCB718285C88004F8834 /* MoodleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4CCB518285C88004F8834 /* MoodleViewController.xib */; };
 		4BDFD5061837E7520016A21C /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDFD5041837E7520016A21C /* CoursesViewController.m */; };
@@ -106,6 +106,9 @@
 		26C4B8FC183BAACA002BF64F /* AddExamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExamController.h; sourceTree = "<group>"; };
 		26C4B8FD183BAACA002BF64F /* AddExamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExamController.m; sourceTree = "<group>"; };
 		26C4B8FE183BAACB002BF64F /* AddExamController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddExamController.xib; sourceTree = "<group>"; };
+		26C4B901183BAF38002BF64F /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		26C4B902183BAF38002BF64F /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		26C4B903183BAF39002BF64F /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		4B2E07F4183A7AFF00C7F089 /* SingleCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCourseViewController.h; sourceTree = "<group>"; };
 		4B2E07F5183A7AFF00C7F089 /* SingleCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCourseViewController.m; sourceTree = "<group>"; };
 		4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleCourseViewController.xib; sourceTree = "<group>"; };
@@ -140,9 +143,6 @@
 		4BD4CCA618285AD9004F8834 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		4BD4CCA718285AD9004F8834 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 		4BD4CCA818285AD9004F8834 /* InformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
-		4BD4CCAB18285B74004F8834 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
-		4BD4CCAC18285B74004F8834 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		4BD4CCAD18285B74004F8834 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		4BD4CCB318285C88004F8834 /* MoodleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodleViewController.h; sourceTree = "<group>"; };
 		4BD4CCB418285C88004F8834 /* MoodleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodleViewController.m; sourceTree = "<group>"; };
 		4BD4CCB518285C88004F8834 /* MoodleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodleViewController.xib; sourceTree = "<group>"; };
@@ -237,9 +237,6 @@
 				4BDFD5031837E7520016A21C /* CoursesViewController.h */,
 				4BDFD5041837E7520016A21C /* CoursesViewController.m */,
 				4BDFD5051837E7520016A21C /* CoursesViewController.xib */,
-				4BD4CCAB18285B74004F8834 /* CalendarViewController.h */,
-				4BD4CCAC18285B74004F8834 /* CalendarViewController.m */,
-				4BD4CCAD18285B74004F8834 /* CalendarViewController.xib */,
 				4BD4CCB318285C88004F8834 /* MoodleViewController.h */,
 				4BD4CCB418285C88004F8834 /* MoodleViewController.m */,
 				4BD4CCB518285C88004F8834 /* MoodleViewController.xib */,
@@ -282,6 +279,9 @@
 				26C4B8FC183BAACA002BF64F /* AddExamController.h */,
 				26C4B8FD183BAACA002BF64F /* AddExamController.m */,
 				26C4B8FE183BAACB002BF64F /* AddExamController.xib */,
+				26C4B901183BAF38002BF64F /* CalendarViewController.h */,
+				26C4B902183BAF38002BF64F /* CalendarViewController.m */,
+				26C4B903183BAF39002BF64F /* CalendarViewController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -402,7 +402,6 @@
 			files = (
 				4BD4CC7818285A27004F8834 /* InfoPlist.strings in Resources */,
 				4BD4CCAA18285AD9004F8834 /* InformationViewController.xib in Resources */,
-				4BD4CCAF18285B74004F8834 /* CalendarViewController.xib in Resources */,
 				4BD4CCB718285C88004F8834 /* MoodleViewController.xib in Resources */,
 				4BFF8C86182FD08C007A5DE2 /* Icon-72.png in Resources */,
 				4BFF8C87182FD08C007A5DE2 /* Icon-72@2x.png in Resources */,
@@ -428,6 +427,7 @@
 				26C4B8F6183BA5BF002BF64F /* AddProjectController.xib in Resources */,
 				26C4B8FB183BAAA8002BF64F /* ExamViewController.xib in Resources */,
 				26C4B900183BAACB002BF64F /* AddExamController.xib in Resources */,
+				26C4B905183BAF39002BF64F /* CalendarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +465,6 @@
 				4BD4CC7A18285A27004F8834 /* main.m in Sources */,
 				4BD4CC7E18285A27004F8834 /* AppDelegate.m in Sources */,
 				4BD4CCA918285AD9004F8834 /* InformationViewController.m in Sources */,
-				4BD4CCAE18285B74004F8834 /* CalendarViewController.m in Sources */,
 				4BD4CCB618285C88004F8834 /* MoodleViewController.m in Sources */,
 				26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */,
 				26BD4389183139E700DA7339 /* Project.m in Sources */,
@@ -484,6 +483,7 @@
 				26C4B8F5183BA5BF002BF64F /* AddProjectController.m in Sources */,
 				26C4B8FA183BAAA8002BF64F /* ExamViewController.m in Sources */,
 				26C4B8FF183BAACB002BF64F /* AddExamController.m in Sources */,
+				26C4B904183BAF39002BF64F /* CalendarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
