@@ -149,8 +149,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AssignmentsViewController *assignsController;
-    //ProjectsViewController *projectsController;
-    //ExamsViewController *examsController;
+    ProjectViewController *projectsController;
+    ExamViewController *examsController;
     switch ([indexPath row]) {
         case 1: //Assignments
         {
@@ -160,10 +160,14 @@
             break;
         }
         case 2: //Projects
-            
+            projectsController = [[ProjectViewController alloc] init];
+            [projectsController setCourse:_course];
+            [[self navigationController] pushViewController:projectsController animated:YES];
             break;
         case 3: //Exams
-            
+            examsController = [[ExamViewController alloc] init];
+            [examsController setCourse:_course];
+            [[self navigationController] pushViewController:examsController animated:YES];
             break;
     }
 }

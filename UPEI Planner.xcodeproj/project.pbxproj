@@ -15,6 +15,14 @@
 		26BD4395183139E800DA7339 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4394183139E800DA7339 /* Student.m */; };
 		26BD4399183424A100DA7339 /* EditStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4397183424A100DA7339 /* EditStudentController.m */; };
 		26BD439A183424A100DA7339 /* EditStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BD4398183424A100DA7339 /* EditStudentController.xib */; };
+		26C4B8F0183BA59D002BF64F /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4B8EE183BA59C002BF64F /* ProjectViewController.m */; };
+		26C4B8F1183BA59D002BF64F /* ProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4B8EF183BA59D002BF64F /* ProjectViewController.xib */; };
+		26C4B8F5183BA5BF002BF64F /* AddProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4B8F3183BA5BF002BF64F /* AddProjectController.m */; };
+		26C4B8F6183BA5BF002BF64F /* AddProjectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4B8F4183BA5BF002BF64F /* AddProjectController.xib */; };
+		26C4B8FA183BAAA8002BF64F /* ExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4B8F8183BAAA8002BF64F /* ExamViewController.m */; };
+		26C4B8FB183BAAA8002BF64F /* ExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4B8F9183BAAA8002BF64F /* ExamViewController.xib */; };
+		26C4B8FF183BAACB002BF64F /* AddExamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4B8FD183BAACA002BF64F /* AddExamController.m */; };
+		26C4B900183BAACB002BF64F /* AddExamController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C4B8FE183BAACB002BF64F /* AddExamController.xib */; };
 		4B2E07F7183A7AFF00C7F089 /* SingleCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E07F5183A7AFF00C7F089 /* SingleCourseViewController.m */; };
 		4B2E07F8183A7AFF00C7F089 /* SingleCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */; };
 		4B9101CA1830206B009F3885 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C81830206B009F3885 /* Default.png */; };
@@ -86,6 +94,18 @@
 		26BD4396183424A100DA7339 /* EditStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditStudentController.h; sourceTree = "<group>"; };
 		26BD4397183424A100DA7339 /* EditStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditStudentController.m; sourceTree = "<group>"; };
 		26BD4398183424A100DA7339 /* EditStudentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditStudentController.xib; sourceTree = "<group>"; };
+		26C4B8ED183BA59C002BF64F /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectViewController.h; sourceTree = "<group>"; };
+		26C4B8EE183BA59C002BF64F /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectViewController.m; sourceTree = "<group>"; };
+		26C4B8EF183BA59D002BF64F /* ProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectViewController.xib; sourceTree = "<group>"; };
+		26C4B8F2183BA5BF002BF64F /* AddProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProjectController.h; sourceTree = "<group>"; };
+		26C4B8F3183BA5BF002BF64F /* AddProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProjectController.m; sourceTree = "<group>"; };
+		26C4B8F4183BA5BF002BF64F /* AddProjectController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddProjectController.xib; sourceTree = "<group>"; };
+		26C4B8F7183BAAA8002BF64F /* ExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamViewController.h; sourceTree = "<group>"; };
+		26C4B8F8183BAAA8002BF64F /* ExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamViewController.m; sourceTree = "<group>"; };
+		26C4B8F9183BAAA8002BF64F /* ExamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamViewController.xib; sourceTree = "<group>"; };
+		26C4B8FC183BAACA002BF64F /* AddExamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExamController.h; sourceTree = "<group>"; };
+		26C4B8FD183BAACA002BF64F /* AddExamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExamController.m; sourceTree = "<group>"; };
+		26C4B8FE183BAACB002BF64F /* AddExamController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddExamController.xib; sourceTree = "<group>"; };
 		4B2E07F4183A7AFF00C7F089 /* SingleCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCourseViewController.h; sourceTree = "<group>"; };
 		4B2E07F5183A7AFF00C7F089 /* SingleCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCourseViewController.m; sourceTree = "<group>"; };
 		4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleCourseViewController.xib; sourceTree = "<group>"; };
@@ -250,6 +270,18 @@
 				4BBE453B183B183D0018A6B5 /* AddAssignmentController.h */,
 				4BBE453C183B183D0018A6B5 /* AddAssignmentController.m */,
 				4BBE453D183B183D0018A6B5 /* AddAssignmentController.xib */,
+				26C4B8ED183BA59C002BF64F /* ProjectViewController.h */,
+				26C4B8EE183BA59C002BF64F /* ProjectViewController.m */,
+				26C4B8EF183BA59D002BF64F /* ProjectViewController.xib */,
+				26C4B8F2183BA5BF002BF64F /* AddProjectController.h */,
+				26C4B8F3183BA5BF002BF64F /* AddProjectController.m */,
+				26C4B8F4183BA5BF002BF64F /* AddProjectController.xib */,
+				26C4B8F7183BAAA8002BF64F /* ExamViewController.h */,
+				26C4B8F8183BAAA8002BF64F /* ExamViewController.m */,
+				26C4B8F9183BAAA8002BF64F /* ExamViewController.xib */,
+				26C4B8FC183BAACA002BF64F /* AddExamController.h */,
+				26C4B8FD183BAACA002BF64F /* AddExamController.m */,
+				26C4B8FE183BAACB002BF64F /* AddExamController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -392,6 +424,10 @@
 				4BBE453A183B13840018A6B5 /* AssignmentsViewController.xib in Resources */,
 				4BBE453F183B183D0018A6B5 /* AddAssignmentController.xib in Resources */,
 				4BBE4549183B21DB0018A6B5 /* EditClassController.xib in Resources */,
+				26C4B8F1183BA59D002BF64F /* ProjectViewController.xib in Resources */,
+				26C4B8F6183BA5BF002BF64F /* AddProjectController.xib in Resources */,
+				26C4B8FB183BAAA8002BF64F /* ExamViewController.xib in Resources */,
+				26C4B900183BAACB002BF64F /* AddExamController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +480,10 @@
 				4BBE4539183B13840018A6B5 /* AssignmentsViewController.m in Sources */,
 				4BBE453E183B183D0018A6B5 /* AddAssignmentController.m in Sources */,
 				4BBE4548183B21DB0018A6B5 /* EditClassController.m in Sources */,
+				26C4B8F0183BA59D002BF64F /* ProjectViewController.m in Sources */,
+				26C4B8F5183BA5BF002BF64F /* AddProjectController.m in Sources */,
+				26C4B8FA183BAAA8002BF64F /* ExamViewController.m in Sources */,
+				26C4B8FF183BAACB002BF64F /* AddExamController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

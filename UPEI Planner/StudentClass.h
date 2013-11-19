@@ -18,8 +18,8 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * professor;
 @property (nonatomic, retain) NSMutableSet *assignment;
-@property (nonatomic, retain) NSSet *exam;
-@property (nonatomic, retain) NSSet *project;
+@property (nonatomic, retain) NSMutableSet *exam;
+@property (nonatomic, retain) NSMutableSet *project;
 @property (nonatomic, retain) NSManagedObject *student;
 @end
 

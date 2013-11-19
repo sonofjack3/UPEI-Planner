@@ -81,6 +81,7 @@
     //NSLog([student name]);
     // Set the cell's text to the faculty name
     [[cell textLabel] setText:[student name]];
+    [[cell imageView] setImage:[UIImage imageNamed:@"Icon.png"]];
     [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Student ID: %@",[student id]]];
 
     return cell;

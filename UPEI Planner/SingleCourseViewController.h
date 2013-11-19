@@ -12,8 +12,8 @@
 #import "AddClassController.h"
 #import "EditClassController.h"
 #import "AssignmentsViewController.h"
-//#import "ProjectsViewController.h"
-//#import "ExamsViewController.h"
+#import "ProjectViewController.h"
+#import "ExamViewController.h"
 
 @interface SingleCourseViewController : UITableViewController
 
