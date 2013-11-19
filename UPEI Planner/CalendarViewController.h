@@ -8,15 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "Exam.h"
+#import "Assignment.h"
+#import "Project.h"
 #import "AppDelegate.h"
 #import "StudentClass.h"
 
 @interface CalendarViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *exams;
+@property (strong, nonatomic) NSMutableArray *assign;
+@property (strong, nonatomic) NSMutableArray *projects;
 @property StudentClass *course;
 @property int rowNumber;
 @property (strong, nonatomic) NSArray *classes;
 @property (strong, nonatomic) NSString *classID;
 @property (strong, nonatomic) NSMutableArray *examList;
+@property (strong, nonatomic) NSMutableArray *assignList;
+@property (strong, nonatomic) NSMutableArray *projectList;
 @end

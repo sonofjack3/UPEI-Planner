@@ -14,6 +14,8 @@
 
 @implementation CalendarViewController
 @synthesize examList;
+@synthesize assignList;
+@synthesize projectList;
 - (id) init
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
@@ -35,7 +37,7 @@
     [[self tableView] setDataSource:self];
     [[self tableView] setDelegate:self];
     [super viewDidLoad];
-    examList = [[NSMutableArray alloc]init];
+    
     [[self navigationItem] setTitle:@"Exams"];
 
 }
@@ -58,9 +60,15 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"Number of exams: %d", [examList count]);
+    NSLog(@"Number of projects: %d", [projectList count]);
+    NSLog(@"Number of assignments: %d", [assignList count]);
     if(section == 0)
         return [examList count];
-    return 0;
+    else if(section ==1)
+        return [assignList count];
+    else if(section ==2)
+        return [projectList count];
+    return 1;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -85,13 +93,34 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
     }
+    switch([indexPath section]){
+        case 0:{
+            // Configure the cell...
+            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+            
+            Exam *exam = [examList objectAtIndex:[indexPath row]];
+            [[cell textLabel] setText:[exam name]];
+            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [exam due_date]]];
+            break;}
+        case 1:{
+            // Configure the cell...
+            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+            
+            Assignment *assign = [assignList objectAtIndex:[indexPath row]];
+            [[cell textLabel] setText:[assign name]];
+            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [assign due_date]]];
+            break;}
+        case 2:{
+            // Configure the cell...
+            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+            
+            Project *project = [projectList objectAtIndex:[indexPath row]];
+            [[cell textLabel] setText:[project name]];
+            
+            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [project due_date]]];
+            break;}
+    }
     
-    // Configure the cell...
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    
-    Exam *exam = [examList objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[exam name]];
-    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [exam due_date]]];
     
     return cell;
 }
@@ -140,6 +169,9 @@
 
 // Performs a fetch and reloads the table view.
 - (void) loadTableData {
+    examList = [[NSMutableArray alloc]init];
+    assignList = [[NSMutableArray alloc]init];
+    projectList = [[NSMutableArray alloc]init];
     NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
     
     // Construct a fetch request
@@ -161,14 +193,25 @@
     
         _course = [_classes objectAtIndex:0];
         NSLog(@"%i",i );
-    _exams = [NSMutableArray arrayWithArray:[[_course exam] allObjects]];
-        
-    
+        _exams = [NSMutableArray arrayWithArray:[[_course exam] allObjects]];
         for(int j = 0; j<_exams.count;j++){
             [examList addObject:[_exams objectAtIndex:j]];
-            NSLog(@"%@",[[_exams objectAtIndex:j] name]);
+            NSLog(@"Exam: %@",[[_exams objectAtIndex:j] name]);
+        }
+        
+        _projects = [NSMutableArray arrayWithArray:[[_course project] allObjects]];
+        for(int k = 0; k<_projects.count;k++){
+            [projectList addObject:[_projects objectAtIndex:k]];
+            NSLog(@"Project %@",[[_projects objectAtIndex:k] name]);
+        }
+        
+        _assign = [NSMutableArray arrayWithArray:[[_course assignment] allObjects]];
+        for(int l = 0; l<_assign.count;l++){
+            [assignList addObject:[_assign objectAtIndex:l]];
+            NSLog(@"assignment %@",[[_assign objectAtIndex:l] name]);
         }
     }
+    
     [[self tableView] reloadData];
 }
 
