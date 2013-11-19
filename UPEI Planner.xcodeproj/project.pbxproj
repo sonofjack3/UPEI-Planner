@@ -19,6 +19,12 @@
 		4B2E07F8183A7AFF00C7F089 /* SingleCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */; };
 		4B9101CA1830206B009F3885 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C81830206B009F3885 /* Default.png */; };
 		4B9101CB1830206B009F3885 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9101C91830206B009F3885 /* Default@2x.png */; };
+		4BBE4539183B13840018A6B5 /* AssignmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4537183B13840018A6B5 /* AssignmentsViewController.m */; };
+		4BBE453A183B13840018A6B5 /* AssignmentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE4538183B13840018A6B5 /* AssignmentsViewController.xib */; };
+		4BBE453E183B183D0018A6B5 /* AddAssignmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE453C183B183D0018A6B5 /* AddAssignmentController.m */; };
+		4BBE453F183B183D0018A6B5 /* AddAssignmentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE453D183B183D0018A6B5 /* AddAssignmentController.xib */; };
+		4BBE4548183B21DB0018A6B5 /* EditClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4546183B21DB0018A6B5 /* EditClassController.m */; };
+		4BBE4549183B21DB0018A6B5 /* EditClassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE4547183B21DB0018A6B5 /* EditClassController.xib */; };
 		4BD4CC6C18285A27004F8834 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6B18285A27004F8834 /* UIKit.framework */; };
 		4BD4CC6E18285A27004F8834 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6D18285A27004F8834 /* Foundation.framework */; };
 		4BD4CC7018285A27004F8834 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD4CC6F18285A27004F8834 /* CoreGraphics.framework */; };
@@ -85,6 +91,15 @@
 		4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleCourseViewController.xib; sourceTree = "<group>"; };
 		4B9101C81830206B009F3885 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4B9101C91830206B009F3885 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4BBE4536183B13840018A6B5 /* AssignmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentsViewController.h; sourceTree = "<group>"; };
+		4BBE4537183B13840018A6B5 /* AssignmentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentsViewController.m; sourceTree = "<group>"; };
+		4BBE4538183B13840018A6B5 /* AssignmentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignmentsViewController.xib; sourceTree = "<group>"; };
+		4BBE453B183B183D0018A6B5 /* AddAssignmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAssignmentController.h; sourceTree = "<group>"; };
+		4BBE453C183B183D0018A6B5 /* AddAssignmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAssignmentController.m; sourceTree = "<group>"; };
+		4BBE453D183B183D0018A6B5 /* AddAssignmentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAssignmentController.xib; sourceTree = "<group>"; };
+		4BBE4545183B21DB0018A6B5 /* EditClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditClassController.h; sourceTree = "<group>"; };
+		4BBE4546183B21DB0018A6B5 /* EditClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditClassController.m; sourceTree = "<group>"; };
+		4BBE4547183B21DB0018A6B5 /* EditClassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditClassController.xib; sourceTree = "<group>"; };
 		4BD4CC6818285A27004F8834 /* UPEI Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UPEI Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD4CC6B18285A27004F8834 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4BD4CC6D18285A27004F8834 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -201,7 +216,6 @@
 				26BD4398183424A100DA7339 /* EditStudentController.xib */,
 				4BDFD5031837E7520016A21C /* CoursesViewController.h */,
 				4BDFD5041837E7520016A21C /* CoursesViewController.m */,
-				4B2E07F5183A7AFF00C7F089 /* SingleCourseViewController.m */,
 				4BDFD5051837E7520016A21C /* CoursesViewController.xib */,
 				4BD4CCAB18285B74004F8834 /* CalendarViewController.h */,
 				4BD4CCAC18285B74004F8834 /* CalendarViewController.m */,
@@ -224,8 +238,18 @@
 				4BE4268E18391C3900CBBEBB /* AddClassController.h */,
 				4BE4268F18391C3900CBBEBB /* AddClassController.m */,
 				4BE4269018391C3900CBBEBB /* AddClassController.xib */,
+				4BBE4545183B21DB0018A6B5 /* EditClassController.h */,
+				4BBE4546183B21DB0018A6B5 /* EditClassController.m */,
+				4BBE4547183B21DB0018A6B5 /* EditClassController.xib */,
 				4B2E07F4183A7AFF00C7F089 /* SingleCourseViewController.h */,
+				4B2E07F5183A7AFF00C7F089 /* SingleCourseViewController.m */,
 				4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */,
+				4BBE4536183B13840018A6B5 /* AssignmentsViewController.h */,
+				4BBE4537183B13840018A6B5 /* AssignmentsViewController.m */,
+				4BBE4538183B13840018A6B5 /* AssignmentsViewController.xib */,
+				4BBE453B183B183D0018A6B5 /* AddAssignmentController.h */,
+				4BBE453C183B183D0018A6B5 /* AddAssignmentController.m */,
+				4BBE453D183B183D0018A6B5 /* AddAssignmentController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -365,6 +389,9 @@
 				4BDFD5071837E7520016A21C /* CoursesViewController.xib in Resources */,
 				4BE4269218391C3900CBBEBB /* AddClassController.xib in Resources */,
 				4B2E07F8183A7AFF00C7F089 /* SingleCourseViewController.xib in Resources */,
+				4BBE453A183B13840018A6B5 /* AssignmentsViewController.xib in Resources */,
+				4BBE453F183B183D0018A6B5 /* AddAssignmentController.xib in Resources */,
+				4BBE4549183B21DB0018A6B5 /* EditClassController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +441,9 @@
 				4BDFD5061837E7520016A21C /* CoursesViewController.m in Sources */,
 				4BE4269118391C3900CBBEBB /* AddClassController.m in Sources */,
 				4B2E07F7183A7AFF00C7F089 /* SingleCourseViewController.m in Sources */,
+				4BBE4539183B13840018A6B5 /* AssignmentsViewController.m in Sources */,
+				4BBE453E183B183D0018A6B5 /* AddAssignmentController.m in Sources */,
+				4BBE4548183B21DB0018A6B5 /* EditClassController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

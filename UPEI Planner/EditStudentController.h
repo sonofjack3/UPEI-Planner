@@ -11,7 +11,7 @@
 #import "Student.h"
 #import "InformationViewController.h"
 
-@interface EditStudentController : UIViewController
+@interface EditStudentController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *idField;
 @property (strong, nonatomic) UIBarButtonItem *saveButton;

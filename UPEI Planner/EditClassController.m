@@ -1,20 +1,18 @@
 //
-//  AddClassController.m
+//  EditClassController.m
 //  UPEI Planner
 //
-//  Created by Evan Jackson on 2013-11-17.
+//  Created by Evan Jackson on 2013-11-19.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
-//  Displays fields for adding a new class (when _rowNumber = -1). Also used to edit an existing
-//  class using the rowNumber passed to the controller.
 
-#import "AddClassController.h"
+#import "EditClassController.h"
 
-@interface AddClassController ()
+@interface EditClassController ()
 
 @end
 
-@implementation AddClassController
+@implementation EditClassController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +33,7 @@
     _cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
     
-    [[self navigationItem] setTitle:@"Add class"];
+    [[self navigationItem] setTitle:@"Edit class"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +69,7 @@
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [request setSortDescriptors:sortDescriptors];
     
-    class = [NSEntityDescription insertNewObjectForEntityForName:@"StudentClass" inManagedObjectContext:context];
+    class = [[context executeFetchRequest:request error:&error] objectAtIndex:_rowNumber];
     
     /* Save user's text field entries to database (StudentClass) */
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];

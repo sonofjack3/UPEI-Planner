@@ -132,6 +132,7 @@
     NSString *prefix = [[_classes objectAtIndex:[indexPath row]] classprefix];
     NSString *number = [prefix stringByAppendingFormat:@" %@", [[_classes objectAtIndex:[indexPath row]] classnumber]];
     [next setClassID:number];
+    [next setCourse:[_classes objectAtIndex:[indexPath row]]];
     [[self navigationController] pushViewController:next animated:YES];
 }
 

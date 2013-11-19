@@ -20,6 +20,6 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * number;
 @property (nonatomic, retain) NSNumber * weight;
-@property (nonatomic, retain) StudentClass *classes;
+@property (nonatomic, retain) StudentClass *course;
 
 @end

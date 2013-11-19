@@ -9,11 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "StudentClass.h"
+#import "AddClassController.h"
+#import "EditClassController.h"
+#import "AssignmentsViewController.h"
+//#import "ProjectsViewController.h"
+//#import "ExamsViewController.h"
 
 @interface SingleCourseViewController : UITableViewController
 
-@property (nonatomic) int rowNumber;
+@property int rowNumber;
 @property (strong, nonatomic) NSArray *classes;
+@property StudentClass *course;
 @property (strong, nonatomic) NSString *classID;
 
 @end

@@ -1,20 +1,18 @@
 //
-//  AddClassController.m
+//  AddAssignmentController.m
 //  UPEI Planner
 //
-//  Created by Evan Jackson on 2013-11-17.
+//  Created by Evan Jackson on 2013-11-18.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
-//  Displays fields for adding a new class (when _rowNumber = -1). Also used to edit an existing
-//  class using the rowNumber passed to the controller.
 
-#import "AddClassController.h"
+#import "AddAssignmentController.h"
 
-@interface AddClassController ()
+@interface AddAssignmentController ()
 
 @end
 
-@implementation AddClassController
+@implementation AddAssignmentController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +32,8 @@
     
     _cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
-    
-    [[self navigationItem] setTitle:@"Add class"];
+
+    [[self navigationItem] setTitle:@"Add Assignment"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,24 +60,25 @@
 {
     NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
     
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentClass" inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assignment" inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entity];
-    StudentClass *class;
     NSError *error = nil;
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [request setSortDescriptors:sortDescriptors];
     
-    class = [NSEntityDescription insertNewObjectForEntityForName:@"StudentClass" inManagedObjectContext:context];
+    Assignment *assignment = [NSEntityDescription insertNewObjectForEntityForName:@"Assignment" inManagedObjectContext:context];
     
-    /* Save user's text field entries to database (StudentClass) */
+    /* Save user's text field entries to database (Assignment) */
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [class setClassprefix:[_prefixField text]];
-    [class setClassnumber:[formatter numberFromString:[_numberField text]]];
-    [class setName:[_nameField text]];
-    [class setProfessor:[_profField text]];
+    [assignment setName:[_nameField text]];
+    [assignment setDue_date:[_dateField text]];
+    [assignment setWeight:[formatter numberFromString:[_weightField text]]];
+    [assignment setCourse:_course];
+    [[_course assignments] addObject:assignment];
+    NSLog(@"%@", [_course assignments]);
     
     if ([context save:&error])
     {

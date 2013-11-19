@@ -21,12 +21,22 @@
     {
         [self setTitle:_classID];
     }
+    
+    NSString *string = [NSString stringWithFormat:@"Hey"];
+    [_course setAssignments:[[NSMutableSet alloc] initWithObjects:string, nil]];
+    
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *edit = [[UIBarButtonItem alloc] initWithTitle:@"Edit Class"
+                                                             style:UIBarButtonItemStyleBordered
+                                                            target:self
+                                                            action:@selector(editClass)];
+    [[self navigationItem] setRightBarButtonItem:edit];
     
     [[self navigationItem] setTitle:_classID];
 }
@@ -61,13 +71,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    StudentClass *class = [_classes objectAtIndex:0]; //_classes only contains one item, so get the first
-    
     switch ([indexPath row])
     {
         case 0: //course description
-            [[cell textLabel] setText:[NSString stringWithFormat:@"%@ %@: %@", [class classprefix], [class classnumber], [class name]]];
-            [[cell detailTextLabel] setText:[NSString stringWithFormat:@"Professor: %@", [class professor]]];
+            [[cell textLabel] setText:[NSString stringWithFormat:@"%@ %@: %@", [_course classprefix], [_course classnumber], [_course name]]];
+            [[cell detailTextLabel] setText:[NSString stringWithFormat:@"Professor: %@", [_course professor]]];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone]; //course description is not selectable
             break;
         case 1:
@@ -140,18 +148,36 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    AssignmentsViewController *assignsController;
+    //ProjectsViewController *projectsController;
+    //ExamsViewController *examsController;
+    switch ([indexPath row]) {
+        case 1: //Assignments
+        {
+            assignsController = [[AssignmentsViewController alloc] init];
+            [assignsController setCourse:_course];
+            [[self navigationController] pushViewController:assignsController animated:YES];
+            break;
+        }
+        case 2: //Projects
+            
+            break;
+        case 3: //Exams
+            
+            break;
+    }
 }
 
 // A helper method to get the appDelegate
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
+- (void) editClass
+{
+    EditClassController *next = [[EditClassController alloc] init];
+    [next setRowNumber:_rowNumber];
+    [[self navigationController] pushViewController:next animated:YES];
 }
 
 // Performs a fetch and reloads the table view.
@@ -173,6 +199,7 @@
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     _classes = [[NSArray alloc] initWithObjects:[fetchedObjects objectAtIndex:_rowNumber], nil];
+    _course = [_classes objectAtIndex:0];
     
     [[self tableView] reloadData];
 }
