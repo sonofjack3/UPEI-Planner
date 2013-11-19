@@ -133,6 +133,10 @@
     NSString *number = [prefix stringByAppendingFormat:@" %@", [[_classes objectAtIndex:[indexPath row]] classnumber]];
     [next setClassID:number];
     [[self navigationController] pushViewController:next animated:YES];*/
+    AssignDetailsController *next = [[AssignDetailsController alloc] initWithNibName:@"AssignDetailsController" bundle:nil];
+    [next setAssignment:[_assignments objectAtIndex:indexPath.row]];
+    [[self navigationController] pushViewController:next animated:YES];
+
 }
 
 #pragma mark - Private methods

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */; };
+		26A6FEAB183BF5C000E9C353 /* AssignDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */; };
 		26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A79392182BCC0300717995 /* DataModel.xcdatamodeld */; };
 		26BD4389183139E700DA7339 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4388183139E700DA7339 /* Project.m */; };
 		26BD438C183139E800DA7339 /* StudentClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD438B183139E800DA7339 /* StudentClass.m */; };
@@ -80,6 +82,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignDetailsController.h; sourceTree = "<group>"; };
+		26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignDetailsController.m; sourceTree = "<group>"; };
+		26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignDetailsController.xib; sourceTree = "<group>"; };
 		26A79393182BCC0300717995 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		26BD4387183139E700DA7339 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		26BD4388183139E700DA7339 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
@@ -282,6 +287,9 @@
 				26C4B901183BAF38002BF64F /* CalendarViewController.h */,
 				26C4B902183BAF38002BF64F /* CalendarViewController.m */,
 				26C4B903183BAF39002BF64F /* CalendarViewController.xib */,
+				26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */,
+				26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */,
+				26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 				26C4B8FB183BAAA8002BF64F /* ExamViewController.xib in Resources */,
 				26C4B900183BAACB002BF64F /* AddExamController.xib in Resources */,
 				26C4B905183BAF39002BF64F /* CalendarViewController.xib in Resources */,
+				26A6FEAB183BF5C000E9C353 /* AssignDetailsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +493,7 @@
 				26C4B8FA183BAAA8002BF64F /* ExamViewController.m in Sources */,
 				26C4B8FF183BAACB002BF64F /* AddExamController.m in Sources */,
 				26C4B904183BAF39002BF64F /* CalendarViewController.m in Sources */,
+				26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -100,7 +100,7 @@
             
             Exam *exam = [examList objectAtIndex:[indexPath row]];
             [[cell textLabel] setText:[exam name]];
-            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [exam due_date]]];
+            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Due: %@", [exam due_date]]];
             break;}
         case 1:{
             // Configure the cell...
@@ -108,7 +108,7 @@
             
             Assignment *assign = [assignList objectAtIndex:[indexPath row]];
             [[cell textLabel] setText:[assign name]];
-            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [assign due_date]]];
+            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Due: %@", [assign due_date]]];
             break;}
         case 2:{
             // Configure the cell...
@@ -117,7 +117,7 @@
             Project *project = [projectList objectAtIndex:[indexPath row]];
             [[cell textLabel] setText:[project name]];
             
-            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [project due_date]]];
+            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Due: %@", [project due_date]]];
             break;}
     }
     
@@ -211,7 +211,10 @@
             NSLog(@"assignment %@",[[_assign objectAtIndex:l] name]);
         }
     }
-    
+    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
+    [examList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
+    [assignList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
+    [projectList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
     [[self tableView] reloadData];
 }
 

@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "AddAssignmentController.h"
 #import "StudentClass.h"
+#import "AssignDetailsController.h"
 //#import "SingleCourseViewController.h"
 
 @interface AssignmentsViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate>
