@@ -19,6 +19,8 @@
 - (id) init
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
+    [[self tabBarItem] setTitle:@"Info View"];
+    [self setTitle:@"Agenda"];
     return self;
 }
 
@@ -27,6 +29,7 @@
     self = [super initWithStyle:style];
     if (self)
     {
+        [[self tabBarItem] setTitle:@"Info View"];
         [self setTitle:@"Agenda"];
     }
     return self;
