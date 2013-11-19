@@ -127,12 +127,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*SingleCourseViewController *next = [[SingleCourseViewController alloc] initWithNibName:@"SingleCourseViewController" bundle:nil];
-     [next setRowNumber:[indexPath row]];
-     NSString *prefix = [[_classes objectAtIndex:[indexPath row]] classprefix];
-     NSString *number = [prefix stringByAppendingFormat:@" %@", [[_classes objectAtIndex:[indexPath row]] classnumber]];
-     [next setClassID:number];
-     [[self navigationController] pushViewController:next animated:YES];*/
+    ProjectDetailsController *next = [[ProjectDetailsController alloc] initWithNibName:@"ProjectDetailsController" bundle:nil];
+    [next setProject:[_projects objectAtIndex:indexPath.row]];
+    [[self navigationController] pushViewController:next animated:YES];
 }
 
 #pragma mark - Private methods

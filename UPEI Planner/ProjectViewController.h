@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "AddProjectController.h"
 #import "StudentClass.h"
+#import "ProjectDetailsController.h"
 //#import "SingleCourseViewController.h"
 
 @interface ProjectViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate>

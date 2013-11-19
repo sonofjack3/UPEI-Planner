@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "AddExamController.h"
 #import "StudentClass.h"
+#import "ExamDetailsController.h"
 //#import "SingleCourseViewController.h"
 
 @interface ExamViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate>

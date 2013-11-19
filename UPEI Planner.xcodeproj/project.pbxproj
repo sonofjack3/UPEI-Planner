@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2607CAE0183BFAB900088BBF /* ExamDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2607CADE183BFAB900088BBF /* ExamDetailsController.m */; };
+		2607CAE1183BFAB900088BBF /* ExamDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2607CADF183BFAB900088BBF /* ExamDetailsController.xib */; };
+		2607CAE5183BFAC800088BBF /* ProjectDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */; };
+		2607CAE6183BFAC800088BBF /* ProjectDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */; };
 		26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */; };
 		26A6FEAB183BF5C000E9C353 /* AssignDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */; };
 		26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A79392182BCC0300717995 /* DataModel.xcdatamodeld */; };
@@ -82,6 +86,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2607CADD183BFAB900088BBF /* ExamDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamDetailsController.h; sourceTree = "<group>"; };
+		2607CADE183BFAB900088BBF /* ExamDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamDetailsController.m; sourceTree = "<group>"; };
+		2607CADF183BFAB900088BBF /* ExamDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamDetailsController.xib; sourceTree = "<group>"; };
+		2607CAE2183BFAC800088BBF /* ProjectDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailsController.h; sourceTree = "<group>"; };
+		2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailsController.m; sourceTree = "<group>"; };
+		2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectDetailsController.xib; sourceTree = "<group>"; };
 		26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignDetailsController.h; sourceTree = "<group>"; };
 		26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignDetailsController.m; sourceTree = "<group>"; };
 		26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignDetailsController.xib; sourceTree = "<group>"; };
@@ -290,6 +300,12 @@
 				26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */,
 				26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */,
 				26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */,
+				2607CADD183BFAB900088BBF /* ExamDetailsController.h */,
+				2607CADE183BFAB900088BBF /* ExamDetailsController.m */,
+				2607CADF183BFAB900088BBF /* ExamDetailsController.xib */,
+				2607CAE2183BFAC800088BBF /* ProjectDetailsController.h */,
+				2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */,
+				2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -437,6 +453,8 @@
 				26C4B900183BAACB002BF64F /* AddExamController.xib in Resources */,
 				26C4B905183BAF39002BF64F /* CalendarViewController.xib in Resources */,
 				26A6FEAB183BF5C000E9C353 /* AssignDetailsController.xib in Resources */,
+				2607CAE1183BFAB900088BBF /* ExamDetailsController.xib in Resources */,
+				2607CAE6183BFAC800088BBF /* ProjectDetailsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +512,8 @@
 				26C4B8FF183BAACB002BF64F /* AddExamController.m in Sources */,
 				26C4B904183BAF39002BF64F /* CalendarViewController.m in Sources */,
 				26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */,
+				2607CAE0183BFAB900088BBF /* ExamDetailsController.m in Sources */,
+				2607CAE5183BFAC800088BBF /* ProjectDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
