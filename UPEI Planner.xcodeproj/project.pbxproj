@@ -11,6 +11,8 @@
 		2607CAE1183BFAB900088BBF /* ExamDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2607CADF183BFAB900088BBF /* ExamDetailsController.xib */; };
 		2607CAE5183BFAC800088BBF /* ProjectDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */; };
 		2607CAE6183BFAC800088BBF /* ProjectDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */; };
+		2607CAEF183C563300088BBF /* ImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2607CAED183C563200088BBF /* ImagePickerController.m */; };
+		2607CAF0183C563300088BBF /* ImagePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2607CAEE183C563300088BBF /* ImagePickerController.xib */; };
 		26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */; };
 		26A6FEAB183BF5C000E9C353 /* AssignDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */; };
 		26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A79392182BCC0300717995 /* DataModel.xcdatamodeld */; };
@@ -92,6 +94,9 @@
 		2607CAE2183BFAC800088BBF /* ProjectDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailsController.h; sourceTree = "<group>"; };
 		2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailsController.m; sourceTree = "<group>"; };
 		2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectDetailsController.xib; sourceTree = "<group>"; };
+		2607CAEC183C563200088BBF /* ImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerController.h; sourceTree = "<group>"; };
+		2607CAED183C563200088BBF /* ImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerController.m; sourceTree = "<group>"; };
+		2607CAEE183C563300088BBF /* ImagePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePickerController.xib; sourceTree = "<group>"; };
 		26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignDetailsController.h; sourceTree = "<group>"; };
 		26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignDetailsController.m; sourceTree = "<group>"; };
 		26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignDetailsController.xib; sourceTree = "<group>"; };
@@ -306,6 +311,9 @@
 				2607CAE2183BFAC800088BBF /* ProjectDetailsController.h */,
 				2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */,
 				2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */,
+				2607CAEC183C563200088BBF /* ImagePickerController.h */,
+				2607CAED183C563200088BBF /* ImagePickerController.m */,
+				2607CAEE183C563300088BBF /* ImagePickerController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -455,6 +463,7 @@
 				26A6FEAB183BF5C000E9C353 /* AssignDetailsController.xib in Resources */,
 				2607CAE1183BFAB900088BBF /* ExamDetailsController.xib in Resources */,
 				2607CAE6183BFAC800088BBF /* ProjectDetailsController.xib in Resources */,
+				2607CAF0183C563300088BBF /* ImagePickerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +523,7 @@
 				26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */,
 				2607CAE0183BFAB900088BBF /* ExamDetailsController.m in Sources */,
 				2607CAE5183BFAC800088BBF /* ProjectDetailsController.m in Sources */,
+				2607CAEF183C563300088BBF /* ImagePickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

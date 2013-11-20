@@ -34,6 +34,22 @@
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
     
     [[self navigationItem] setTitle:@"Edit class"];
+    NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentClass" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entity];
+    StudentClass *class;
+    NSError *error = nil;
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    class = [[context executeFetchRequest:request error:&error] objectAtIndex:_rowNumber];
+    [_prefixField setText:[class classprefix]];
+    [_numberField setText:[[class classnumber]stringValue]];
+    [_nameField setText:[class name]];
+    [_profField setText:[class professor]];
 }
 
 - (void)didReceiveMemoryWarning

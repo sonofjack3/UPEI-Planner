@@ -13,7 +13,7 @@
 @end
 
 @implementation EditStudentController
-
+@synthesize imageView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -21,6 +21,25 @@
         // Custom initialization
     }
     return self;
+}
+-(IBAction)choosePhoto:(id)sender
+{
+    UIImagePickerController *imagePickController=[[UIImagePickerController alloc]init];
+    imagePickController.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePickController.delegate=self;
+    imagePickController.allowsEditing=TRUE;
+    [self presentModalViewController:imagePickController animated:YES];
+    
+}
+
+#pragma mark - When finish shoot
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image=[info objectForKey:UIImagePickerControllerEditedImage];
+    imageView.image=image;
+    //saveImageBotton.enabled=TRUE;
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad
@@ -43,8 +62,14 @@
     NSError *error = nil;
     if ([[context executeFetchRequest:request error:&error] count] == 0) //no student in database
         [_cancelButton setEnabled:NO];
-    else //a student is in the database
+    else {//a student is in the database
         [_cancelButton setEnabled:YES];
+        NSArray *studentArray = [context executeFetchRequest:request error:&error];
+        Student *student = [studentArray objectAtIndex:0];
+        [_idField setText:[[student id]stringValue]];
+        [_nameField setText:[student name]];
+        [imageView setImage:[student picture]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,6 +121,7 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [student setId:[formatter numberFromString:[_idField text]]];
+    [student setPicture:[imageView image]];
     
     if ([context save:&error])
     {

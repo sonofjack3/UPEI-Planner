@@ -34,7 +34,7 @@
                                                             target:self
                                                             action:@selector(editStudent)];
     [[self navigationItem] setRightBarButtonItem:edit];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -81,7 +81,7 @@
     //NSLog([student name]);
     // Set the cell's text to the faculty name
     [[cell textLabel] setText:[student name]];
-    [[cell imageView] setImage:[UIImage imageNamed:@"Icon.png"]];
+    [[cell imageView] setImage:[student picture]];
     [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Student ID: %@",[student id]]];
 
     return cell;

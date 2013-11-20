@@ -11,10 +11,12 @@
 #import "Student.h"
 #import "InformationViewController.h"
 
-@interface EditStudentController : UIViewController <UITextFieldDelegate>
+@interface EditStudentController : UIViewController <UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *idField;
 @property (strong, nonatomic) UIBarButtonItem *saveButton;
 @property (strong, nonatomic) UIBarButtonItem *cancelButton;
+- (IBAction)choosePhoto:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
