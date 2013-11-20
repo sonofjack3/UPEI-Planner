@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ProjectDetailsController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *dateField;
+@property (weak, nonatomic) IBOutlet UITextField *weightField;
 @property Project *project;
 @end

@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self dateField]setText:[_project due_date]];
+    [[self weightField]setText:[[_project weight]stringValue]];
+    [[self nameField]setText:[_project name]];
     // Do any additional setup after loading the view from its nib.
 }
 
