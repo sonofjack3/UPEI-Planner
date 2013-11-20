@@ -41,8 +41,8 @@
     [[self tableView] setDelegate:self];
     [super viewDidLoad];
     
-    [[self navigationItem] setTitle:@"Exams"];
-
+    [[self navigationItem] setTitle:@"Agenda"];
+    [[self tableView] reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +55,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 3;
 }
@@ -71,7 +70,7 @@
         return [assignList count];
     else if(section ==2)
         return [projectList count];
-    return 1;
+    return 0;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -87,9 +86,11 @@
     {
         return @"Projects";
     }
+    return nil;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *cellId = @"AgendaCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil)
@@ -198,24 +199,26 @@
         NSLog(@"%i",i );
         _exams = [NSMutableArray arrayWithArray:[[_course exam] allObjects]];
         for(int j = 0; j<_exams.count;j++){
-            
+            if([[[_exams objectAtIndex:j]completed]intValue] ==0){
             [examList addObject:[_exams objectAtIndex:j]];
-            NSLog(@"Exam: %@",[[_exams objectAtIndex:j] name]);
+                NSLog(@"Exam: %@",[[_exams objectAtIndex:j] name]);}
         }
         
         _projects = [NSMutableArray arrayWithArray:[[_course project] allObjects]];
         for(int k = 0; k<_projects.count;k++){
+            if([[[_projects objectAtIndex:k]completed]intValue] ==0){
             [projectList addObject:[_projects objectAtIndex:k]];
             NSLog(@"Project %@",[[_projects objectAtIndex:k] name]);
+            }
         }
-        
         _assign = [NSMutableArray arrayWithArray:[[_course assignment] allObjects]];
         for(int l = 0; l<_assign.count;l++){
-            if([[_assign objectAtIndex:l]completed] ==0){
+            if([[[_assign objectAtIndex:l]completed]intValue] ==0){
             [assignList addObject:[_assign objectAtIndex:l]];
                 NSLog(@"assignment %@",[[_assign objectAtIndex:l] name]);}
+            }
         }
-    }
+    
     NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
     [examList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
     [assignList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
@@ -253,23 +256,90 @@
     {
         [tableView beginUpdates];
         NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assignment" inManagedObjectContext:context];
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        [request setEntity:entity];
-        NSError *error = nil;
-        Assignment *assignment = [[context executeFetchRequest:request error:&error] objectAtIndex:[indexPath row]];
-        [assignment setCompleted:[NSNumber numberWithInteger:1]];
-        if ([context save:&error])
-        {
-            NSLog(@"Saved successfully");
+        
+        
+        
+        NSLog(@"row %i",[indexPath row]);
+        switch([indexPath section]){
+            case 0:{
+                NSEntityDescription *entity = [NSEntityDescription entityForName:@"Exam" inManagedObjectContext:context];
+                NSFetchRequest *request = [[NSFetchRequest alloc] init];
+                [request setEntity:entity];
+                NSError *error = nil;
+                NSMutableArray *uncompletedExams = [[NSMutableArray alloc] init];
+                for(int k = 0; k<_exams.count;k++){
+                    if([[[_exams objectAtIndex:k]completed]intValue] ==0){
+                        [uncompletedExams addObject:[_exams objectAtIndex:k]];
+                    }
+                }
+                Exam *exam = [uncompletedExams objectAtIndex:[indexPath row]];
+                [exam setCompleted:[NSNumber numberWithInteger:1]];
+                
+                if ([context save:&error])
+                {
+                    NSLog(@"Saved successfully");
+                }
+                else
+                {
+                    NSLog(@"Save error: %@", [error localizedDescription]);
+                }
+                [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
+                [examList removeObjectAtIndex:[indexPath row]];
+                break;}
+            case 1:{
+                NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assignment" inManagedObjectContext:context];
+                NSFetchRequest *request = [[NSFetchRequest alloc] init];
+                [request setEntity:entity];
+                NSError *error = nil;
+                NSMutableArray *uncompletedAssignments = [[NSMutableArray alloc] init];
+                for(int k = 0; k<_assign.count;k++){
+                    if([[[_assign objectAtIndex:k]completed]intValue] ==0){
+                        [uncompletedAssignments addObject:[_assign objectAtIndex:k]];
+                    }
+                }
+                Assignment *assign = [uncompletedAssignments objectAtIndex:[indexPath row]];
+                [assign setCompleted:[NSNumber numberWithInteger:1]];
+                
+                if ([context save:&error])
+                {
+                    NSLog(@"Saved successfully");
+                }
+                else
+                {
+                    NSLog(@"Save error: %@", [error localizedDescription]);
+                }
+                [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
+                [assignList removeObjectAtIndex:[indexPath row]];
+                break;}
+            case 2:{
+                NSEntityDescription *entity = [NSEntityDescription entityForName:@"Project" inManagedObjectContext:context];
+                NSFetchRequest *request = [[NSFetchRequest alloc] init];
+                [request setEntity:entity];
+                NSError *error = nil;
+                NSMutableArray *uncompletedProjects = [[NSMutableArray alloc] init];
+                for(int k = 0; k<_projects.count;k++){
+                    if([[[_projects objectAtIndex:k]completed]intValue] ==0){
+                        [uncompletedProjects addObject:[_projects objectAtIndex:k]];
+                    }
+                }
+                Project *project = [uncompletedProjects objectAtIndex:[indexPath row]];
+                [project setCompleted:[NSNumber numberWithInteger:1]];
+                
+                if ([context save:&error])
+                {
+                    NSLog(@"Saved successfully");
+                }
+                else
+                {
+                    NSLog(@"Save error: %@", [error localizedDescription]);
+                }
+                [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
+                [[projectList objectAtIndex:[indexPath row]]setCompleted:[NSNumber numberWithInteger:1]];
+                [projectList removeObjectAtIndex:[indexPath row]];
+                break;}
         }
-        else
-        {
-            NSLog(@"Save error: %@", [error localizedDescription]);
-        }
-        [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
-        [assignList removeObjectAtIndex:[indexPath row]];
         [tableView endUpdates];
+        
     }
 }
 

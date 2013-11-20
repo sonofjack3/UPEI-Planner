@@ -31,6 +31,7 @@
     [[self dateField]setText:[_exam due_date]];
     [[self weightField]setText:[[_exam weight]stringValue]];
     [[self nameField]setText:[_exam name]];
+    [_completeSelect setSelectedSegmentIndex:[[_exam completed]integerValue]];
     // Do any additional setup after loading the view from its nib.
 }
 

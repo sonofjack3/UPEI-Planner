@@ -42,8 +42,10 @@
 }
 -(void)updateTextField:(id)sender
 {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM-dd-yy HH:mm"];
     UIDatePicker *picker = (UIDatePicker*)self.dateField.inputView;
-    self.dateField.text = [NSString stringWithFormat:@"%@",picker.date];
+    self.dateField.text = [NSString stringWithFormat:@"%@",[dateFormat stringFromDate:picker.date]];
 }
 
 - (void)didReceiveMemoryWarning

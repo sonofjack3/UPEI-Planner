@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UITextField *weightField;
 @property (weak, nonatomic) IBOutlet UITextField *membersField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *completeSelect;
 @property Project *project;
 @end

@@ -30,6 +30,7 @@
     [[self weightField]setText:[[_project weight]stringValue]];
     [[self nameField]setText:[_project name]];
     [[self membersField]setText:[_project members]];
+    [_completeSelect setSelectedSegmentIndex:[[_project completed]integerValue]];
     // Do any additional setup after loading the view from its nib.
 }
 
