@@ -10,8 +10,9 @@
 #import "AppDelegate.h"
 #import "Project.h"
 #import "StudentClass.h"
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface AddProjectController : UIViewController <UITextFieldDelegate>
+@interface AddProjectController : UIViewController <UITextFieldDelegate,ABPeoplePickerNavigationControllerDelegate>
 
 @property (strong, nonatomic) UIBarButtonItem *saveButton;
 @property (strong, nonatomic) UIBarButtonItem *cancelButton;
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UITextField *weightField;
 @property (weak, nonatomic) IBOutlet UITextField *groupField;
+- (IBAction)selectMembers:(id)sender;
+
 
 
 @end

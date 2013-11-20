@@ -12,6 +12,8 @@
 		2607CAE5183BFAC800088BBF /* ProjectDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */; };
 		2607CAE6183BFAC800088BBF /* ProjectDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */; };
 		2607CAF2183C5EBE00088BBF /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2607CAF1183C5EBE00088BBF /* InformationViewController.xib */; };
+		2607CAF5183C65EF00088BBF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2607CAF3183C65EF00088BBF /* AddressBook.framework */; };
+		2607CAF6183C65EF00088BBF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2607CAF4183C65EF00088BBF /* AddressBookUI.framework */; };
 		26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */; };
 		26A6FEAB183BF5C000E9C353 /* AssignDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */; };
 		26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A79392182BCC0300717995 /* DataModel.xcdatamodeld */; };
@@ -93,6 +95,8 @@
 		2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailsController.m; sourceTree = "<group>"; };
 		2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectDetailsController.xib; sourceTree = "<group>"; };
 		2607CAF1183C5EBE00088BBF /* InformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
+		2607CAF3183C65EF00088BBF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		2607CAF4183C65EF00088BBF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignDetailsController.h; sourceTree = "<group>"; };
 		26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignDetailsController.m; sourceTree = "<group>"; };
 		26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignDetailsController.xib; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2607CAF5183C65EF00088BBF /* AddressBook.framework in Frameworks */,
+				2607CAF6183C65EF00088BBF /* AddressBookUI.framework in Frameworks */,
 				4BD4CC6C18285A27004F8834 /* UIKit.framework in Frameworks */,
 				4BD4CC6E18285A27004F8834 /* Foundation.framework in Frameworks */,
 				4BD4CC7018285A27004F8834 /* CoreGraphics.framework in Frameworks */,
@@ -210,6 +216,8 @@
 		4BD4CC5F18285A27004F8834 = {
 			isa = PBXGroup;
 			children = (
+				2607CAF3183C65EF00088BBF /* AddressBook.framework */,
+				2607CAF4183C65EF00088BBF /* AddressBookUI.framework */,
 				4BD4CC7318285A27004F8834 /* UPEI Planner */,
 				4BD4CC9518285A28004F8834 /* UPEI PlannerTests */,
 				4BD4CC6A18285A27004F8834 /* Frameworks */,

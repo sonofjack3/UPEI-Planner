@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UITextField *weightField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *completedSelector;
 
 
 @end

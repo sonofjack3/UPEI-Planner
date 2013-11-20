@@ -165,9 +165,9 @@
     for (StudentClass *class in fetchedObjects)
     {
         // DisplayFaculty details
-        NSLog(@"Class Name: %@, Class Number: %@", [class name], [class classnumber]);
+        /*NSLog(@"Class Name: %@, Class Number: %@", [class name], [class classnumber]);
             
-        NSLog(@"\tCourses:");
+        NSLog(@"\tCourses:");*/
         //NSSet *classes = [student courses];
     }
     [[self tableView] reloadData];

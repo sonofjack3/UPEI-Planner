@@ -198,6 +198,7 @@
         NSLog(@"%i",i );
         _exams = [NSMutableArray arrayWithArray:[[_course exam] allObjects]];
         for(int j = 0; j<_exams.count;j++){
+            
             [examList addObject:[_exams objectAtIndex:j]];
             NSLog(@"Exam: %@",[[_exams objectAtIndex:j] name]);
         }
@@ -210,8 +211,9 @@
         
         _assign = [NSMutableArray arrayWithArray:[[_course assignment] allObjects]];
         for(int l = 0; l<_assign.count;l++){
+            if([[_assign objectAtIndex:l]completed] ==0){
             [assignList addObject:[_assign objectAtIndex:l]];
-            NSLog(@"assignment %@",[[_assign objectAtIndex:l] name]);
+                NSLog(@"assignment %@",[[_assign objectAtIndex:l] name]);}
         }
     }
     NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
@@ -238,6 +240,37 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+-(UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *ipaths = [NSArray arrayWithObject:indexPath];
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [tableView beginUpdates];
+        NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assignment" inManagedObjectContext:context];
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        [request setEntity:entity];
+        NSError *error = nil;
+        Assignment *assignment = [[context executeFetchRequest:request error:&error] objectAtIndex:[indexPath row]];
+        [assignment setCompleted:[NSNumber numberWithInteger:1]];
+        if ([context save:&error])
+        {
+            NSLog(@"Saved successfully");
+        }
+        else
+        {
+            NSLog(@"Save error: %@", [error localizedDescription]);
+        }
+        [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
+        [assignList removeObjectAtIndex:[indexPath row]];
+        [tableView endUpdates];
+    }
 }
 
 @end

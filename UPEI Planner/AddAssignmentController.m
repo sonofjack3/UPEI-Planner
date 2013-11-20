@@ -34,6 +34,16 @@
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
 
     [[self navigationItem] setTitle:@"Add Assignment"];
+    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
+    
+    [datePicker setDate:[NSDate date]];
+    [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+    [self.dateField setInputView:datePicker];
+}
+-(void)updateTextField:(id)sender
+{
+    UIDatePicker *picker = (UIDatePicker*)self.dateField.inputView;
+    self.dateField.text = [NSString stringWithFormat:@"%@",picker.date];
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,6 +87,9 @@
     [assignment setDue_date:[_dateField text]];
     [assignment setWeight:[formatter numberFromString:[_weightField text]]];
     [assignment setClasses:_course];
+    NSInteger selectedSegment = _completedSelector.selectedSegmentIndex;
+     
+    [assignment setCompleted:[NSNumber numberWithInteger:selectedSegment]];
     [[_course assignment] addObject:assignment];
     NSLog(@"%@", [_course assignment]);
     

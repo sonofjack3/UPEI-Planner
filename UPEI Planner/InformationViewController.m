@@ -146,6 +146,7 @@
             // DisplayFaculty details
 
             classes = [student courses];
+            
         }
     }
     //[[self tableView] reloadData];
@@ -156,7 +157,20 @@
     // Set the cell's text to the faculty name
     [_imageView setImage:[student picture]];
     [_idLabel setText:[[student id]stringValue]];
-    [_courseLabel setText:[NSString stringWithFormat:@"%i",student.courses.count]];
+    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"StudentClass"
+                                              inManagedObjectContext:context];
+    [fetchRequest2 setEntity:entity2];
+    
+    // Add an NSSortDescriptor to sort the faculties alphabetically
+    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors2 = [[NSArray alloc] initWithObjects:sortDescriptor2, nil];
+    [fetchRequest2 setSortDescriptors:sortDescriptors2];
+    
+    NSError *error2 = nil;
+    NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest2 error:&error2];
+
+    [_courseLabel setText:[NSString stringWithFormat:@"%i",fetchedObjects2.count]];
     
 }
 - (void) viewWillAppear:(BOOL)animated

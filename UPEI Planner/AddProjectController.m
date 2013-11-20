@@ -34,6 +34,16 @@
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
     
     [[self navigationItem] setTitle:@"Add Project"];
+    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
+    
+    [datePicker setDate:[NSDate date]];
+    [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+    [self.dateField setInputView:datePicker];
+}
+-(void)updateTextField:(id)sender
+{
+    UIDatePicker *picker = (UIDatePicker*)self.dateField.inputView;
+    self.dateField.text = [NSString stringWithFormat:@"%@",picker.date];
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,6 +106,57 @@
 - (void) dismiss
 {
     [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (IBAction)selectMembers:(id)sender {
+    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
+    
+    [self presentModalViewController:picker animated:YES];
+}
+- (void)peoplePickerNavigationControllerDidCancel:
+(ABPeoplePickerNavigationController *)peoplePicker
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+- (BOOL)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker
+      shouldContinueAfterSelectingPerson:(ABRecordRef)person {
+    
+    [self displayPerson:person];
+    [self dismissModalViewControllerAnimated:YES];
+    
+    return NO;
+}
+
+- (BOOL)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker
+      shouldContinueAfterSelectingPerson:(ABRecordRef)person
+                                property:(ABPropertyID)property
+                              identifier:(ABMultiValueIdentifier)identifier
+{
+    return NO;
+}
+- (void)displayPerson:(ABRecordRef)person
+{
+    NSString* name = (__bridge_transfer NSString*)ABRecordCopyValue(person,
+                                                                   kABPersonFirstNameProperty);
+    NSString *current = self.groupField.text; 
+    self.groupField.text = [NSString stringWithFormat:@"%@ , %@", name, current];;
+    
+    NSString* phone = nil;
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
+                                                     kABPersonPhoneProperty);
+    if (ABMultiValueGetCount(phoneNumbers) > 0) {
+        phone = (__bridge_transfer NSString*)
+        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
+    } else {
+        phone = @"[None]";
+    }
+    
+    CFRelease(phoneNumbers);
 }
 
 @end

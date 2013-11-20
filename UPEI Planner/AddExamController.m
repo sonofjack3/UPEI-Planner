@@ -34,8 +34,17 @@
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
     
     [[self navigationItem] setTitle:@"Add Exam"];
+    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
+    
+    [datePicker setDate:[NSDate date]];
+    [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+    [self.dateField setInputView:datePicker];
 }
-
+-(void)updateTextField:(id)sender
+{
+    UIDatePicker *picker = (UIDatePicker*)self.dateField.inputView;
+    self.dateField.text = [NSString stringWithFormat:@"%@",picker.date];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -31,6 +31,7 @@
     [[self dueField]setText:[_assignment due_date]];
     [[self weightField]setText:[[_assignment weight]stringValue]];
     [[self nameField]setText:[_assignment name]];
+    [_completeSelect setSelectedSegmentIndex:[[_assignment completed]integerValue]];
     // Do any additional setup after loading the view from its nib.
 }
 
