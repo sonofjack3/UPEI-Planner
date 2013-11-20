@@ -10,7 +10,7 @@
 #import "InformationViewController.h"
 #import "CalendarViewController.h"
 #import "MoodleViewController.h"
-#import "ImagePickerController.h"
+
 #import "Student.h"
 #import "Assignment.h"
 #import "Exam.h"
@@ -35,12 +35,12 @@
     InformationViewController *info = [[InformationViewController alloc] init];
     CalendarViewController *calendar = [[CalendarViewController alloc] init];
     MoodleViewController *moodle = [[MoodleViewController alloc] init];
-    ImagePickerController *image = [[ImagePickerController alloc] init];
+
     //Info screen requires nav controller
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:info];
     //Create a tab bar view controller with tabs for each of the above three views
     UITabBarController *tabBar = [[UITabBarController alloc] init];
-    NSArray *viewControllers = [NSArray arrayWithObjects:navController, calendar, moodle,image, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:navController, calendar, moodle, nil];
     [tabBar setViewControllers:viewControllers];
     
     [[self window] setRootViewController:tabBar];

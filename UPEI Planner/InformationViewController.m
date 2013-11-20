@@ -14,18 +14,17 @@
 
 @implementation InformationViewController
 @synthesize studentArray;
-@synthesize TableView;
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize InfoView;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
-    if (self)
-    {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
         [[self tabBarItem] setTitle:@"Info View"];
         [self setTitle:@"Planner"];
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,7 +33,12 @@
                                                             target:self
                                                             action:@selector(editStudent)];
     [[self navigationItem] setRightBarButtonItem:edit];
-    
+    Student *student = [studentArray objectAtIndex:0];
+    [_nameLabel setText:[student name]];
+    //NSLog([student name]);
+    // Set the cell's text to the faculty name
+    [_imageView setImage:[student picture]];
+    [_idLabel setText:[[student id]stringValue]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -48,45 +52,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // The number of Faculties will define the # of rows needed
-    int size = 0;
-    if(studentArray.count)
-        size = studentArray.count;
-    return size;
-    //return 1;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellId = @"StudentCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
-    }
-    //[[cell textLabel] setText:[NSString stringWithFormat:@"%d - Puppy", [indexPath row]]];
-    
-    // Configure the cell...
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    
-    // Get the faculty
-    Student *student = [studentArray objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[student name]];
-    //NSLog([student name]);
-    // Set the cell's text to the faculty name
-    [[cell textLabel] setText:[student name]];
-    [[cell imageView] setImage:[student picture]];
-    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Student ID: %@",[student id]]];
 
-    return cell;
-    //return nil;
-}
+
 
 /*
  // Override to support conditional editing of the table view.
@@ -164,7 +131,7 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
-    
+    NSSet *classes;
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     studentArray = [context executeFetchRequest:fetchRequest error:&error];
@@ -177,13 +144,20 @@
         for (Student *student in fetchedObjects)
         {
             // DisplayFaculty details
-            NSLog(@"Student: %@, id: %@", [student name], [student id]);
-        
-            NSLog(@"\tCourses:");
-            NSSet *classes = [student courses];
+
+            classes = [student courses];
         }
     }
-    [[self tableView] reloadData];
+    //[[self tableView] reloadData];
+    [[self InfoView]reloadInputViews];
+    Student *student = [studentArray objectAtIndex:0];
+    [_nameLabel setText:[student name]];
+    //NSLog([student name]);
+    // Set the cell's text to the faculty name
+    [_imageView setImage:[student picture]];
+    [_idLabel setText:[[student id]stringValue]];
+    [_courseLabel setText:[NSString stringWithFormat:@"%i",student.courses.count]];
+    
 }
 - (void) viewWillAppear:(BOOL)animated
 {
@@ -198,4 +172,8 @@
     [[self navigationController] pushViewController:next animated:YES];
 }
 
+- (IBAction)viewCourses:(id)sender {
+    UIViewController *next = [[CoursesViewController alloc] initWithNibName:@"CoursesViewController" bundle:nil];
+    [[self navigationController] pushViewController:next animated:YES];
+}
 @end
