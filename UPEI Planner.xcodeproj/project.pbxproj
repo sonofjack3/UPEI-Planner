@@ -254,69 +254,15 @@
 			children = (
 				4BD4CC7C18285A27004F8834 /* AppDelegate.h */,
 				4BD4CC7D18285A27004F8834 /* AppDelegate.m */,
-				4BD4CCA618285AD9004F8834 /* InformationViewController.h */,
-				4BD4CCA718285AD9004F8834 /* InformationViewController.m */,
-				2607CAF1183C5EBE00088BBF /* InformationViewController.xib */,
-				26BD4396183424A100DA7339 /* EditStudentController.h */,
-				26BD4397183424A100DA7339 /* EditStudentController.m */,
-				26BD4398183424A100DA7339 /* EditStudentController.xib */,
-				4BDFD5031837E7520016A21C /* CoursesViewController.h */,
-				4BDFD5041837E7520016A21C /* CoursesViewController.m */,
-				4BDFD5051837E7520016A21C /* CoursesViewController.xib */,
-				4BD4CCB318285C88004F8834 /* MoodleViewController.h */,
-				4BD4CCB418285C88004F8834 /* MoodleViewController.m */,
-				4BD4CCB518285C88004F8834 /* MoodleViewController.xib */,
+				4BE4BAF6183D57C30060E082 /* Student */,
+				4BE4BAF8183D581E0060E082 /* Courses */,
+				4BE4BAF9183D585F0060E082 /* Assignments */,
+				4BE4BAFA183D58840060E082 /* Projects */,
+				4BE4BAFB183D58EB0060E082 /* Exams */,
+				4BE4BAF7183D57F90060E082 /* Agenda */,
+				4BE4BAFC183D59420060E082 /* Moodle */,
 				4BD4CC7418285A27004F8834 /* Supporting Files */,
 				26A79392182BCC0300717995 /* DataModel.xcdatamodeld */,
-				26BD4393183139E800DA7339 /* Student.h */,
-				26BD4394183139E800DA7339 /* Student.m */,
-				26BD4390183139E800DA7339 /* Assignment.h */,
-				26BD4391183139E800DA7339 /* Assignment.m */,
-				26BD438D183139E800DA7339 /* Exam.h */,
-				26BD438E183139E800DA7339 /* Exam.m */,
-				26BD438A183139E800DA7339 /* StudentClass.h */,
-				26BD438B183139E800DA7339 /* StudentClass.m */,
-				26BD4387183139E700DA7339 /* Project.h */,
-				26BD4388183139E700DA7339 /* Project.m */,
-				4BE4268E18391C3900CBBEBB /* AddClassController.h */,
-				4BE4268F18391C3900CBBEBB /* AddClassController.m */,
-				4BE4269018391C3900CBBEBB /* AddClassController.xib */,
-				4BBE4545183B21DB0018A6B5 /* EditClassController.h */,
-				4BBE4546183B21DB0018A6B5 /* EditClassController.m */,
-				4BBE4547183B21DB0018A6B5 /* EditClassController.xib */,
-				4B2E07F4183A7AFF00C7F089 /* SingleCourseViewController.h */,
-				4B2E07F5183A7AFF00C7F089 /* SingleCourseViewController.m */,
-				4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */,
-				4BBE4536183B13840018A6B5 /* AssignmentsViewController.h */,
-				4BBE4537183B13840018A6B5 /* AssignmentsViewController.m */,
-				4BBE4538183B13840018A6B5 /* AssignmentsViewController.xib */,
-				4BBE453B183B183D0018A6B5 /* AddAssignmentController.h */,
-				4BBE453C183B183D0018A6B5 /* AddAssignmentController.m */,
-				4BBE453D183B183D0018A6B5 /* AddAssignmentController.xib */,
-				26C4B8ED183BA59C002BF64F /* ProjectViewController.h */,
-				26C4B8EE183BA59C002BF64F /* ProjectViewController.m */,
-				26C4B8EF183BA59D002BF64F /* ProjectViewController.xib */,
-				26C4B8F2183BA5BF002BF64F /* AddProjectController.h */,
-				26C4B8F3183BA5BF002BF64F /* AddProjectController.m */,
-				26C4B8F4183BA5BF002BF64F /* AddProjectController.xib */,
-				26C4B8F7183BAAA8002BF64F /* ExamViewController.h */,
-				26C4B8F8183BAAA8002BF64F /* ExamViewController.m */,
-				26C4B8F9183BAAA8002BF64F /* ExamViewController.xib */,
-				26C4B8FC183BAACA002BF64F /* AddExamController.h */,
-				26C4B8FD183BAACA002BF64F /* AddExamController.m */,
-				26C4B8FE183BAACB002BF64F /* AddExamController.xib */,
-				26C4B901183BAF38002BF64F /* CalendarViewController.h */,
-				26C4B902183BAF38002BF64F /* CalendarViewController.m */,
-				26C4B903183BAF39002BF64F /* CalendarViewController.xib */,
-				26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */,
-				26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */,
-				26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */,
-				2607CADD183BFAB900088BBF /* ExamDetailsController.h */,
-				2607CADE183BFAB900088BBF /* ExamDetailsController.m */,
-				2607CADF183BFAB900088BBF /* ExamDetailsController.xib */,
-				2607CAE2183BFAC800088BBF /* ProjectDetailsController.h */,
-				2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */,
-				2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */,
 			);
 			path = "UPEI Planner";
 			sourceTree = "<group>";
@@ -362,6 +308,116 @@
 				4BD4CC9818285A28004F8834 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BE4BAF6183D57C30060E082 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				26BD4393183139E800DA7339 /* Student.h */,
+				26BD4394183139E800DA7339 /* Student.m */,
+				4BD4CCA618285AD9004F8834 /* InformationViewController.h */,
+				4BD4CCA718285AD9004F8834 /* InformationViewController.m */,
+				2607CAF1183C5EBE00088BBF /* InformationViewController.xib */,
+				26BD4396183424A100DA7339 /* EditStudentController.h */,
+				26BD4397183424A100DA7339 /* EditStudentController.m */,
+				26BD4398183424A100DA7339 /* EditStudentController.xib */,
+			);
+			name = Student;
+			sourceTree = "<group>";
+		};
+		4BE4BAF7183D57F90060E082 /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				26C4B901183BAF38002BF64F /* CalendarViewController.h */,
+				26C4B902183BAF38002BF64F /* CalendarViewController.m */,
+				26C4B903183BAF39002BF64F /* CalendarViewController.xib */,
+			);
+			name = Agenda;
+			sourceTree = "<group>";
+		};
+		4BE4BAF8183D581E0060E082 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				26BD438A183139E800DA7339 /* StudentClass.h */,
+				26BD438B183139E800DA7339 /* StudentClass.m */,
+				4BDFD5031837E7520016A21C /* CoursesViewController.h */,
+				4BDFD5041837E7520016A21C /* CoursesViewController.m */,
+				4BDFD5051837E7520016A21C /* CoursesViewController.xib */,
+				4B2E07F4183A7AFF00C7F089 /* SingleCourseViewController.h */,
+				4B2E07F5183A7AFF00C7F089 /* SingleCourseViewController.m */,
+				4B2E07F6183A7AFF00C7F089 /* SingleCourseViewController.xib */,
+				4BE4268E18391C3900CBBEBB /* AddClassController.h */,
+				4BE4268F18391C3900CBBEBB /* AddClassController.m */,
+				4BE4269018391C3900CBBEBB /* AddClassController.xib */,
+				4BBE4545183B21DB0018A6B5 /* EditClassController.h */,
+				4BBE4546183B21DB0018A6B5 /* EditClassController.m */,
+				4BBE4547183B21DB0018A6B5 /* EditClassController.xib */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
+		4BE4BAF9183D585F0060E082 /* Assignments */ = {
+			isa = PBXGroup;
+			children = (
+				26BD4390183139E800DA7339 /* Assignment.h */,
+				26BD4391183139E800DA7339 /* Assignment.m */,
+				4BBE4536183B13840018A6B5 /* AssignmentsViewController.h */,
+				4BBE4537183B13840018A6B5 /* AssignmentsViewController.m */,
+				4BBE4538183B13840018A6B5 /* AssignmentsViewController.xib */,
+				26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */,
+				26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */,
+				26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */,
+				4BBE453B183B183D0018A6B5 /* AddAssignmentController.h */,
+				4BBE453C183B183D0018A6B5 /* AddAssignmentController.m */,
+				4BBE453D183B183D0018A6B5 /* AddAssignmentController.xib */,
+			);
+			name = Assignments;
+			sourceTree = "<group>";
+		};
+		4BE4BAFA183D58840060E082 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				26BD4387183139E700DA7339 /* Project.h */,
+				26BD4388183139E700DA7339 /* Project.m */,
+				26C4B8ED183BA59C002BF64F /* ProjectViewController.h */,
+				26C4B8EE183BA59C002BF64F /* ProjectViewController.m */,
+				26C4B8EF183BA59D002BF64F /* ProjectViewController.xib */,
+				2607CAE2183BFAC800088BBF /* ProjectDetailsController.h */,
+				2607CAE3183BFAC800088BBF /* ProjectDetailsController.m */,
+				2607CAE4183BFAC800088BBF /* ProjectDetailsController.xib */,
+				26C4B8F2183BA5BF002BF64F /* AddProjectController.h */,
+				26C4B8F3183BA5BF002BF64F /* AddProjectController.m */,
+				26C4B8F4183BA5BF002BF64F /* AddProjectController.xib */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		4BE4BAFB183D58EB0060E082 /* Exams */ = {
+			isa = PBXGroup;
+			children = (
+				26BD438D183139E800DA7339 /* Exam.h */,
+				26BD438E183139E800DA7339 /* Exam.m */,
+				26C4B8F7183BAAA8002BF64F /* ExamViewController.h */,
+				26C4B8F8183BAAA8002BF64F /* ExamViewController.m */,
+				26C4B8F9183BAAA8002BF64F /* ExamViewController.xib */,
+				26C4B8FC183BAACA002BF64F /* AddExamController.h */,
+				26C4B8FD183BAACA002BF64F /* AddExamController.m */,
+				26C4B8FE183BAACB002BF64F /* AddExamController.xib */,
+				2607CADD183BFAB900088BBF /* ExamDetailsController.h */,
+				2607CADE183BFAB900088BBF /* ExamDetailsController.m */,
+				2607CADF183BFAB900088BBF /* ExamDetailsController.xib */,
+			);
+			name = Exams;
+			sourceTree = "<group>";
+		};
+		4BE4BAFC183D59420060E082 /* Moodle */ = {
+			isa = PBXGroup;
+			children = (
+				4BD4CCB318285C88004F8834 /* MoodleViewController.h */,
+				4BD4CCB418285C88004F8834 /* MoodleViewController.m */,
+				4BD4CCB518285C88004F8834 /* MoodleViewController.xib */,
+			);
+			name = Moodle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

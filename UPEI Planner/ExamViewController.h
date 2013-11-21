@@ -12,11 +12,11 @@
 #import "AddExamController.h"
 #import "StudentClass.h"
 #import "ExamDetailsController.h"
-//#import "SingleCourseViewController.h"
 
-@interface ExamViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate>
+@interface ExamViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *exams;
 @property StudentClass *course;
+@property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted;
 
 @end

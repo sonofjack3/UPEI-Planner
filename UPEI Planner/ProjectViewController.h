@@ -14,9 +14,10 @@
 #import "ProjectDetailsController.h"
 //#import "SingleCourseViewController.h"
 
-@interface ProjectViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate>
+@interface ProjectViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *projects;
 @property StudentClass *course;
+@property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted;
 
 @end

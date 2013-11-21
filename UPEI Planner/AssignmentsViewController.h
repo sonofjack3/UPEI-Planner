@@ -12,11 +12,11 @@
 #import "AddAssignmentController.h"
 #import "StudentClass.h"
 #import "AssignDetailsController.h"
-//#import "SingleCourseViewController.h"
 
-@interface AssignmentsViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate>
+@interface AssignmentsViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *assignments;
 @property StudentClass *course;
+@property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted;
 
 @end

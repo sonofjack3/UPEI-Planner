@@ -192,16 +192,25 @@
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *ipaths = [NSArray arrayWithObject:indexPath];
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [tableView beginUpdates];
+        _indexPathToBeDeleted = indexPath;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Delete %@ and all associated data?", [[_classes objectAtIndex:[indexPath row]] name]] message:nil delegate:self cancelButtonTitle:@"Delete" otherButtonTitles:@"Cancel", nil];
+        [alertView show];
+    }
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) //delete confirmation
+    {
+        [[self tableView] beginUpdates];
         NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentClass" inManagedObjectContext:context];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:entity];
         NSError *error = nil;
-        StudentClass *classToDelete = [[context executeFetchRequest:request error:&error] objectAtIndex:[indexPath row]];
+        StudentClass *classToDelete = [[context executeFetchRequest:request error:&error] objectAtIndex:[[self indexPathToBeDeleted] row]];
         [context deleteObject:classToDelete];
         if ([context save:&error])
         {
@@ -211,10 +220,10 @@
         {
             NSLog(@"Save error: %@", [error localizedDescription]);
         }
-        [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
-        [_classes removeObjectAtIndex:[indexPath row]];
+        [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:_indexPathToBeDeleted] withRowAnimation:UITableViewRowAnimationFade];
+        [_classes removeObjectAtIndex:[_indexPathToBeDeleted row]];
         NSLog(@"%d", [_classes count]);
-        [tableView endUpdates];
+        [[self tableView] endUpdates];
     }
 }
 

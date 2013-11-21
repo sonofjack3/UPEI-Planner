@@ -60,7 +60,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"Number of classes: %d", [_projects count]);
+    NSLog(@"Number of projects: %d", [_projects count]);
     return [_projects count];
 }
 
@@ -76,7 +76,7 @@
     // Configure the cell...
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
-   Project *project = [_projects objectAtIndex:[indexPath row]];
+    Project *project = [_projects objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[project name]];
     [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [project due_date]]];
     
@@ -167,17 +167,27 @@
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *ipaths = [NSArray arrayWithObject:indexPath];
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [tableView beginUpdates];
+        _indexPathToBeDeleted = indexPath;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Delete %@?", [[_projects objectAtIndex:[indexPath row]] name]] message:nil delegate:self cancelButtonTitle:@"Delete" otherButtonTitles:@"Cancel", nil];
+        [alertView show];
+    }
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) //delete confirmation
+    {
+        [[self tableView] beginUpdates];
         NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Project" inManagedObjectContext:context];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:entity];
         NSError *error = nil;
-        Project *projectToDelete = [[context executeFetchRequest:request error:&error] objectAtIndex:[indexPath row]];
+        Project *projectToDelete = [[context executeFetchRequest:request error:&error] objectAtIndex:[[self indexPathToBeDeleted] row]];
         [context deleteObject:projectToDelete];
+        [[_course project] removeObject:projectToDelete];
         if ([context save:&error])
         {
             NSLog(@"Saved successfully");
@@ -186,10 +196,10 @@
         {
             NSLog(@"Save error: %@", [error localizedDescription]);
         }
-        [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
-        [_projects removeObjectAtIndex:[indexPath row]];
+        [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:_indexPathToBeDeleted] withRowAnimation:UITableViewRowAnimationFade];
+        [_projects removeObjectAtIndex:[_indexPathToBeDeleted row]];
         NSLog(@"%d", [_projects count]);
-        [tableView endUpdates];
+        [[self tableView] endUpdates];
     }
 }
 

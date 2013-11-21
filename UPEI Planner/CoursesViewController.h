@@ -12,8 +12,9 @@
 #import "AddClassController.h"
 #import "SingleCourseViewController.h"
 
-@interface CoursesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CoursesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *classes;
+@property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted;
 
 @end

@@ -129,6 +129,7 @@
     return cell;
 }
 
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -224,6 +225,11 @@
     [assignList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
     [projectList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
     [[self tableView] reloadData];
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"Mark as complete";
 }
 
 - (void) viewWillAppear:(BOOL)animated

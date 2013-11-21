@@ -12,6 +12,9 @@
 #import "Project.h"
 #import "AppDelegate.h"
 #import "StudentClass.h"
+#import "AssignDetailsController.h"
+#import "ExamDetailsController.h"
+#import "ProjectDetailsController.h"
 
 @interface CalendarViewController : UITableViewController
 

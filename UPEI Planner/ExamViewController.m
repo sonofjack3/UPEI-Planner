@@ -60,7 +60,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"Number of classes: %d", [_exams count]);
+    NSLog(@"Number of exams: %d", [_exams count]);
     return [_exams count];
 }
 
@@ -167,17 +167,27 @@
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *ipaths = [NSArray arrayWithObject:indexPath];
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [tableView beginUpdates];
+        _indexPathToBeDeleted = indexPath;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Delete %@?", [[_exams objectAtIndex:[indexPath row]] name]] message:nil delegate:self cancelButtonTitle:@"Delete" otherButtonTitles:@"Cancel", nil];
+        [alertView show];
+    }
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) //delete confirmation
+    {
+        [[self tableView] beginUpdates];
         NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Exam" inManagedObjectContext:context];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:entity];
         NSError *error = nil;
-        Exam *examToDelete = [[context executeFetchRequest:request error:&error] objectAtIndex:[indexPath row]];
+        Exam *examToDelete = [[context executeFetchRequest:request error:&error] objectAtIndex:[[self indexPathToBeDeleted] row]];
         [context deleteObject:examToDelete];
+        [[_course exam] removeObject:examToDelete];
         if ([context save:&error])
         {
             NSLog(@"Saved successfully");
@@ -186,10 +196,10 @@
         {
             NSLog(@"Save error: %@", [error localizedDescription]);
         }
-        [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
-        [_exams removeObjectAtIndex:[indexPath row]];
+        [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:_indexPathToBeDeleted] withRowAnimation:UITableViewRowAnimationFade];
+        [_exams removeObjectAtIndex:[_indexPathToBeDeleted row]];
         NSLog(@"%d", [_exams count]);
-        [tableView endUpdates];
+        [[self tableView] endUpdates];
     }
 }
 
