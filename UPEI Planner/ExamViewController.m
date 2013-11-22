@@ -52,7 +52,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
@@ -74,11 +73,13 @@
     }
     
     // Configure the cell...
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     Exam *exam = [_exams objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[exam name]];
-    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [exam due_date]]];
+    
+    
+    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Date of exam: %@", [exam due_date]]];
     
     return cell;
     //return nil;

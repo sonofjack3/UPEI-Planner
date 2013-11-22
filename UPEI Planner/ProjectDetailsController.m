@@ -84,6 +84,11 @@
 //User edits saved after fields are edited; called when first responder status is resigned
 - (void) textFieldDidEndEditing:(UITextField *)textField
 {
+    [self saveChanges];
+}
+
+- (void) saveChanges
+{
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [_project setDue_date:[dateField text]];
@@ -99,6 +104,7 @@
     [dateFormat setDateFormat:@"MM-dd-yy HH:mm"];
     UIDatePicker *picker = (UIDatePicker*)self.dateField.inputView;
     self.dateField.text = [NSString stringWithFormat:@"%@",[dateFormat stringFromDate:picker.date]];
+    [self saveChanges];
 }
 
 - (void)didReceiveMemoryWarning

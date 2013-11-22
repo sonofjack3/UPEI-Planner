@@ -69,6 +69,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    if ([indexPath row] != 0) //any row except the first
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     switch ([indexPath row])
     {
         case 0: //course description

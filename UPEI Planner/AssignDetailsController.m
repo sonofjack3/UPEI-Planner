@@ -106,6 +106,7 @@
     [dateFormat setDateFormat:@"MM-dd-yy HH:mm"];
     UIDatePicker *picker = (UIDatePicker*)self.dueField.inputView;
     self.dueField.text = [NSString stringWithFormat:@"%@",[dateFormat stringFromDate:picker.date]];
+    [self saveChanges];
 }
 
 - (void)didReceiveMemoryWarning

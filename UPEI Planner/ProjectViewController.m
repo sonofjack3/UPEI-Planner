@@ -52,7 +52,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
@@ -74,11 +73,35 @@
     }
     
     // Configure the cell...
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     Project *project = [_projects objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[project name]];
-    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@", [project due_date]]];
+    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Due: %@", [project due_date]]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yy HH:mm"];
+    NSDate *dateNow = [NSDate date];
+    NSString *now = [dateFormatter stringFromDate:dateNow];
+    dateNow = [dateFormatter dateFromString:now];
+    NSDate *dueDate = [dateFormatter dateFromString:[project due_date]];
+    NSLog(@"%@", now);
+    NSLog(@"%@", [project due_date]);
+    if (([[project completed] isEqualToNumber:[NSNumber numberWithInt:0]]) &&  ([dueDate compare:dateNow] == NSOrderedDescending)) //if assignment is not yet completed and not overdue
+    {
+        [[cell detailTextLabel]setText:[NSString stringWithFormat:@"INCOMPLETE. Due: %@", [project due_date]]];
+        ([[cell detailTextLabel] setTextColor:[UIColor grayColor]]);
+    }
+    else if ([[project completed] isEqualToNumber:[NSNumber numberWithInt:1]]) //assignment is completed
+    {
+        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"COMPLETED. Due: %@", [project due_date]]];
+        [[cell detailTextLabel] setTextColor:[UIColor colorWithRed:0 green:0.6 blue:0 alpha:1]];
+    }
+    else if (([[project completed] isEqualToNumber:[NSNumber numberWithInt:0]]) && ([dueDate compare:dateNow] == NSOrderedAscending))
+    {
+        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"OVERDUE. Due: %@", [project due_date]]];
+        [[cell detailTextLabel] setTextColor:[UIColor redColor]];
+    }
     
     return cell;
     //return nil;

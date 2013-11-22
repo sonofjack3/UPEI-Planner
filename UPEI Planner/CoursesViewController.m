@@ -73,7 +73,7 @@
     }
     
     // Configure the cell...
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     StudentClass *class = [_classes objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[class name]];
