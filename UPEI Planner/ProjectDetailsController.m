@@ -24,7 +24,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -57,6 +56,17 @@
     }
 }
 
+- (void) saveChanges
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [_project setDue_date:[dateField text]];
+    [_project setWeight:[formatter numberFromString:[weightField text]]];
+    [_project setName:[nameField text]];
+    [_project setMark:[formatter numberFromString:[markField text]]];
+    [self viewDidLoad];
+}
+
 - (BOOL) textFieldShouldBeginEditing:(UITextField *)textField
 {
     if ([textField isEqual:dateField]) //bring up date picker when due field is tapped
@@ -85,17 +95,6 @@
 - (void) textFieldDidEndEditing:(UITextField *)textField
 {
     [self saveChanges];
-}
-
-- (void) saveChanges
-{
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [_project setDue_date:[dateField text]];
-    [_project setWeight:[formatter numberFromString:[weightField text]]];
-    [_project setName:[nameField text]];
-    [_project setMark:[formatter numberFromString:[markField text]]];
-    [self viewDidLoad];
 }
 
 -(void)updateTextField:(id)sender

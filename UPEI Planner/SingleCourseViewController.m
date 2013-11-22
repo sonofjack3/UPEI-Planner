@@ -22,9 +22,6 @@
         [self setTitle:_classID];
     }
     
-    NSString *string = [NSString stringWithFormat:@"Hey"];
-    [_course setAssignment:[[NSMutableSet alloc] initWithObjects:string, nil]];
-    
     return self;
 }
 
@@ -154,12 +151,10 @@
     ExamViewController *examsController;
     switch ([indexPath row]) {
         case 1: //Assignments
-        {
             assignsController = [[AssignmentsViewController alloc] init];
             [assignsController setCourse:_course];
             [[self navigationController] pushViewController:assignsController animated:YES];
             break;
-        }
         case 2: //Projects
             projectsController = [[ProjectViewController alloc] init];
             [projectsController setCourse:_course];

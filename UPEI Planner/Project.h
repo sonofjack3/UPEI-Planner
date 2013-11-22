@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class StudentClass;
 
 @interface Project : NSManagedObject
 
@@ -19,6 +20,6 @@
 @property (nonatomic, retain) id members;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * weight;
-@property (nonatomic, retain) NSManagedObject *classes;
+@property (nonatomic, retain) StudentClass *classes;
 
 @end

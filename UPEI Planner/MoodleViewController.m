@@ -35,8 +35,8 @@
     /* My Courses button is always enabled */
     _myCoursesButton.enabled = YES;
     
-    NSString *moodleURL = @"http://moodle.upei.ca";
-    NSURL *url = [NSURL URLWithString:moodleURL];
+    _stringURL = @"http://moodle.upei.ca";
+    NSURL *url = [NSURL URLWithString:_stringURL];
     NSURLRequest *requestObject = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObject];
 }

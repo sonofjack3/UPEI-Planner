@@ -97,34 +97,61 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
     }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yy HH:mm"];
+    NSDate *dateNow = [NSDate date];
+    NSString *now = [dateFormatter stringFromDate:dateNow];
+    dateNow = [dateFormatter dateFromString:now];
+    NSDate *dueDate;
+    NSString *dueDateString;
+    NSNumber *completed;
+    
+    /* Configure each cell */
     switch([indexPath section]){
-        case 0:{
-            // Configure the cell...
-            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-            
+        case 0:{ //exams
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             Exam *exam = [examList objectAtIndex:[indexPath row]];
+            dueDate = [dateFormatter dateFromString:[exam due_date]];
+            dueDateString = [exam due_date];
+            completed = [exam completed];
             [[cell textLabel] setText:[exam name]];
-            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Due: %@", [exam due_date]]];
+            [[cell detailTextLabel] setText:[NSString stringWithFormat:@"Exam date: %@", dueDateString]];
             break;}
-        case 1:{
-            // Configure the cell...
-            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-            
+        case 1:{ //assignments
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             Assignment *assign = [assignList objectAtIndex:[indexPath row]];
+            dueDate = [dateFormatter dateFromString:[assign due_date]];
+            dueDateString = [assign due_date];
+            completed = [assign completed];
             [[cell textLabel] setText:[assign name]];
-            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Due: %@", [assign due_date]]];
             break;}
-        case 2:{
-            // Configure the cell...
-            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-            
+        case 2:{ //projects
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             Project *project = [projectList objectAtIndex:[indexPath row]];
+            dueDate = [dateFormatter dateFromString:[project due_date]];
+            dueDateString = [project due_date];
+            completed = [project completed];
             [[cell textLabel] setText:[project name]];
-            
-            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Due: %@", [project due_date]]];
             break;}
     }
     
+    if ([indexPath section] != 0) //completion status not shown for exams
+    {
+        /* Configure detailText for each cell with due date and completed status */
+        if (([completed isEqualToNumber:[NSNumber numberWithInt:0]]) &&  ([dueDate compare:dateNow] == NSOrderedDescending)) //if item is not yet completed and not overdue
+        {
+            [[cell detailTextLabel]setText:[NSString stringWithFormat:@"INCOMPLETE. Due: %@", dueDateString]];
+            ([[cell detailTextLabel] setTextColor:[UIColor grayColor]]);
+        }
+        else if (([completed isEqualToNumber:[NSNumber numberWithInt:0]]) && ([dueDate compare:dateNow] == NSOrderedAscending)) //if item is not completed and is overdue
+        {
+            [[cell detailTextLabel] setText:[NSString stringWithFormat:@"OVERDUE. Due: %@", dueDateString]];
+            [[cell detailTextLabel] setTextColor:[UIColor redColor]];
+        }
+    }
+    
+    //Completed items are not shown
     
     return cell;
 }
@@ -168,6 +195,31 @@
     return YES;
 }
 */
+
+//Selecting an item will bring up that item's detailed view
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch ([indexPath section]) {
+        case 0: { //exams
+            ExamDetailsController *next = [[ExamDetailsController alloc] initWithNibName:@"ExamDetailsController" bundle:nil];
+            [next setExam:[examList objectAtIndex:indexPath.row]];
+            [[self navigationController] pushViewController:next animated:YES];
+            break;
+        }
+        case 1: { //assignments
+            AssignDetailsController *next = [[AssignDetailsController alloc] initWithNibName:@"AssignDetailsController" bundle:nil];
+            [next setAssignment:[assignList objectAtIndex:indexPath.row]];
+            [[self navigationController] pushViewController:next animated:YES];
+            break;
+        }
+        case 2: { //projects
+            ProjectDetailsController *next = [[ProjectDetailsController alloc] initWithNibName:@"ProjectDetailsController" bundle:nil];
+            [next setProject:[_projects objectAtIndex:indexPath.row]];
+            [[self navigationController] pushViewController:next animated:YES];
+        }
+    }
+}
+
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
@@ -240,16 +292,6 @@
 }
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 -(UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return UITableViewCellEditingStyleDelete;

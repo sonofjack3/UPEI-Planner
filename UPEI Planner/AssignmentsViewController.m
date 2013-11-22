@@ -149,12 +149,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*SingleCourseViewController *next = [[SingleCourseViewController alloc] initWithNibName:@"SingleCourseViewController" bundle:nil];
-    [next setRowNumber:[indexPath row]];
-    NSString *prefix = [[_classes objectAtIndex:[indexPath row]] classprefix];
-    NSString *number = [prefix stringByAppendingFormat:@" %@", [[_classes objectAtIndex:[indexPath row]] classnumber]];
-    [next setClassID:number];
-    [[self navigationController] pushViewController:next animated:YES];*/
     AssignDetailsController *next = [[AssignDetailsController alloc] initWithNibName:@"AssignDetailsController" bundle:nil];
     [next setAssignment:[_assignments objectAtIndex:indexPath.row]];
     [[self navigationController] pushViewController:next animated:YES];
@@ -170,8 +164,11 @@
 // Performs a fetch and reloads the table view.
 - (void) loadTableData {
     _assignments = [NSMutableArray arrayWithArray:[[_course assignment] allObjects]];
-    
     [_course setAssignment:[NSSet setWithArray:_assignments]];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
+    [_assignments sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
     [[self tableView] reloadData];
 }
 

@@ -77,7 +77,6 @@
     
     Project *project = [_projects objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[project name]];
-    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Due: %@", [project due_date]]];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yy HH:mm"];
@@ -163,10 +162,12 @@
 
 // Performs a fetch and reloads the table view.
 - (void) loadTableData {
-    
     _projects = [NSMutableArray arrayWithArray:[[_course project] allObjects]];
-    
     [_course setProject:[NSSet setWithArray:_projects]];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
+    [_projects sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
     [[self tableView] reloadData];
 }
 

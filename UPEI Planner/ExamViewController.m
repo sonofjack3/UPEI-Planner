@@ -141,10 +141,12 @@
 
 // Performs a fetch and reloads the table view.
 - (void) loadTableData {
-    
     _exams = [NSMutableArray arrayWithArray:[[_course exam] allObjects]];
-    
     [_course setExam:[NSSet setWithArray:_exams]];
+    
+    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
+    [_exams sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
+    
     [[self tableView] reloadData];
 }
 
