@@ -1,24 +1,23 @@
 //
-//  Assignment.m
+//  Exam.m
 //  UPEI Planner
 //
-//  Created by Kyle Pineau on 2013-11-11.
+//  Created by Kyle Pineau on 2013-11-22.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
 
-#import "Assignment.h"
+#import "Exam.h"
 #import "StudentClass.h"
 
 
-@implementation Assignment
+@implementation Exam
 
 @dynamic completed;
+@dynamic descript;
 @dynamic due_date;
-@dynamic link;
+@dynamic location;
 @dynamic mark;
 @dynamic name;
-@dynamic number;
-@dynamic weight;
-@synthesize classes;
+@dynamic classes;
 
 @end

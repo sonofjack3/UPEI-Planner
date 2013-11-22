@@ -16,7 +16,6 @@
 
 @synthesize nameField;
 @synthesize dateField;
-@synthesize weightField;
 @synthesize markField;
 @synthesize completeSelect;
 
@@ -33,13 +32,11 @@
     [super viewDidLoad];
     [self setTitle:[_project name]];
     [[self dateField]setText:[_project due_date]];
-    [[self weightField]setText:[[_project weight]stringValue]];
     [[self nameField]setText:[_project name]];
     [[self membersField]setText:[_project members]];
     [[self markField]setText:[[_project mark] stringValue]];
     [completeSelect setSelectedSegmentIndex:[[_project completed]integerValue]];
     [dateField setUserInteractionEnabled:YES];
-    [weightField setUserInteractionEnabled:YES];
     [nameField setUserInteractionEnabled:YES];
     [nameField setUserInteractionEnabled:YES];
     [completeSelect setUserInteractionEnabled:YES];
@@ -61,7 +58,6 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [_project setDue_date:[dateField text]];
-    [_project setWeight:[formatter numberFromString:[weightField text]]];
     [_project setName:[nameField text]];
     [_project setMark:[formatter numberFromString:[markField text]]];
     [self viewDidLoad];

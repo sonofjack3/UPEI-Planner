@@ -88,7 +88,6 @@
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [assignment setName:[_nameField text]];
     [assignment setDue_date:[_dateField text]];
-    [assignment setWeight:[formatter numberFromString:[_weightField text]]];
     [assignment setClasses:_course];
     NSInteger selectedSegment = _completedSelector.selectedSegmentIndex;
      

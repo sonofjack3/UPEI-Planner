@@ -15,7 +15,6 @@
 @implementation AssignDetailsController
 @synthesize nameField;
 @synthesize dueField;
-@synthesize weightField;
 @synthesize markField;
 @synthesize completeSelect;
 
@@ -32,14 +31,12 @@
     [super viewDidLoad];
     [self setTitle:[_assignment name]];
     [[self dueField]setText:[_assignment due_date]];
-    [[self weightField]setText:[[_assignment weight]stringValue]];
     [[self nameField]setText:[_assignment name]];
     [[self markField] setText:[[_assignment mark] stringValue]];
     [completeSelect setSelectedSegmentIndex:[[_assignment completed]integerValue]];
     
     //Enable text fields and segmented-control
     [dueField setUserInteractionEnabled:YES];
-    [weightField setUserInteractionEnabled:YES];
     [nameField setUserInteractionEnabled:YES];
     [nameField setUserInteractionEnabled:YES];
     [completeSelect setUserInteractionEnabled:YES];
@@ -62,7 +59,6 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [_assignment setDue_date:[dueField text]];
-    [_assignment setWeight:[formatter numberFromString:[weightField text]]];
     [_assignment setName:[nameField text]];
     [_assignment setMark:[formatter numberFromString:[markField text]]];
     [self viewDidLoad];

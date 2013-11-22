@@ -87,7 +87,6 @@
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [project setName:[_nameField text]];
     [project setDue_date:[_dateField text]];
-    [project setWeight:[formatter numberFromString:[_weightField text]]];
     
     [project setClasses:_course];
     [[_course project] addObject:project];

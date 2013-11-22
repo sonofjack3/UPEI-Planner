@@ -86,7 +86,6 @@
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [exam setName:[_nameField text]];
     [exam setDue_date:[_dateField text]];
-    [exam setWeight:[formatter numberFromString:[_weightField text]]];
     
     [exam setClasses:_course];
     [[_course exam] addObject:exam];

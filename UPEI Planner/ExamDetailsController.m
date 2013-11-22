@@ -15,7 +15,6 @@
 @implementation ExamDetailsController
 @synthesize nameField;
 @synthesize dateField;
-@synthesize weightField;
 @synthesize markField;
 @synthesize completeSelect;
 
@@ -32,12 +31,10 @@
     [super viewDidLoad];
     [self setTitle:[_exam name]];
     [[self dateField]setText:[_exam due_date]];
-    [[self weightField]setText:[[_exam weight]stringValue]];
     [[self nameField]setText:[_exam name]];
     [[self markField]setText:[[_exam mark] stringValue]];
     [completeSelect setSelectedSegmentIndex:[[_exam completed]integerValue]];
     [dateField setUserInteractionEnabled:YES];
-    [weightField setUserInteractionEnabled:YES];
     [nameField setUserInteractionEnabled:YES];
     [nameField setUserInteractionEnabled:YES];
     [completeSelect setUserInteractionEnabled:YES];
@@ -89,7 +86,6 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [_exam setDue_date:[dateField text]];
-    [_exam setWeight:[formatter numberFromString:[weightField text]]];
     [_exam setName:[nameField text]];
     [_exam setMark:[formatter numberFromString:[markField text]]];
     [self viewDidLoad];

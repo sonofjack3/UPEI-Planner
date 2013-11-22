@@ -15,13 +15,13 @@
 		2607CAF5183C65EF00088BBF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2607CAF3183C65EF00088BBF /* AddressBook.framework */; };
 		2607CAF6183C65EF00088BBF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2607CAF4183C65EF00088BBF /* AddressBookUI.framework */; };
 		2607CAF8183D1DBF00088BBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2607CAF7183D1DBE00088BBF /* Default-568h@2x.png */; };
+		269F9BED183FB27E00EFF7E7 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F9BEC183FB27E00EFF7E7 /* Exam.m */; };
+		269F9BF3183FB27F00EFF7E7 /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F9BF2183FB27F00EFF7E7 /* Assignment.m */; };
+		269F9BF6183FB27F00EFF7E7 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F9BF5183FB27F00EFF7E7 /* Project.m */; };
 		26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */; };
 		26A6FEAB183BF5C000E9C353 /* AssignDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */; };
 		26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A79392182BCC0300717995 /* DataModel.xcdatamodeld */; };
-		26BD4389183139E700DA7339 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4388183139E700DA7339 /* Project.m */; };
 		26BD438C183139E800DA7339 /* StudentClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD438B183139E800DA7339 /* StudentClass.m */; };
-		26BD438F183139E800DA7339 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD438E183139E800DA7339 /* Exam.m */; };
-		26BD4392183139E800DA7339 /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4391183139E800DA7339 /* Assignment.m */; };
 		26BD4395183139E800DA7339 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4394183139E800DA7339 /* Student.m */; };
 		26BD4399183424A100DA7339 /* EditStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD4397183424A100DA7339 /* EditStudentController.m */; };
 		26BD439A183424A100DA7339 /* EditStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BD4398183424A100DA7339 /* EditStudentController.xib */; };
@@ -99,18 +99,18 @@
 		2607CAF3183C65EF00088BBF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		2607CAF4183C65EF00088BBF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		2607CAF7183D1DBE00088BBF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		269F9BEB183FB27E00EFF7E7 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exam.h; path = ../Exam.h; sourceTree = "<group>"; };
+		269F9BEC183FB27E00EFF7E7 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exam.m; path = ../Exam.m; sourceTree = "<group>"; };
+		269F9BF1183FB27F00EFF7E7 /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assignment.h; path = ../Assignment.h; sourceTree = "<group>"; };
+		269F9BF2183FB27F00EFF7E7 /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assignment.m; path = ../Assignment.m; sourceTree = "<group>"; };
+		269F9BF4183FB27F00EFF7E7 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Project.h; path = ../Project.h; sourceTree = "<group>"; };
+		269F9BF5183FB27F00EFF7E7 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Project.m; path = ../Project.m; sourceTree = "<group>"; };
 		26A6FEA7183BF5C000E9C353 /* AssignDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignDetailsController.h; sourceTree = "<group>"; };
 		26A6FEA8183BF5C000E9C353 /* AssignDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignDetailsController.m; sourceTree = "<group>"; };
 		26A6FEA9183BF5C000E9C353 /* AssignDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignDetailsController.xib; sourceTree = "<group>"; };
 		26A79393182BCC0300717995 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		26BD4387183139E700DA7339 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
-		26BD4388183139E700DA7339 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		26BD438A183139E800DA7339 /* StudentClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentClass.h; sourceTree = "<group>"; };
 		26BD438B183139E800DA7339 /* StudentClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentClass.m; sourceTree = "<group>"; };
-		26BD438D183139E800DA7339 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
-		26BD438E183139E800DA7339 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
-		26BD4390183139E800DA7339 /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignment.h; sourceTree = "<group>"; };
-		26BD4391183139E800DA7339 /* Assignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assignment.m; sourceTree = "<group>"; };
 		26BD4393183139E800DA7339 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		26BD4394183139E800DA7339 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		26BD4396183424A100DA7339 /* EditStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditStudentController.h; sourceTree = "<group>"; };
@@ -359,8 +359,8 @@
 		4BE4BAF9183D585F0060E082 /* Assignments */ = {
 			isa = PBXGroup;
 			children = (
-				26BD4390183139E800DA7339 /* Assignment.h */,
-				26BD4391183139E800DA7339 /* Assignment.m */,
+				269F9BF1183FB27F00EFF7E7 /* Assignment.h */,
+				269F9BF2183FB27F00EFF7E7 /* Assignment.m */,
 				4BBE4536183B13840018A6B5 /* AssignmentsViewController.h */,
 				4BBE4537183B13840018A6B5 /* AssignmentsViewController.m */,
 				4BBE4538183B13840018A6B5 /* AssignmentsViewController.xib */,
@@ -377,8 +377,8 @@
 		4BE4BAFA183D58840060E082 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				26BD4387183139E700DA7339 /* Project.h */,
-				26BD4388183139E700DA7339 /* Project.m */,
+				269F9BF4183FB27F00EFF7E7 /* Project.h */,
+				269F9BF5183FB27F00EFF7E7 /* Project.m */,
 				26C4B8ED183BA59C002BF64F /* ProjectViewController.h */,
 				26C4B8EE183BA59C002BF64F /* ProjectViewController.m */,
 				26C4B8EF183BA59D002BF64F /* ProjectViewController.xib */,
@@ -395,8 +395,8 @@
 		4BE4BAFB183D58EB0060E082 /* Exams */ = {
 			isa = PBXGroup;
 			children = (
-				26BD438D183139E800DA7339 /* Exam.h */,
-				26BD438E183139E800DA7339 /* Exam.m */,
+				269F9BEB183FB27E00EFF7E7 /* Exam.h */,
+				269F9BEC183FB27E00EFF7E7 /* Exam.m */,
 				26C4B8F7183BAAA8002BF64F /* ExamViewController.h */,
 				26C4B8F8183BAAA8002BF64F /* ExamViewController.m */,
 				26C4B8F9183BAAA8002BF64F /* ExamViewController.xib */,
@@ -562,10 +562,7 @@
 				4BD4CCA918285AD9004F8834 /* InformationViewController.m in Sources */,
 				4BD4CCB618285C88004F8834 /* MoodleViewController.m in Sources */,
 				26A79394182BCC0300717995 /* DataModel.xcdatamodeld in Sources */,
-				26BD4389183139E700DA7339 /* Project.m in Sources */,
 				26BD438C183139E800DA7339 /* StudentClass.m in Sources */,
-				26BD438F183139E800DA7339 /* Exam.m in Sources */,
-				26BD4392183139E800DA7339 /* Assignment.m in Sources */,
 				26BD4395183139E800DA7339 /* Student.m in Sources */,
 				26BD4399183424A100DA7339 /* EditStudentController.m in Sources */,
 				4BDFD5061837E7520016A21C /* CoursesViewController.m in Sources */,
@@ -582,6 +579,9 @@
 				26A6FEAA183BF5C000E9C353 /* AssignDetailsController.m in Sources */,
 				2607CAE0183BFAB900088BBF /* ExamDetailsController.m in Sources */,
 				2607CAE5183BFAC800088BBF /* ProjectDetailsController.m in Sources */,
+				269F9BED183FB27E00EFF7E7 /* Exam.m in Sources */,
+				269F9BF3183FB27F00EFF7E7 /* Assignment.m in Sources */,
+				269F9BF6183FB27F00EFF7E7 /* Project.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

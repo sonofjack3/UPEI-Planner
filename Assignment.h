@@ -1,8 +1,8 @@
 //
-//  Project.h
+//  Assignment.h
 //  UPEI Planner
 //
-//  Created by Kyle Pineau on 2013-11-11.
+//  Created by Kyle Pineau on 2013-11-22.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
 
@@ -11,15 +11,13 @@
 
 @class StudentClass;
 
-@interface Project : NSManagedObject
+@interface Assignment : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * completed;
 @property (nonatomic, retain) NSString * due_date;
-@property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSNumber * mark;
-@property (nonatomic, retain) id members;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * weight;
+@property (nonatomic, retain) NSNumber * number;
 @property (nonatomic, retain) StudentClass *classes;
 
 @end
