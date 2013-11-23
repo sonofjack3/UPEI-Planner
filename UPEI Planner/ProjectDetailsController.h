@@ -8,14 +8,16 @@
 #import "Project.h"
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface ProjectDetailsController : UIViewController <UITextFieldDelegate>
+@interface ProjectDetailsController : UIViewController <UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UITextField *membersField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *completeSelect;
 @property (weak, nonatomic) IBOutlet UITextField *markField;
 - (IBAction)completedChanged:(id)sender;
+- (IBAction)selectMembers:(id)sender;
 
 @property Project *project;
 @end

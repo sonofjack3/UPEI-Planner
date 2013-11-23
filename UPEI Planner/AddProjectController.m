@@ -60,6 +60,11 @@
     return YES;
 }
 
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [[self view] endEditing:YES];
+}
+
 #pragma mark - private methods
 
 - (AppDelegate *) appDelegate
@@ -87,6 +92,8 @@
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [project setName:[_nameField text]];
     [project setDue_date:[_dateField text]];
+    [project setMembers:[_groupField text]];
+    [project setCompleted:[NSNumber numberWithInt:0]]; //set to not completed for new projects
     
     [project setClasses:_course];
     [[_course project] addObject:project];
@@ -145,7 +152,10 @@
     NSString* name = (__bridge_transfer NSString*)ABRecordCopyValue(person,
                                                                    kABPersonFirstNameProperty);
     NSString *current = self.groupField.text; 
-    self.groupField.text = [NSString stringWithFormat:@"%@ , %@", name, current];;
+    if (current == NULL) //if group field is empty
+        self.groupField.text = [NSString stringWithFormat:@"%@", name];
+    else //group field is not empty; place new name in front of current text
+        self.groupField.text = [NSString stringWithFormat:@"%@, %@", name, current];
     
     NSString* phone = nil;
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,

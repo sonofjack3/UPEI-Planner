@@ -84,6 +84,11 @@
     return YES;
 }
 
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [[self view] endEditing:YES];
+}
+
 #pragma mark - private methods
 
 - (AppDelegate *) appDelegate

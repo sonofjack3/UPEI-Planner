@@ -70,6 +70,12 @@
     return YES;
 }
 
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self saveChanges];
+    [[self view] endEditing:YES];
+}
+
 - (AppDelegate *) appDelegate
 {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
