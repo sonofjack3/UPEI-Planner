@@ -14,7 +14,6 @@
 		2607CAF2183C5EBE00088BBF /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2607CAF1183C5EBE00088BBF /* InformationViewController.xib */; };
 		2607CAF5183C65EF00088BBF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2607CAF3183C65EF00088BBF /* AddressBook.framework */; };
 		2607CAF6183C65EF00088BBF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2607CAF4183C65EF00088BBF /* AddressBookUI.framework */; };
-		2607CAF8183D1DBF00088BBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2607CAF7183D1DBE00088BBF /* Default-568h@2x.png */; };
 		269F9BED183FB27E00EFF7E7 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F9BEC183FB27E00EFF7E7 /* Exam.m */; };
 		269F9BF3183FB27F00EFF7E7 /* Assignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F9BF2183FB27F00EFF7E7 /* Assignment.m */; };
 		269F9BF6183FB27F00EFF7E7 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F9BF5183FB27F00EFF7E7 /* Project.m */; };
@@ -65,6 +64,10 @@
 		4BDFD5071837E7520016A21C /* CoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFD5051837E7520016A21C /* CoursesViewController.xib */; };
 		4BE4269118391C3900CBBEBB /* AddClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4268F18391C3900CBBEBB /* AddClassController.m */; };
 		4BE4269218391C3900CBBEBB /* AddClassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE4269018391C3900CBBEBB /* AddClassController.xib */; };
+		4BF4F8B81842971F00430D2E /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF4F8B51842971F00430D2E /* calendar.png */; };
+		4BF4F8B91842971F00430D2E /* earth-usa.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF4F8B61842971F00430D2E /* earth-usa.png */; };
+		4BF4F8BA1842971F00430D2E /* text-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF4F8B71842971F00430D2E /* text-list.png */; };
+		4BF4F8BC18429A6E00430D2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF4F8BB18429A6E00430D2E /* Default-568h@2x.png */; };
 		4BFF8C86182FD08C007A5DE2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF8C7B182FD08B007A5DE2 /* Icon-72.png */; };
 		4BFF8C87182FD08C007A5DE2 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF8C7C182FD08C007A5DE2 /* Icon-72@2x.png */; };
 		4BFF8C88182FD08C007A5DE2 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF8C7D182FD08C007A5DE2 /* Icon-Small-50.png */; };
@@ -98,7 +101,6 @@
 		2607CAF1183C5EBE00088BBF /* InformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		2607CAF3183C65EF00088BBF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		2607CAF4183C65EF00088BBF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		2607CAF7183D1DBE00088BBF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		269F9BEB183FB27E00EFF7E7 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exam.h; path = ../Exam.h; sourceTree = "<group>"; };
 		269F9BEC183FB27E00EFF7E7 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exam.m; path = ../Exam.m; sourceTree = "<group>"; };
 		269F9BF1183FB27F00EFF7E7 /* Assignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assignment.h; path = ../Assignment.h; sourceTree = "<group>"; };
@@ -174,6 +176,10 @@
 		4BE4268E18391C3900CBBEBB /* AddClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddClassController.h; sourceTree = "<group>"; };
 		4BE4268F18391C3900CBBEBB /* AddClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddClassController.m; sourceTree = "<group>"; };
 		4BE4269018391C3900CBBEBB /* AddClassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddClassController.xib; sourceTree = "<group>"; };
+		4BF4F8B51842971F00430D2E /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		4BF4F8B61842971F00430D2E /* earth-usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earth-usa.png"; sourceTree = "<group>"; };
+		4BF4F8B71842971F00430D2E /* text-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-list.png"; sourceTree = "<group>"; };
+		4BF4F8BB18429A6E00430D2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		4BFF8C7B182FD08B007A5DE2 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		4BFF8C7C182FD08C007A5DE2 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		4BFF8C7D182FD08C007A5DE2 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -218,9 +224,6 @@
 		4BD4CC5F18285A27004F8834 = {
 			isa = PBXGroup;
 			children = (
-				2607CAF7183D1DBE00088BBF /* Default-568h@2x.png */,
-				2607CAF3183C65EF00088BBF /* AddressBook.framework */,
-				2607CAF4183C65EF00088BBF /* AddressBookUI.framework */,
 				4BD4CC7318285A27004F8834 /* UPEI Planner */,
 				4BD4CC9518285A28004F8834 /* UPEI PlannerTests */,
 				4BD4CC6A18285A27004F8834 /* Frameworks */,
@@ -240,6 +243,8 @@
 		4BD4CC6A18285A27004F8834 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2607CAF3183C65EF00088BBF /* AddressBook.framework */,
+				2607CAF4183C65EF00088BBF /* AddressBookUI.framework */,
 				4BD4CC6B18285A27004F8834 /* UIKit.framework */,
 				4BD4CC6D18285A27004F8834 /* Foundation.framework */,
 				4BD4CC6F18285A27004F8834 /* CoreGraphics.framework */,
@@ -270,6 +275,10 @@
 		4BD4CC7418285A27004F8834 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4BF4F8BB18429A6E00430D2E /* Default-568h@2x.png */,
+				4BF4F8B51842971F00430D2E /* calendar.png */,
+				4BF4F8B61842971F00430D2E /* earth-usa.png */,
+				4BF4F8B71842971F00430D2E /* text-list.png */,
 				4B9101C81830206B009F3885 /* Default.png */,
 				4B9101C91830206B009F3885 /* Default@2x.png */,
 				4BD4CC7518285A27004F8834 /* UPEI Planner-Info.plist */,
@@ -522,7 +531,10 @@
 				2607CAE1183BFAB900088BBF /* ExamDetailsController.xib in Resources */,
 				2607CAE6183BFAC800088BBF /* ProjectDetailsController.xib in Resources */,
 				2607CAF2183C5EBE00088BBF /* InformationViewController.xib in Resources */,
-				2607CAF8183D1DBF00088BBF /* Default-568h@2x.png in Resources */,
+				4BF4F8B81842971F00430D2E /* calendar.png in Resources */,
+				4BF4F8B91842971F00430D2E /* earth-usa.png in Resources */,
+				4BF4F8BA1842971F00430D2E /* text-list.png in Resources */,
+				4BF4F8BC18429A6E00430D2E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +699,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UPEI Planner/UPEI Planner-Prefix.pch";
 				INFOPLIST_FILE = "UPEI Planner/UPEI Planner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -699,7 +711,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UPEI Planner/UPEI Planner-Prefix.pch";
 				INFOPLIST_FILE = "UPEI Planner/UPEI Planner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

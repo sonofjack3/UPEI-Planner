@@ -19,7 +19,7 @@
 - (id) init
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
-    [[self tabBarItem] setTitle:@"Info View"];
+    [[self tabBarItem] setImage:[UIImage imageNamed:@"calendar.png"]];
     [self setTitle:@"Agenda"];
     return self;
 }
@@ -29,7 +29,7 @@
     self = [super initWithStyle:style];
     if (self)
     {
-        [[self tabBarItem] setTitle:@"Info View"];
+        [[self tabBarItem] setTitle:@"Agenda"];
         [self setTitle:@"Agenda"];
     }
     return self;

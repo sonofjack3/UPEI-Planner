@@ -19,7 +19,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        [[self tabBarItem] setTitle:@"Moodle"];
+        [[self tabBarItem] setImage:[UIImage imageNamed:@"earth-usa"]];
+        [self setTitle:@"Moodle"];
     }
     return self;
 }
@@ -57,6 +58,7 @@
 {
     [_webView goBack];
 }
+
 - (IBAction)myCoursesAction:(id)sender
 {
     NSString *courseURL = @"http://moodle.upei.ca/my/";

@@ -20,7 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [[self tabBarItem] setTitle:@"Info View"];
+        [[self tabBarItem] setImage:[UIImage imageNamed:@"text-list.png"]];
         [self setTitle:@"Planner"];
     }
     return self;
