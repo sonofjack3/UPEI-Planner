@@ -28,7 +28,7 @@
     imagePickController.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
     imagePickController.delegate=self;
     imagePickController.allowsEditing=TRUE;
-    [self presentModalViewController:imagePickController animated:YES];
+    [self presentViewController:imagePickController animated:YES completion:NULL];
     
 }
 
@@ -39,7 +39,7 @@
     UIImage *image=[info objectForKey:UIImagePickerControllerEditedImage];
     imageView.image=image;
     //saveImageBotton.enabled=TRUE;
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)viewDidLoad
