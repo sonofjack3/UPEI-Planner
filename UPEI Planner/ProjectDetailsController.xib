@@ -945,7 +945,6 @@
 								<int key="contentType">3</int>
 							</object>
 							<reference ref="199316032"/>
-							<reference ref="907925948"/>
 							<reference ref="541325171"/>
 							<reference ref="864928899"/>
 							<reference ref="90105581"/>
@@ -954,6 +953,7 @@
 							<reference ref="767767090"/>
 							<reference ref="431344813"/>
 							<reference ref="912376043"/>
+							<reference ref="907925948"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
