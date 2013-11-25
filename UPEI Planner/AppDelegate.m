@@ -39,7 +39,7 @@
     //Info screen requires nav controller
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:info];
     //Calendar screen requires nav controller
-    UINavigationBar *calendarNavController = [[UINavigationController alloc] initWithRootViewController:calendar];
+    UINavigationController *calendarNavController = [[UINavigationController alloc] initWithRootViewController:calendar];
     //Create a tab bar view controller with tabs for each of the above three views
     UITabBarController *tabBar = [[UITabBarController alloc] init];
     NSArray *viewControllers = [NSArray arrayWithObjects:navController, calendarNavController, moodle, nil];

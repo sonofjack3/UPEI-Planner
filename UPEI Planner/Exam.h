@@ -1,8 +1,8 @@
 //
-//  Assignment.h
+//  Exam.h
 //  UPEI Planner
 //
-//  Created by Kyle Pineau on 2013-11-22.
+//  Created by Kyle Pineau on 2013-11-25.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
 
@@ -11,13 +11,12 @@
 
 @class StudentClass;
 
-@interface Assignment : NSManagedObject
+@interface Exam : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * completed;
 @property (nonatomic, retain) NSString * due_date;
 @property (nonatomic, retain) NSNumber * mark;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * number;
 @property (nonatomic, retain) StudentClass *classes;
 
 @end

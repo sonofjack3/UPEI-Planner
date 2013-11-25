@@ -182,7 +182,7 @@
     if (current == nil) //if members field is empty
         self.membersField.text = [NSString stringWithFormat:@"%@", name];
     else //members field is not empty; place new name in front of current text
-        self.membersField.text = [NSString stringWithFormat:@"%@, %@", current, name];
+        self.membersField.text = [NSString stringWithFormat:@"%@, %@", name, current];
     [self saveChanges];
     
     NSString* phone = nil;

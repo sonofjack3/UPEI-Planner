@@ -1,21 +1,20 @@
 //
-//  Project.m
+//  Assignment.m
 //  UPEI Planner
 //
-//  Created by Kyle Pineau on 2013-11-22.
+//  Created by Kyle Pineau on 2013-11-25.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
 
-#import "Project.h"
+#import "Assignment.h"
 #import "StudentClass.h"
 
 
-@implementation Project
+@implementation Assignment
 
 @dynamic completed;
 @dynamic due_date;
 @dynamic mark;
-@dynamic members;
 @dynamic name;
 @dynamic classes;
 

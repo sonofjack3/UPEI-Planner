@@ -5,14 +5,11 @@
         <attribute name="due_date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mark" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentClass" inverseName="assignment" inverseEntity="StudentClass" syncable="YES"/>
     </entity>
     <entity name="Exam" representedClassName="Exam" syncable="YES">
         <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="due_date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mark" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentClass" inverseName="exam" inverseEntity="StudentClass" syncable="YES"/>
@@ -42,8 +39,8 @@
         <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="courses" inverseEntity="Student" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="Exam" positionX="358" positionY="90" width="128" height="150"/>
+        <element name="Assignment" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="Exam" positionX="358" positionY="90" width="128" height="120"/>
         <element name="Project" positionX="142" positionY="-117" width="128" height="135"/>
         <element name="Student" positionX="-378" positionY="270" width="128" height="103"/>
         <element name="StudentClass" positionX="-54" positionY="393" width="128" height="163"/>
