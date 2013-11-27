@@ -5,6 +5,7 @@
 //  Created by Kyle Pineau on 2013-11-13.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Displays a view for editing Student information
 
 #import "EditStudentController.h"
 
@@ -14,6 +15,8 @@
 
 @implementation EditStudentController
 @synthesize imageView;
+
+// Initializer using the nib file to load
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +25,8 @@
     }
     return self;
 }
+
+// Action for bringing up the image picker when choosing a profile picture
 -(IBAction)choosePhoto:(id)sender
 {
     UIImagePickerController *imagePickController=[[UIImagePickerController alloc]init];
@@ -32,23 +37,24 @@
     
 }
 
-#pragma mark - When finish shoot
-
+// Called when image is picked
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image=[info objectForKey:UIImagePickerControllerEditedImage];
     imageView.image=image;
-    //saveImageBotton.enabled=TRUE;
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+// Called to load this controller's view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //Save button for saving user inputs to database
     _saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(saveStudent)];
     [[self navigationItem] setRightBarButtonItem:_saveButton];
     
+    //Cancel button for cancelling input and popping the edit view off the stack
     _cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
     
@@ -78,12 +84,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Called when the return button on the keyboard is tapped
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
-    [self resignFirstResponder];
+    [self resignFirstResponder]; //dismiss keyboard
     return YES;
 }
 
+// Called to dismiss keyboard when any other area on the screen is tapped
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [[self view] endEditing:YES];
@@ -91,6 +99,7 @@
 
 #pragma mark - private methods
 
+// Returns the application delegate
 - (AppDelegate *) appDelegate
 {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -140,6 +149,7 @@
     [self dismiss];
 }
 
+// Pop this controller off the stack (return to Information View)
 - (void) dismiss
 {
     [[self navigationController] popViewControllerAnimated:YES];

@@ -5,10 +5,10 @@
 //  Created by Kyle Pineau on 2013-11-11.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Represents a Student Class, with attributes as described in the data model
 
 #import "StudentClass.h"
 #import "Project.h"
-
 
 @implementation StudentClass
 
