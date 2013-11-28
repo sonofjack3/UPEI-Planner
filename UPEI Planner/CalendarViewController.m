@@ -5,6 +5,7 @@
 //  Created by Kyle Pineau on 2013-11-19.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Displays an Agenda table which shows all incompleted items.
 
 #import "CalendarViewController.h"
 
@@ -16,14 +17,17 @@
 @synthesize examList;
 @synthesize assignList;
 @synthesize projectList;
+
+// Default initializer
 - (id) init
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
-    [[self tabBarItem] setImage:[UIImage imageNamed:@"calendar.png"]];
+    [[self tabBarItem] setImage:[UIImage imageNamed:@"calendar.png"]]; //set tab bar icon
     [self setTitle:@"Agenda"];
     return self;
 }
 
+// Initialize using a specfied table view style
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -35,6 +39,7 @@
     return self;
 }
 
+// Called when this controller's view is loaded
 - (void)viewDidLoad
 {
     [[self tableView] setDataSource:self];
@@ -53,25 +58,28 @@
 
 #pragma mark - Table view data source
 
+// Returns the number of sections in the table
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 3;
+    return 3; //section for Assignments, section for Exams, section for Projects
 }
 
+// Returns the number of rows in the given section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"Number of exams: %d", [examList count]);
     NSLog(@"Number of projects: %d", [projectList count]);
     NSLog(@"Number of assignments: %d", [assignList count]);
-    if(section == 0)
+    if(section == 0) //exams
         return [examList count];
-    else if(section ==1)
+    else if(section ==1) //assignments
         return [assignList count];
-    else if(section ==2)
+    else if(section ==2) //projects
         return [projectList count];
     return 0;
 }
+
+// Set title for each section header
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if(section == 0)
@@ -88,6 +96,8 @@
     }
     return nil;
 }
+
+// Configure table cell at given indexPath
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -97,6 +107,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
     }
+    
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yy HH:mm"];
@@ -136,9 +147,9 @@
             break;}
     }
     
-    if ([indexPath section] != 0) //completion status not shown for exams
+    if ([indexPath section] != 0) //completion status not shown for exams (section 0)
     {
-        /* Configure detailText for each cell with due date and completed status */
+        /* Configure detailText for each Assignment or Project cell with due date and completed status */
         if (([completed isEqualToNumber:[NSNumber numberWithInt:0]]) &&  ([dueDate compare:dateNow] == NSOrderedDescending)) //if item is not yet completed and not overdue
         {
             [[cell detailTextLabel]setText:[NSString stringWithFormat:@"INCOMPLETE. Due: %@", dueDateString]];
@@ -149,56 +160,17 @@
             [[cell detailTextLabel] setText:[NSString stringWithFormat:@"OVERDUE. Due: %@", dueDateString]];
             [[cell detailTextLabel] setTextColor:[UIColor redColor]];
         }
+        
+        //Completed items are not shown
     }
-    
-    //Completed items are not shown
     
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-//Selecting an item will bring up that item's detailed view
+// Called when the row at indexPath is tapped
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //Selecting an item will bring up that item's particular Details view
     switch ([indexPath section]) {
         case 0: { //exams
             ExamDetailsController *next = [[ExamDetailsController alloc] initWithNibName:@"ExamDetailsController" bundle:nil];
@@ -220,12 +192,17 @@
     }
 }
 
-- (AppDelegate *)appDelegate {
+#pragma mark - Private methods
+
+// Returns the application delegate
+- (AppDelegate *)appDelegate
+{
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 // Performs a fetch and reloads the table view.
-- (void) loadTableData {
+- (void) loadTableData
+{
     examList = [[NSMutableArray alloc]init];
     assignList = [[NSMutableArray alloc]init];
     projectList = [[NSMutableArray alloc]init];
@@ -237,7 +214,7 @@
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
-    // Add an NSSortDescriptor to sort the faculties alphabetically
+    // Use NSSortDescriptor to sort classes by name
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -245,11 +222,15 @@
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     NSLog(@"%i",fetchedObjects.count);
-    for(int i =0; i<fetchedObjects.count;i++) {
-    _classes = [[NSArray alloc] initWithObjects:[fetchedObjects objectAtIndex:i], nil];
     
+    //Add incomplete items to the arrays examList, projectList and assignList using the complete set of items
+    for(int i =0; i<fetchedObjects.count;i++) {
+    
+        _classes = [[NSArray alloc] initWithObjects:[fetchedObjects objectAtIndex:i], nil];
         _course = [_classes objectAtIndex:0];
         NSLog(@"%i",i );
+        
+        //Add incomplete exams to array examList
         _exams = [NSMutableArray arrayWithArray:[[_course exam] allObjects]];
         for(int j = 0; j<_exams.count;j++){
             if([[[_exams objectAtIndex:j]completed]intValue] ==0){
@@ -257,6 +238,7 @@
                 NSLog(@"Exam: %@",[[_exams objectAtIndex:j] name]);}
         }
         
+        //Add incomplete projects to array projectList
         _projects = [NSMutableArray arrayWithArray:[[_course project] allObjects]];
         for(int k = 0; k<_projects.count;k++){
             if([[[_projects objectAtIndex:k]completed]intValue] ==0){
@@ -264,6 +246,8 @@
             NSLog(@"Project %@",[[_projects objectAtIndex:k] name]);
             }
         }
+        
+        //Add incomplete assignments to array assignList
         _assign = [NSMutableArray arrayWithArray:[[_course assignment] allObjects]];
         for(int l = 0; l<_assign.count;l++){
             if([[[_assign objectAtIndex:l]completed]intValue] ==0){
@@ -272,6 +256,7 @@
             }
         }
     
+    //Use NSSortDescriptor to sort agenda items by due date
     NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
     [examList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
     [assignList sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
@@ -279,24 +264,29 @@
     [[self tableView] reloadData];
 }
 
+// Set text for the table view delete button
 - (NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return @"Mark as complete";
+    return @"Mark as complete"; //deleting a row from the agenda view simply marks the corresponding object as complete
 }
 
+// Called when the view appears
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     // Load the table data //
     [self loadTableData];
 }
+
 #pragma mark - Table view delegate
 
+// Specifies editing style for each cell
 -(UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewCellEditingStyleDelete;
+    return UITableViewCellEditingStyleDelete; //all rows deletable
 }
 
+// Used here to delete items from the agenda (ie: mark them as complete)
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *ipaths = [NSArray arrayWithObject:indexPath];
@@ -305,11 +295,10 @@
         [tableView beginUpdates];
         NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
         
-        
-        
         NSLog(@"row %i",[indexPath row]);
+        /* Switch case gets item corresponding to indexPath within the database and marks it as complete, and removes it from the array holding the incomplete items (examList, assignList, projectList) */
         switch([indexPath section]){
-            case 0:{
+            case 0:{ //exams
                 NSEntityDescription *entity = [NSEntityDescription entityForName:@"Exam" inManagedObjectContext:context];
                 NSFetchRequest *request = [[NSFetchRequest alloc] init];
                 [request setEntity:entity];
@@ -334,7 +323,7 @@
                 [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
                 [examList removeObjectAtIndex:[indexPath row]];
                 break;}
-            case 1:{
+            case 1:{ //assignments
                 NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assignment" inManagedObjectContext:context];
                 NSFetchRequest *request = [[NSFetchRequest alloc] init];
                 [request setEntity:entity];
@@ -359,7 +348,7 @@
                 [tableView deleteRowsAtIndexPaths:ipaths withRowAnimation:UITableViewRowAnimationFade];
                 [assignList removeObjectAtIndex:[indexPath row]];
                 break;}
-            case 2:{
+            case 2:{ //projects
                 NSEntityDescription *entity = [NSEntityDescription entityForName:@"Project" inManagedObjectContext:context];
                 NSFetchRequest *request = [[NSFetchRequest alloc] init];
                 [request setEntity:entity];
@@ -387,7 +376,6 @@
                 break;}
         }
         [tableView endUpdates];
-        
     }
 }
 

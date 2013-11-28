@@ -1,10 +1,11 @@
 //
-//  ProjectsViewController.m
+//  ExamViewController.m
 //  UPEI Planner
 //
 //  Created by Evan Jackson on 2013-11-18.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Displays all exams for a course in a table view.
 
 #import "ExamViewController.h"
 
@@ -14,12 +15,14 @@
 
 @implementation ExamViewController
 
+// Default initializer
 - (id) init
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     return self;
 }
 
+// Initializer using a specified table style
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -30,12 +33,14 @@
     return self;
 }
 
+// Called to load this controller's view
 - (void)viewDidLoad
 {
     [[self tableView] setDataSource:self];
     [[self tableView] setDelegate:self];
     [super viewDidLoad];
     
+    //Add button for adding a new exam
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addExam)];
     [[self navigationItem] setRightBarButtonItem:addButton];
     
@@ -50,12 +55,13 @@
 
 #pragma mark - Table view data source
 
+// Returns the number of sections in the table
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
+// Returns the number of rows in the given section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -63,6 +69,7 @@
     return [_exams count];
 }
 
+// Configures the table cell at the given indexPath
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellId = @"ExamCell";
@@ -78,54 +85,15 @@
     Exam *exam = [_exams objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[exam name]];
     
-    
+    //Display exam date as cell subtitle
     [[cell detailTextLabel]setText:[NSString stringWithFormat:@"Date of exam: %@", [exam due_date]]];
     
     return cell;
-    //return nil;
 }
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - Table view delegate
 
+// Called when row at indexPath is tapped
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ExamDetailsController *next = [[ExamDetailsController alloc] initWithNibName:@"ExamDetailsController" bundle:nil];
@@ -134,22 +102,27 @@
 }
 
 #pragma mark - Private methods
-// A helper method to get the appDelegate
-- (AppDelegate *)appDelegate {
+
+// Returns the application delegate
+- (AppDelegate *)appDelegate
+{
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 // Performs a fetch and reloads the table view.
-- (void) loadTableData {
+- (void) loadTableData
+{
     _exams = [NSMutableArray arrayWithArray:[[_course exam] allObjects]];
     [_course setExam:[NSSet setWithArray:_exams]];
     
-    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
-    [_exams sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
+    //Use NSSortDescriptor to sort exams by date
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"due_date" ascending:YES];
+    [_exams sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     [[self tableView] reloadData];
 }
 
+// Called when the view appears
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -157,17 +130,20 @@
     [self loadTableData];
 }
 
+// Set editing status
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated
 {
     [super setEditing:editing animated:animated];
     [[self tableView] setEditing:editing animated:YES];
 }
 
+// Set editing style per row
 -(UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewCellEditingStyleDelete;
+    return UITableViewCellEditingStyleDelete; //all rows deletable
 }
 
+// Used here to delete rows from the table view
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
@@ -178,10 +154,12 @@
     }
 }
 
+// Called when a row is chosen for deletion (displays an alert view)
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) //delete confirmation
     {
+        /* Delete object in the database */
         [[self tableView] beginUpdates];
         NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Exam" inManagedObjectContext:context];
@@ -199,6 +177,8 @@
         {
             NSLog(@"Save error: %@", [error localizedDescription]);
         }
+        
+        /* Delete corresponding row in the table view */
         [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:_indexPathToBeDeleted] withRowAnimation:UITableViewRowAnimationFade];
         [_exams removeObjectAtIndex:[_indexPathToBeDeleted row]];
         NSLog(@"%d", [_exams count]);
@@ -206,6 +186,7 @@
     }
 }
 
+// Called to add an exam to the table view and the database
 - (void) addExam{
     AddExamController *next = [[AddExamController alloc] initWithNibName:@"AddExamController" bundle:nil];
     [next setCourse:_course];

@@ -5,6 +5,7 @@
 //  Created by Evan Jackson on 2013-11-18.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Used for adding a new project to the database.
 
 #import "AddProjectController.h"
 
@@ -14,6 +15,7 @@
 
 @implementation AddProjectController
 
+// Initializer using the nib file
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,23 +25,29 @@
     return self;
 }
 
+// Called to load this controller's view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    //Save button for saving user inputs
     _saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(saveClass)];
     [[self navigationItem] setRightBarButtonItem:_saveButton];
-    
+
+    //Cancel button for cancelling add operation
     _cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
     
     [[self navigationItem] setTitle:@"Add Project"];
+
+    //Bring up date picker when date field is tapped
     UIDatePicker *datePicker = [[UIDatePicker alloc]init];
-    
     [datePicker setDate:[NSDate date]];
     [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
     [self.dateField setInputView:datePicker];
 }
+
+// Update the date field after date has been picked
 -(void)updateTextField:(id)sender
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -54,12 +62,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Called when RETURN is tapped on the keyboard
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
+// Called to dismiss keyboard when any other area on the screen is tapped
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [[self view] endEditing:YES];
@@ -67,6 +77,7 @@
 
 #pragma mark - private methods
 
+// Returns the application delegate
 - (AppDelegate *) appDelegate
 {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -111,24 +122,28 @@
     [self dismiss];
 }
 
+// Called when cancel button is tapped; pops this controller off the stack
 - (void) dismiss
 {
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
+// Called when Add Members from Address Book button is tapped
 - (IBAction)selectMembers:(id)sender {
     ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;
     
     [self presentViewController:picker animated:YES completion:NULL];
 }
+
+// Cancel people picker
 - (void)peoplePickerNavigationControllerDidCancel:
 (ABPeoplePickerNavigationController *)peoplePicker
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-
+// Dismiss people picker after a contact is chosen
 - (BOOL)peoplePickerNavigationController:
 (ABPeoplePickerNavigationController *)peoplePicker
       shouldContinueAfterSelectingPerson:(ABRecordRef)person {
@@ -139,6 +154,7 @@
     return NO;
 }
 
+// Let delegate handle person selection
 - (BOOL)peoplePickerNavigationController:
 (ABPeoplePickerNavigationController *)peoplePicker
       shouldContinueAfterSelectingPerson:(ABRecordRef)person
@@ -147,6 +163,8 @@
 {
     return NO;
 }
+
+// Fill text field with Contact name chosen from Address Book
 - (void)displayPerson:(ABRecordRef)person
 {
     NSString* name = (__bridge_transfer NSString*)ABRecordCopyValue(person,

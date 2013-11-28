@@ -5,6 +5,7 @@
 //  Created by Evan Jackson on 2013-11-04.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Application delegate header file
 
 #import <UIKit/UIKit.h>
 

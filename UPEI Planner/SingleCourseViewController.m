@@ -5,6 +5,7 @@
 //  Created by Evan Jackson on 2013-11-18.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Displays the information for a single course, and rows for assignments, projects and exams.
 
 #import "SingleCourseViewController.h"
 
@@ -14,6 +15,7 @@
 
 @implementation SingleCourseViewController
 
+// Initialize with a particular table view style
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -25,10 +27,12 @@
     return self;
 }
 
+// Called to load this controller's view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //Edit button to allow editing of course information
     UIBarButtonItem *edit = [[UIBarButtonItem alloc] initWithTitle:@"Edit Class"
                                                              style:UIBarButtonItemStyleBordered
                                                             target:self
@@ -41,23 +45,24 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
+// Returns the number of sections in this table view
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
+// Returns the number of rows in the given section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return 4;
 }
 
+// Sets up the table view's cells
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -76,13 +81,13 @@
             [[cell detailTextLabel] setText:[NSString stringWithFormat:@"Professor: %@", [_course professor]]];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone]; //course description is not selectable
             break;
-        case 1:
+        case 1: //Assignments row
             [[cell textLabel] setText:@"Assignments"];
             break;
-        case 2:
+        case 2: //Projects row
             [[cell textLabel] setText:@"Projects"];
             break;
-        case 3:
+        case 3: //Exams row
             [[cell textLabel] setText:@"Exams"];
             break;
     }
@@ -90,57 +95,20 @@
     return cell;
 }
 
+// Sets the height for each cell in the table view
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch ([indexPath row])
     {
-        case 0:
+        case 0: //Course description row
             return 60;
             break;
-        default:
+        default: //Assignments, Projects, Exams rows
             return 44;
             break;
     }
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -168,21 +136,26 @@
     }
 }
 
-// A helper method to get the appDelegate
-- (AppDelegate *)appDelegate {
+#pragma mark - Private methods
+
+// Returns the application delegate
+- (AppDelegate *)appDelegate
+{
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
+// Called when the Edit Class button is tapped
 - (void) editClass
 {
+    //Push the EditClassController on the stack
     EditClassController *next = [[EditClassController alloc] init];
     [next setRowNumber:_rowNumber];
     [[self navigationController] pushViewController:next animated:YES];
 }
 
 // Performs a fetch and reloads the table view.
-- (void) loadTableData {
-    
+- (void) loadTableData
+{
     NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
     
     // Construct a fetch request
@@ -191,19 +164,19 @@
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
-    // Add an NSSortDescriptor to sort the faculties alphabetically
+    // Use NSSortDescriptor to sort courses by name
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    _classes = [[NSArray alloc] initWithObjects:[fetchedObjects objectAtIndex:_rowNumber], nil];
-    _course = [_classes objectAtIndex:0];
+    _course = [fetchedObjects objectAtIndex:_rowNumber];
     
     [[self tableView] reloadData];
 }
 
+// Called when the view appears
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

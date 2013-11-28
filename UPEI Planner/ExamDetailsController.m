@@ -5,6 +5,7 @@
 //  Created by Kyle Pineau on 2013-11-19.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Displays attributes of a specific exam.
 
 #import "ExamDetailsController.h"
 
@@ -18,6 +19,7 @@
 @synthesize markField;
 @synthesize completeSelect;
 
+// Initializer using the nib file
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,31 +28,39 @@
     return self;
 }
 
+// Called to load this controller's view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setTitle:[_exam name]];
+    
+    //Fill text fields and segmented controller with existing exam data
     [[self dateField]setText:[_exam due_date]];
     [[self nameField]setText:[_exam name]];
     [[self markField]setText:[[_exam mark] stringValue]];
     [completeSelect setSelectedSegmentIndex:[[_exam completed]integerValue]];
+    
+    //Enable text fields and segmented-control
     [dateField setUserInteractionEnabled:YES];
     [nameField setUserInteractionEnabled:YES];
     [nameField setUserInteractionEnabled:YES];
     [completeSelect setUserInteractionEnabled:YES];
-    if ([[_exam completed] boolValue] == NO) //if assignment is not completed
+    
+    //Enable mark field based on completion status
+    if ([[_exam completed] boolValue] == NO) //if exam is not completed
     {
         [markField setText:@""];
-        [markField setUserInteractionEnabled:NO]; //mark field editable only when assignment has been completed
-        [markField setAlpha:0.3];
+        [markField setUserInteractionEnabled:NO]; //mark field editable only when exam has been completed
+        [markField setAlpha:0.3]; //"grey out" mark field
     }
-    else //assignment is completed
+    else //exam is completed
     {
         [markField setUserInteractionEnabled:YES];
         [markField setAlpha:1];
     }
 }
 
+// Called when a text field is tapped
 - (BOOL) textFieldShouldBeginEditing:(UITextField *)textField
 {
     if ([textField isEqual:dateField]) //bring up date picker when due field is tapped
@@ -64,18 +74,23 @@
     return YES;
 }
 
+// Called when RETURN is tapped on the keyboard
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
+// Called to dismiss keyboard when any other area on the screen is tapped
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self saveChanges];
     [[self view] endEditing:YES];
 }
 
+#pragma mark: private methods
+
+// Returns the application delegate
 - (AppDelegate *) appDelegate
 {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -87,6 +102,7 @@
     [self saveChanges];
 }
 
+// Save user edits to the database
 - (void) saveChanges
 {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -97,6 +113,7 @@
     [self viewDidLoad];
 }
 
+// Update the date field after date has been picked
 -(void)updateTextField:(id)sender
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
