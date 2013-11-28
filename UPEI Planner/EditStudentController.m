@@ -149,7 +149,7 @@
     [self dismiss];
 }
 
-// Pop this controller off the stack (return to Information View)
+// Called when cancel button is tapped; pops this controller off the stack (return to Information View)
 - (void) dismiss
 {
     [[self navigationController] popViewControllerAnimated:YES];

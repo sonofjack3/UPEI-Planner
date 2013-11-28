@@ -5,8 +5,7 @@
 //  Created by Evan Jackson on 2013-11-17.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
-//  Displays fields for adding a new class (when _rowNumber = -1). Also used to edit an existing
-//  class using the rowNumber passed to the controller.
+//  
 
 #import "AddClassController.h"
 
@@ -16,6 +15,7 @@
 
 @implementation AddClassController
 
+// Initializes controller using nib file
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,13 +25,16 @@
     return self;
 }
 
+// Called to load this controller's view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //Save button for saving user inputs
     _saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(saveClass)];
     [[self navigationItem] setRightBarButtonItem:_saveButton];
     
+    //Cancel button for cancelling add operation
     _cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
     [[self navigationItem] setLeftBarButtonItem:_cancelButton];
     
@@ -44,12 +47,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Called when RETURN is tapped on keyboard
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
+    [textField resignFirstResponder]; //dismiss keyboard
     return YES;
 }
 
+// Called to dismiss keyboard when any other area on the screen is tapped
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [[self view] endEditing:YES];
@@ -57,12 +62,13 @@
 
 #pragma mark - private methods
 
+// Returns the application delegate
 - (AppDelegate *) appDelegate
 {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
-// Action called by _saveButton to save edits to the Student
+// Action called by _saveButton to save edits to the class
 - (void) saveClass
 {
     NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
@@ -98,6 +104,7 @@
     [self dismiss];
 }
 
+// Called when cancel button is tapped; pops this controller off the stack
 - (void) dismiss
 {
     [[self navigationController] popViewControllerAnimated:YES];

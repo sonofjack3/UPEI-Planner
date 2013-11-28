@@ -89,14 +89,21 @@
 
 #pragma mark - Table view delegate
 
+// Called when row at indexPath is tapped
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SingleCourseViewController *next = [[SingleCourseViewController alloc] initWithNibName:@"SingleCourseViewController" bundle:nil];
-    [next setRowNumber:[indexPath row]];
+    [next setRowNumber:[indexPath row]]; //pass row number to SingleCourseViewController to indicate the course at the given row in the database's array
+    
+    /* Pass the course prefix and number as a single string (simply used as the title of the single course view */
     NSString *prefix = [[_classes objectAtIndex:[indexPath row]] classprefix];
     NSString *number = [prefix stringByAppendingFormat:@" %@", [[_classes objectAtIndex:[indexPath row]] classnumber]];
     [next setClassID:number];
+    
+    /* Pass the course at the given row */
     [next setCourse:[_classes objectAtIndex:[indexPath row]]];
+    
+    /* Push the single view controller on the stack */
     [[self navigationController] pushViewController:next animated:YES];
 }
 

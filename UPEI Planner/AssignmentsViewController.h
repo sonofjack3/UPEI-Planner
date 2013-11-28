@@ -5,6 +5,7 @@
 //  Created by Evan Jackson on 2013-11-18.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Displays all assignments for a course in a table.
 
 #import <UIKit/UIKit.h>
 #import "Assignment.h"
@@ -15,8 +16,8 @@
 
 @interface AssignmentsViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate, UIAlertViewDelegate>
 
-@property (strong, nonatomic) NSMutableArray *assignments;
-@property StudentClass *course;
-@property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted;
+@property (strong, nonatomic) NSMutableArray *assignments; //assignments to be listed in the table
+@property StudentClass *course; //course associated with this controller's assignments
+@property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted; //used to 
 
 @end

@@ -5,6 +5,7 @@
 //  Created by Kyle Pineau on 2013-11-19.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
+//  Displays attributes of a specific assignment.
 
 #import "AssignDetailsController.h"
 
@@ -18,6 +19,7 @@
 @synthesize markField;
 @synthesize completeSelect;
 
+// Initializer using the nib file
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,10 +28,13 @@
     return self;
 }
 
+// Called to load this controller's view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setTitle:[_assignment name]];
+    
+    //Fill text fields with existing assignment data
     [[self dueField]setText:[_assignment due_date]];
     [[self nameField]setText:[_assignment name]];
     [[self markField] setText:[[_assignment mark] stringValue]];
@@ -54,6 +59,7 @@
     }
 }
 
+// Save user edits to the database
 - (void) saveChanges
 {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -64,6 +70,7 @@
     [self viewDidLoad];
 }
 
+// Called when a text field is tapped
 - (BOOL) textFieldShouldBeginEditing:(UITextField *)textField
 {
     if ([textField isEqual:dueField]) //bring up date picker when due field is tapped
@@ -77,18 +84,21 @@
     return YES;
 }
 
+// Called when RETURN is tapped on the keyboard
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
+    [textField resignFirstResponder]; //dismiss keyboard
     return YES;
 }
 
+// Called to dismiss keyboard when any other area on the screen is tapped
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self saveChanges];
     [[self view] endEditing:YES];
 }
 
+// Returns the application delegate
 - (AppDelegate *) appDelegate
 {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -100,7 +110,7 @@
     [self saveChanges];
 }
 
-//Update the dateField
+// Update the date field after date has been picked
 -(void)updateTextField:(id)sender
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];

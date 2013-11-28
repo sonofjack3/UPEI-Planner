@@ -12,9 +12,9 @@
 
 @implementation Student
 
-@dynamic id;
-@dynamic name;
-@dynamic picture;
-@dynamic courses;
+@dynamic id; //student's UPEI ID
+@dynamic name; //student's name
+@dynamic picture; //profile picture
+@dynamic courses; //all courses associated with this student
 
 @end

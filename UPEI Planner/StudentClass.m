@@ -12,13 +12,13 @@
 
 @implementation StudentClass
 
-@dynamic classnumber;
-@dynamic classprefix;
-@dynamic name;
-@dynamic professor;
-@dynamic assignment;
-@dynamic exam;
-@dynamic project;
-@dynamic student;
+@dynamic classnumber; //course number (eg: 252)
+@dynamic classprefix; //course prefix (eg: CS)
+@dynamic name; //course name (eg: iPhone Programming)
+@dynamic professor; //course professor's name
+@dynamic assignment; //set of assignments for this course
+@dynamic exam; //set of exams for this course
+@dynamic project; //set of projects for this course
+@dynamic student; //Student associated with this course
 
 @end
