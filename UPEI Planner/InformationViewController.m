@@ -130,7 +130,11 @@
 // Called when the View Courses button is tapped
 - (IBAction)viewCourses:(id)sender
 {
+<<<<<<< HEAD
     CoursesViewController *next = [[CoursesViewController alloc] initWithNibName:@"CoursesViewController" bundle:nil];
+=======
+    UIViewController *next = [[CoursesViewController alloc] initWithNibName:@"CoursesViewController" bundle:nil];
+>>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
     [[self navigationController] pushViewController:next animated:YES]; //push CoursesViewController on the stack
 }
 @end

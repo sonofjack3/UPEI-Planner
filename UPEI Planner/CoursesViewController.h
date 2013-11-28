@@ -19,7 +19,10 @@
 
 @property (strong, nonatomic) NSMutableArray *classes; //classes to be displayed
 @property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted; //used for deleting classes
+<<<<<<< HEAD
 @property (strong, nonatomic) UIAlertView *deleteAlert; //alert view to confirm a course deletion
 @property (strong, nonatomic) UIAlertView *maxAlert; //alert view indicating maximum number of courses has been reached
+=======
+>>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
 
 @end
