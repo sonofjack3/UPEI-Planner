@@ -174,20 +174,7 @@
 {
     if ([alertView isEqual:_deleteAlert])
     {
-<<<<<<< HEAD
         if (buttonIndex == 0) //delete confirmation
-=======
-        /* Delete object in the database */
-        [[self tableView] beginUpdates];
-        NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentClass" inManagedObjectContext:context];
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        [request setEntity:entity];
-        NSError *error = nil;
-        StudentClass *classToDelete = [[context executeFetchRequest:request error:&error] objectAtIndex:[[self indexPathToBeDeleted] row]];
-        [context deleteObject:classToDelete];
-        if ([context save:&error])
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
         {
             /* Delete object in the database */
             [[self tableView] beginUpdates];
@@ -212,25 +199,12 @@
             [_classes removeObjectAtIndex:[_indexPathToBeDeleted row]];
             [[self tableView] endUpdates];
         }
-<<<<<<< HEAD
-=======
-        else
-        {
-            NSLog(@"Save error: %@", [error localizedDescription]);
-        }
-        
-        /* Delete corresponding row in the table view */
-        [[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:_indexPathToBeDeleted] withRowAnimation:UITableViewRowAnimationFade];
-        [_classes removeObjectAtIndex:[_indexPathToBeDeleted row]];
-        [[self tableView] endUpdates];
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
     }
 }
 
 // Called to add a class to the table view and the database
 - (void) addClass
 {
-<<<<<<< HEAD
     NSLog(@"%i", [_classes count]);
     if ([_classes count] >= MAX_COURSES) //if user has reached max number of courses, display alert
     {
@@ -242,9 +216,5 @@
         UIViewController *next = [[AddClassController alloc] initWithNibName:@"AddClassController" bundle:nil];
         [[self navigationController] pushViewController:next animated:YES]; //push AddClassController on the stack
     }
-=======
-    UIViewController *next = [[AddClassController alloc] initWithNibName:@"AddClassController" bundle:nil];
-    [[self navigationController] pushViewController:next animated:YES]; //push AddClassController on the stack
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
 }
 @end

@@ -18,10 +18,6 @@
 
 @property (strong, nonatomic) NSMutableArray *assignments; //assignments to be listed in the table
 @property StudentClass *course; //course associated with this controller's assignments
-<<<<<<< HEAD
 @property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted; //used to look up the assignment to be deleted within the database
-=======
-@property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted; //used to 
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
 
 @end

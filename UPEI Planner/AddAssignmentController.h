@@ -14,18 +14,9 @@
 
 @interface AddAssignmentController : UIViewController <UITextFieldDelegate>
 
-<<<<<<< HEAD
 @property (strong, nonatomic) UIBarButtonItem *saveButton; //save button for saving user inputs to 
 @property (strong, nonatomic) UIBarButtonItem *cancelButton; //cancel button for cancelling an add and popping this controller off the stack
 @property StudentClass *course; //course to be associated with the new assignment
-=======
-@property (strong, nonatomic) UIBarButtonItem *saveButton;; //save button for saving user inputs to 
-@property (strong, nonatomic) UIBarButtonItem *cancelButton; //cancel button for cancelling an add and popping this controller off the stack
-@property StudentClass *course; //course to be associated with the new assignment
-
-@property (weak, nonatomic) IBOutlet UITextField *nameField; //text field containing the assignment title
-@property (weak, nonatomic) IBOutlet UITextField *dateField; //text field containing the assignment due date
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField; //text field containing the assignment title
 @property (weak, nonatomic) IBOutlet UITextField *dateField; //text field containing the assignment due date

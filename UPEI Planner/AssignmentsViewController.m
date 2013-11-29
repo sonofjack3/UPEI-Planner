@@ -5,11 +5,7 @@
 //  Created by Evan Jackson on 2013-11-18.
 //  Copyright (c) 2013 Kyle Pineau & Evan Jackson. All rights reserved.
 //
-<<<<<<< HEAD
 //  Displays all assignments for a course in a table view.
-=======
-//  Displays all assignments for a course in a table.
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
 
 #import "AssignmentsViewController.h"
 
@@ -44,11 +40,7 @@
     [[self tableView] setDelegate:self];
     [super viewDidLoad];
     
-<<<<<<< HEAD
     //Add button for adding a new assignment
-=======
-    //Add button 
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAssignment)];
     [[self navigationItem] setRightBarButtonItem:addButton];
     
@@ -92,11 +84,7 @@
     Assignment *assignment = [_assignments objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[assignment name]];
     
-<<<<<<< HEAD
     //Display completed status and due date for each assignment as a cell subtitle
-=======
-    //Display completed status and due date for each assignment
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yy HH:mm"];
     NSDate *dateNow = [NSDate date];
@@ -122,10 +110,6 @@
     }
     
     return cell;
-<<<<<<< HEAD
-=======
-    //return nil;
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
 }
 
 #pragma mark - Table view delegate

@@ -34,11 +34,7 @@
     [super viewDidLoad];
     [self setTitle:[_assignment name]];
     
-<<<<<<< HEAD
     //Fill text fields and segmented controller with existing assignment data
-=======
-    //Fill text fields with existing assignment data
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
     [[self dueField]setText:[_assignment due_date]];
     [[self nameField]setText:[_assignment name]];
     [[self markField] setText:[[_assignment mark] stringValue]];
@@ -103,11 +99,8 @@
     [[self view] endEditing:YES];
 }
 
-<<<<<<< HEAD
 #pragma mark: private methods
 
-=======
->>>>>>> 58478260c9d4e919bf310df5db8e85d63a21c937
 // Returns the application delegate
 - (AppDelegate *) appDelegate
 {
